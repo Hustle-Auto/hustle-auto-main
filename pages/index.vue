@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="max-w-screen-md mx-auto prose text-center">
-      <div class="w-52 mx-auto">
+      <div class="mx-auto w-52">
         <img src="/logo.svg" width="100%" />
       </div>
       <h1 class="">Coming Soon</h1>
@@ -15,9 +15,9 @@
         >
         or call
         <a
-          href="tel:4034020462"
+          href="tel:587-436-7001"
           class="text-red-500 underline hover:no-underline"
-          >403-402-0462</a
+          >(587) 436-7001</a
         >
       </p>
     </section>
