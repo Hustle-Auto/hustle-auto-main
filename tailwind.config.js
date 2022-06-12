@@ -1,11 +1,17 @@
 module.exports = {
-  content: [],
-  media: false, // or ' darkMode' or 'class'
+  content: [
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        accent: '#ef4444',
+      },
+    },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
 }
