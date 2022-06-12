@@ -10,13 +10,13 @@
         Please contact us at
         <a
           href="mailto:hustleaservices@gmail.com"
-          class="text-red-500 underline hover:no-underline"
+          class="text-accent underline hover:no-underline"
           >hustleaservices@gmail.com</a
         >
         or call
         <a
           href="tel:587-436-7001"
-          class="text-red-500 underline hover:no-underline"
+          class="text-accent underline hover:no-underline"
           >(587) 436-7001</a
         >
       </p>
@@ -24,8 +24,10 @@
   </main>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'IndexPage',
-}
+})
 </script>
