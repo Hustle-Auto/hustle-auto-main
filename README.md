@@ -1,5 +1,7 @@
 # new-hustle-auto-main
 
+# Hustle Auto
+
 ## Build Setup
 
 ```bash
