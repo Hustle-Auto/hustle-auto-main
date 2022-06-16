@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-paragraph;
+}
+
+@layer components {
+  .h2 {
+    @apply text-3xl font-semibold uppercase font-heading;
+  }
+
+
+  .h3 {
+    @apply text-2xl font-semibold tracking-tight uppercase font-heading;
+  }
+}

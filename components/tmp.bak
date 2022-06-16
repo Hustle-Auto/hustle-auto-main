@@ -1,0 +1,192 @@
+<template>
+  <!-- Hamburger menu  -->
+
+  <div>
+    <div class="lg:hidden sm:order-last">
+      <button
+        type="button"
+        class="inline-flex items-center justify-center p-2 bg-white rounded-md text-blue"
+        aria-expanded="false"
+        id="menu-toggle"
+        @click="menuOpen"
+      >
+        <svg
+          class="block w-10 h-10"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      id="menu"
+      ref="menu"
+      class="absolute right-0 z-50 w-full h-screen overflow-auto sm:p-8 p-2.5 transition ease-in transform"
+    >
+      <div class="pb-6 sm:px-5 sm:pt-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <img class="w-auto logo" src="/logo.svg" />
+          </div>
+          <div class="-mr-2">
+            <button
+              id="menu-toggle-close"
+              ref="menu_toggle_close"
+              type="button"
+              class="inline-flex items-center justify-center p-2 text-white rounded-md bg-white/0"
+              @click="menuClose"
+            >
+              <span class="sr-only">Close menu</span>
+
+              <svg
+                class="w-10 h-10 ml-8"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="px-5 mt-12 md:pl-10">
+          <nav class="grid">
+            <NuxtLink
+              to="book-now"
+              class="flex items-center py-4 opacity-50 hover:opacity-100"
+              @click="menuClose"
+            >
+              <span class="ml-3"> menu 1</span>
+            </NuxtLink>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of hamburger  menu  -->
+  <!-- <nav>
+    <ul class="">
+      <li>
+        <NuxtLink to="/">Home</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="book-now">Book Now</NuxtLink>
+      </li>
+    </ul>
+  </nav> -->
+</template>
+
+<script>
+export default {
+  methods: {
+    menuOpen() {
+      this.$refs.menu.classList.add('show')
+      document.documentElement.style.overflow = 'hidden'
+    },
+    menuClose() {
+      this.$refs.menu.classList.remove('show')
+      document.documentElement.style.overflow = 'auto'
+    },
+  },
+}
+</script>
+
+<style scoped>
+/* Active link  */
+.active {
+  opacity: 100 !important;
+  font-weight: 700;
+}
+
+/* MENU------------------- */
+#menu {
+  background: #3c5eaa;
+  transform: scale(0);
+  transition: transform 0.2s;
+  transform-origin: 90% 50px;
+}
+#menu.show {
+  background: #3c5eaa;
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.menu-bar a {
+  color: #3c5eaa;
+  font-size: 16px;
+}
+.menu-bar a:after {
+  content: '';
+  background: #22b46e;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  transition: width 0.4s;
+}
+.menu-bar a.active {
+  font-weight: bold;
+  color: #22b46e;
+}
+.menu-bar a:hover {
+  color: #22b46e;
+}
+.menu-bar a:hover:after,
+.menu-bar a.active:after {
+  width: 100%;
+  transition: width 0.4s;
+}
+
+@media (max-width: 767px) {
+  .header-btn {
+    flex: 0 0 100%;
+  }
+  .logo {
+    height: 60px;
+  }
+}
+/* MEDIA CSS --------------------- */
+@media (max-width: 1024px) {
+  #menu {
+    transform: scale(0);
+    z-index: 99;
+  }
+  #menu:after {
+    content: '';
+    /* background-image: url(../assets/images/menu-icons/bg.png); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  #menu nav a {
+    color: #fff;
+    font-size: 20px;
+    border-bottom: 1px solid #5a77b7;
+  }
+  #menu nav a img {
+    height: 70px;
+  }
+}
+</style>

@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'new-hustle-auto-main',
+    title: 'hustle-auto-main',
     htmlAttrs: {
       lang: 'en',
     },
@@ -21,6 +21,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // plugins: [{ src: '~/plugins/vue-burger-menu.js', ssr: false }],
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,6 +33,8 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://google-fonts.nuxtjs.org/setup/
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -44,6 +47,16 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+  },
+
+  googleFonts: {
+    download: true,
+    families: {
+      Roboto: true,
+      'Roboto Mono': true,
+      Poppins: true,
+      Inconsolata: true,
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
