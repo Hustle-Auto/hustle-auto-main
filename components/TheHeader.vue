@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="my-5 mx-3 flex justify-between">
+    <nav class="container flex justify-between px-3 mx-auto my-5">
       <NuxtLink to="/">
         <img src="~/assets/imgs/logo.svg" class="w-24" />
       </NuxtLink>

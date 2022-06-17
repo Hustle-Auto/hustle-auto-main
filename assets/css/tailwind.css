@@ -8,7 +8,7 @@ body {
 
 @layer components {
   .h2 {
-    @apply text-3xl font-semibold uppercase font-heading;
+    @apply text-3xl font-semibold uppercase font-heading md:text-4xl;
   }
 
 

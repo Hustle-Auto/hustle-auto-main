@@ -9,28 +9,13 @@
         <p class="text-lg">Calgary, Alberta</p>
         <ul class="flex space-x-3">
           <li>
-            <a href="#">
-              <img
-                src="~/assets/icons/facebook.svg"
-                class="w-6 h-6 filter invert brightness-0"
-              />
-            </a>
+            <SocialsFacebook />
           </li>
           <li>
-            <a href="#">
-              <img
-                src="~/assets/icons/twitter.svg"
-                class="w-6 h-6 filter invert brightness-0"
-              />
-            </a>
+            <SocialsTwitter />
           </li>
           <li>
-            <a href="#">
-              <img
-                src="~/assets/icons/instagram.svg"
-                class="w-6 h-6 filter invert brightness-0"
-              />
-            </a>
+            <SocialsInstagram />
           </li>
         </ul>
       </div>
