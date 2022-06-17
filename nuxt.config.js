@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'hustle-auto-main',
+    title: 'new-hustle-auto-main',
     htmlAttrs: {
       lang: 'en',
     },

@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+<<<<<<< HEAD
 @tailwind utilities;
 
 body {
@@ -16,3 +17,6 @@ body {
     @apply text-2xl font-semibold tracking-tight uppercase font-heading;
   }
 }
+=======
+@tailwind utilities;
+>>>>>>> main
