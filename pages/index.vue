@@ -1,31 +1,9 @@
 <template>
-<<<<<<< HEAD
   <div>
     <main>
       <div class="bg-black">
         <section
           class="container flex flex-col justify-center min-h-screen py-16 mx-auto space-y-16 px-7"
-=======
-  <main>
-    <section class="max-w-screen-md mx-auto prose text-center">
-      <div class="mx-auto w-52">
-        <img src="/logo.svg" width="100%" />
-      </div>
-      <h1 class="">Coming Soon</h1>
-      <p class="">
-        Our website is under construction. <br />
-        Please contact us at
-        <a
-          href="mailto:hustleaservices@gmail.com"
-          class="text-accent underline hover:no-underline"
-          >hustleaservices@gmail.com</a
-        >
-        or call
-        <a
-          href="tel:587-436-7001"
-          class="text-accent underline hover:no-underline"
-          >(587) 436-7001</a
->>>>>>> main
         >
           <!-- bg-center bg-no-repeat bg-contain bg-white/30 backdrop-blur-md px-7 bg-logo -->
           <div class="flex justify-center w-3/4 max-w-sm mx-auto">
