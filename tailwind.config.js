@@ -1,5 +1,4 @@
 module.exports = {
-<<<<<<< HEAD
   theme: {
     fontFamily: {
       heading: ['Inconsolata', 'sans-serif'],
@@ -23,19 +22,6 @@ module.exports = {
       },
       backgroundImage: {
         logo: "url('~/assets/imgs/logo.svg')",
-=======
-  content: [
-    './components/**/*.{js,vue,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
-  ],
-  theme: {
-    extend: {
-      colors: {
-        accent: '#ef4444',
->>>>>>> main
       },
     },
   },
