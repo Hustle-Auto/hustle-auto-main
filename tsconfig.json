@@ -5,6 +5,7 @@
     "moduleResolution": "Node",
     "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
+    "isolatedModules": true, // for netlify functions
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
