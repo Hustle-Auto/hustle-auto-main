@@ -8,11 +8,27 @@ body {
 
 @layer components {
   .h2 {
-    @apply text-3xl font-semibold uppercase font-heading md:text-4xl;
+    @apply mb-5 text-3xl font-semibold tracking-tight uppercase font-heading md:text-4xl;
   }
 
 
   .h3 {
     @apply text-2xl font-semibold tracking-tight uppercase font-heading;
+  }
+
+  .p {
+    @apply text-lg font-paragraph;
+  }
+
+  .section {
+    @apply container px-2 py-12 mx-auto;
+  }
+
+  .label {
+    @apply block;
+  }
+
+  .input {
+    @apply w-full border-black;
   }
 }

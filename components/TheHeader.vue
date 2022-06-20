@@ -9,6 +9,9 @@
           <NuxtLink to="/">Home</NuxtLink>
         </li>
         <li>
+          <NuxtLink to="/contact-us">Contact Us</NuxtLink>
+        </li>
+        <li>
           <NuxtLink to="/book-now">Book Now</NuxtLink>
         </li>
       </ul>

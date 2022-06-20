@@ -23,37 +23,40 @@
           </div>
         </section>
       </div>
-      <section class="mx-2 my-12">
+      <section class="section">
         <h2 class="text-center h2">Our Reviews</h2>
 
-        <div class="container mx-auto space-x-5 md:flex">
-          <article class="w-full my-20 space-y-5">
-            <div class="w-full overflow-hidden h-60">
-              <img src="~/assets/imgs/review-photo.png" alt="review-photo" />
-            </div>
-            <h3
-              class="text-2xl font-semibold tracking-tight uppercase font-heading"
-            >
-              Simran M.
-            </h3>
-            <p class="capitalize">
-              They really turned my range around, I had my dog with me in the
+        <div class="sm:grid sm:grid-cols-2 sm:gap-x-2 lg:grid-cols-3">
+          <Review
+            :src="require('~/assets/imgs/reviews/simran-m-review.png')"
+            title="Simran M."
+            text="They really turned my range around, I had my dog with me in the
               car, it was such a mess. And they really made it all Amazing! Will
-              be definitely coming back! - Simian M.
-            </p>
-          </article>
-          <article class="w-full my-20 space-y-5">
-            <div class="w-full overflow-hidden h-60">
-              <img src="~/assets/imgs/review-photo.png" alt="review-photo" />
-            </div>
-            <h3 class="h3">Ashely P.</h3>
-            <p class="capitalize">
-              I just came back from a week partying with my girls and the car
-              was in such a bad shape, I had trash everywhere and broken bottle
-              in the back with dried alcohol. But these guys really did such a
-              good job, removed the stain and I loved it!
-            </p>
-          </article>
+              be definitely coming back! - Simian M."
+          />
+          <Review
+            :src="require('~/assets/imgs/reviews/ashley-p-review.png')"
+            title="Ashley P."
+            text="I just came back from a week partying with my girls and the car was in such a bad shape, I had trash everywhere and broken bottle in the back with dried alcohol. But these guys really did such a good job, removed the stain and I loved it!"
+          />
+
+          <Review
+            :src="require('~/assets/imgs/reviews/harpreet-m-review.png')"
+            title="Harpreet M."
+            text="these guys really did a good job, I work in construction and the truck gets beaten and used everyday, I did not think it was going to come out this nice! Any looking for a detail book now -Harpreet M. "
+          />
+
+          <Review
+            :src="require('~/assets/imgs/reviews/harpreet-m-review.png')"
+            title="Harpreet M."
+            text="these guys really did a good job, I work in construction and the truck gets beaten and used everyday, I did not think it was going to come out this nice! Any looking for a detail book now -Harpreet M. "
+          />
+
+          <Review
+            :src="require('~/assets/imgs/reviews/harpreet-m-review.png')"
+            title="Harpreet M."
+            text="these guys really did a good job, I work in construction and the truck gets beaten and used everyday, I did not think it was going to come out this nice! Any looking for a detail book now -Harpreet M.  "
+          />
         </div>
       </section>
     </main>
