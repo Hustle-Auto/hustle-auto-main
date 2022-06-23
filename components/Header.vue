@@ -3,7 +3,7 @@
     <!-- Hamburger menu -->
     <section
       ref="menu"
-      class="absolute right-0 z-50 hidden w-full h-screen px-4 overflow-auto transition-all bg-slate-700"
+      class="absolute right-0 z-50 hidden w-full h-screen px-4 overflow-auto transition-all bg-gray-700"
     >
       <div class="flex items-center justify-between p-2">
         <div class="mr-auto">
