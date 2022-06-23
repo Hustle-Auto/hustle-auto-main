@@ -130,13 +130,10 @@ export default Vue.extend({
 
   methods: {
     openMenu() {
-      console.log('Here we are')
-      // typescript refs
       const menu = this.$refs.menu! as HTMLDivElement
       menu.classList.toggle('hidden')
     },
     closeMenu() {
-      console.log('Here we are at cloing')
       const menu = this.$refs.menu! as HTMLDivElement
       menu.classList.add('hidden')
     },
