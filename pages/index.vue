@@ -10,13 +10,13 @@
         Please contact us at
         <a
           href="mailto:hustleaservices@gmail.com"
-          class="text-accent underline hover:no-underline"
+          class="underline text-accent hover:no-underline"
           >hustleaservices@gmail.com</a
         >
         or call
         <a
           href="tel:587-436-7001"
-          class="text-accent underline hover:no-underline"
+          class="underline text-accent hover:no-underline"
           >(587) 436-7001</a
         >
       </p>

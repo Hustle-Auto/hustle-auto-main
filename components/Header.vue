@@ -7,15 +7,15 @@
     >
       <div class="flex items-center justify-between p-2">
         <div class="mr-auto">
-          <router-link to="/">
+          <NuxtLink to="/">
             <img class="w-32 h-auto" src="../static/logo.svg" alt="logo" />
-          </router-link>
+          </NuxtLink>
         </div>
         <div class="mr-2">
           <button
             type="button"
             class="inline-flex items-center justify-center p-2 text-white rounded-md bg-white/0"
-            @click="toggleMenu"
+            @click="closeMenu()"
           >
             <span class="sr-only">Close menu</span>
 
@@ -42,14 +42,16 @@
         <nav class="">
           <ul class="">
             <li
+              @click="closeMenu()"
               class="p-3 py-4 my-2 text-3xl text-white border border-gray-200 rounded-lg opacity-50 hover:opacity-100"
             >
-              <router-link to="/about" @click="toggleMenu">About</router-link>
+              <NuxtLink to="/about">About</NuxtLink>
             </li>
             <li
+              @click="closeMenu()"
               class="p-3 py-4 my-2 text-3xl text-white border border-gray-200 rounded-lg opacity-50 min-w-fullp-3 hover:opacity-100"
             >
-              <router-link to="/faq" @click="toggleMenu">Faq</router-link>
+              <NuxtLink to="/faq">Faq</NuxtLink>
             </li>
           </ul>
         </nav>
@@ -61,9 +63,9 @@
     <section class="px-4 mx-auto max-w-7xl">
       <div class="flex items-center p-2 text-lg md:text-2xl">
         <div class="mr-auto">
-          <router-link to="/">
+          <NuxtLink to="/">
             <img class="w-32 h-auto" src="../static/logo.svg" alt="logo" />
-          </router-link>
+          </NuxtLink>
         </div>
         <!-- Start Hamburger icon: visible on mobile -->
         <div class="order-last lg:hidden">
@@ -71,7 +73,7 @@
             type="button"
             class="inline-flex items-center justify-center p-2 bg-white rounded-md text-blue"
             aria-expanded="false"
-            @click="toggleMenu"
+            @click="openMenu()"
           >
             <svg
               class="block w-10 h-10"
@@ -99,10 +101,10 @@
                 <NuxtLink to="/">Home</NuxtLink>
               </li>
               <li class="p-3 m-1 hover:underline hover:underline-offset-8">
-                <router-link to="/about">About</router-link>
+                <NuxtLink to="/about">About</NuxtLink>
               </li>
               <li class="p-3 m-1 hover:underline hover:underline-offset-8">
-                <router-link to="/faq">Faq</router-link>
+                <NuxtLink to="/faq">Faq</NuxtLink>
               </li>
               <li class="p-3 m-1">
                 <button
@@ -127,10 +129,16 @@ export default Vue.extend({
   name: 'HeaderPage',
 
   methods: {
-    toggleMenu() {
+    openMenu() {
+      console.log('Here we are')
       // typescript refs
       const menu = this.$refs.menu! as HTMLDivElement
       menu.classList.toggle('hidden')
+    },
+    closeMenu() {
+      console.log('Here we are at cloing')
+      const menu = this.$refs.menu! as HTMLDivElement
+      menu.classList.add('hidden')
     },
   },
 })
