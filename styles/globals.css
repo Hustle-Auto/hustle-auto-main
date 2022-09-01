@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  /* ----------------------- Typography ----------------------- */
+
+  .page-heading {
+    @apply mb-5 text-3xl font-semibold tracking-tight text-center uppercase font-heading;
+  }
+
+  .heading {
+    @apply mb-5 text-lg font-bold uppercase;
+  }
+
+  /* ----------------------- Card ----------------------- */
+  .card-image-top {
+  }
+
+  .card-body {
+    @apply p-4 my-5;
+  }
+
+  .card-body .card-title {
+    @apply mb-5;
+  }
+
+  .card-body .card-text {
+    
+  }
+
+  /* ----------------------- Button ----------------------- */
+  .button {
+    @apply px-5 py-4 tracking-wide text-black uppercase border-2 border-black hover:text-white hover:border-white;
+
+    /* for transition */
+    @apply relative z-10 overflow-hidden transition duration-300 bg-white rounded;
+  }
+
+  .button::after {
+    content: "";
+    z-index: -1;
+
+    @apply absolute block transition-all duration-300 bg-black;
+    @apply left-0 right-0 top-full -bottom-full;
+
+    /* sets the "border" around the hover state of the button
+    margin: 0.1rem; */
+  }
+
+  .button:hover::after {
+    @apply top-0 bottom-0 left-0 right-0;
+  }
+
+  .button.accent {
+    @apply text-accent hover:text-white border-accent;
+  }
+
+  .button.accent::after {
+    @apply bg-accent;
+  }
+
+  /* ----------------------- End Button ----------------------- */
+}

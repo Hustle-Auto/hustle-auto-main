@@ -1,17 +1,19 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './components/**/*.{js,vue,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        heading: ["Inconsolata", "sans-serif"],
+      },
       colors: {
-        accent: '#ef4444',
+        accent: "#EF4444",
       },
     },
   },
   plugins: [],
-}
+};
