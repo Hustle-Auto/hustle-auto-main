@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import Layout from "../components/layout/Layout";
 import Button from "../components/ui/Button";
@@ -8,14 +9,17 @@ import CheckboxCardInput from "../components/ui/CheckboxCardInput.jsx";
 import PageSection from "../components/ui/PageSection";
 import RadioCardInput from "../components/ui/RadioCardInput";
 import { carTypes, serviceTypes, services, addOns } from "../data/services";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const BookNow = () => {
-  const [userInput, setUserInput] = useState({
+  const router = useRouter();
+  const [userInput, setUserInput] = useLocalStorage("user-service-selections", {
     carType: null,
     serviceType: null,
     service: null,
     addOns: [],
   });
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const handleCarTypeChange = (e) => {
     const selectedCarType = carTypes.find(
@@ -26,7 +30,7 @@ const BookNow = () => {
       ...userInput,
       carType: selectedCarType,
       serviceType: null,
-      package: null,
+      service: null,
     };
 
     setUserInput(newUserInput);
@@ -41,7 +45,7 @@ const BookNow = () => {
       ...userInput,
       carType: userInput.carType,
       serviceType: selectedServiceType,
-      package: null,
+      service: null,
     };
 
     setUserInput(newUserInput);
@@ -56,7 +60,7 @@ const BookNow = () => {
       ...userInput,
       carType: userInput.carType,
       serviceType: userInput.serviceType,
-      package: selectedService,
+      service: selectedService,
     };
 
     setUserInput(newUserInput);
@@ -64,26 +68,35 @@ const BookNow = () => {
 
   const handleAddOnChange = (e) => {
     const newAddOns = userInput.addOns;
-    if (e.target.checked) {
-      newAddOns.push(e.target.value);
+    const currAddOn = addOns.find((addOn) => addOn.id === e.target.value);
+    const currAddOnChecked = e.target.checked;
+
+    if (currAddOnChecked) {
+      newAddOns.push(currAddOn);
     } else {
-      newAddOns.splice(newAddOns.indexOf(e.target.value), 1);
+      newAddOns = newAddOns.filter((addOn) => addOn.id !== currAddOn.id);
     }
     setUserInput({ ...userInput, addOns: newAddOns });
   };
 
-  const calcTotal = () => {
+  const handleOnContinueClick = () => {
+    router.push("/book-now-stage-2");
+  };
+
+  useEffect(() => {
     let total = 0;
-    if (userInput.carType && userInput.package) {
-      total += parseFloat(userInput.package.prices[userInput.carType.id]);
+    if (userInput.carType && userInput.service) {
+      total += parseFloat(userInput.service.prices[userInput.carType.id]);
     }
     if (userInput.addOns.length > 0) {
       userInput.addOns.forEach((addOn) => {
-        total += parseFloat(addOns.find((a) => a.id === addOn).price);
+        console.log(`addOn: ${JSON.stringify(addOn, null, 2)}`);
+        total += parseFloat(addOn.price);
       });
     }
-    return total;
-  };
+
+    setTotalPrice(total);
+  }, [userInput]);
 
   const filteredServices = services.filter((service) => {
     return service.serviceType === userInput.serviceType?.id;
@@ -92,9 +105,6 @@ const BookNow = () => {
   return (
     <Layout>
       <main>
-        <PageSection>
-          <div className="grid grid-cols-3 gap-8"></div>
-        </PageSection>
         <PageSection>
           <h2 className="page-heading">Book Now</h2>
           <section className="my-10">
@@ -155,7 +165,7 @@ const BookNow = () => {
                   <RadioCardInput
                     key={service.id}
                     value={service.id}
-                    checked={service.id === userInput.package?.id}
+                    checked={service.id === userInput.service?.id}
                     onChange={handleServiceChange}
                   >
                     <div className="card-body">
@@ -181,7 +191,9 @@ const BookNow = () => {
                 <CheckboxCardInput
                   key={addOn.id}
                   value={addOn.id}
-                  checked={userInput.addOns.includes(addOn.id)}
+                  checked={userInput.addOns
+                    .map((addOn) => addOn.id)
+                    .includes(addOn.id)}
                   onChange={handleAddOnChange}
                 >
                   <div className="card-body">{addOn.label}</div>
@@ -193,10 +205,12 @@ const BookNow = () => {
         <PageSection>
           <div className="flex items-center justify-between max-w-md mx-auto">
             <p className="text-2xl font-bold">
-              Total: <span className="text-accent"> ${calcTotal()} </span>
+              Total: <span className="text-accent"> ${totalPrice} </span>
             </p>
             <div>
-              <Button accent>Continue</Button>
+              <Button accent onClick={handleOnContinueClick}>
+                Continue
+              </Button>
             </div>
           </div>
         </PageSection>
