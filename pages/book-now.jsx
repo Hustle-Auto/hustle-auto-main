@@ -10,6 +10,7 @@ import PageSection from "../components/ui/PageSection";
 import RadioCardInput from "../components/ui/RadioCardInput";
 import { carTypes, serviceTypes, services, addOns } from "../data/services";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { calcTotalPriceOfServices } from "../utils/utils";
 
 const BookNow = () => {
   const router = useRouter();
@@ -84,18 +85,13 @@ const BookNow = () => {
   };
 
   useEffect(() => {
-    let total = 0;
-    if (userInput.carType && userInput.service) {
-      total += parseFloat(userInput.service.prices[userInput.carType.id]);
-    }
-    if (userInput.addOns.length > 0) {
-      userInput.addOns.forEach((addOn) => {
-        console.log(`addOn: ${JSON.stringify(addOn, null, 2)}`);
-        total += parseFloat(addOn.price);
-      });
-    }
-
-    setTotalPrice(total);
+    setTotalPrice(
+      calcTotalPriceOfServices({
+        carType: userInput.carType,
+        service: userInput.service,
+        addOns: userInput.addOns,
+      })
+    );
   }, [userInput]);
 
   const filteredServices = services.filter((service) => {
@@ -185,7 +181,7 @@ const BookNow = () => {
           </section>
 
           <section>
-            <p className="heading">Select Your AddOns</p>
+            <p className="heading">Select Your Add-Ons</p>
             <div className="grid grid-cols-3 gap-8">
               {addOns.map((addOn) => (
                 <CheckboxCardInput
@@ -196,7 +192,14 @@ const BookNow = () => {
                     .includes(addOn.id)}
                   onChange={handleAddOnChange}
                 >
-                  <div className="card-body">{addOn.label}</div>
+                  <div className="card-body">
+                    <div className="text-center card-text">
+                      <div className="mb-2">{addOn.label}</div>
+                      <div className="font-bold text-center">
+                        ${addOn.price}
+                      </div>
+                    </div>
+                  </div>
                 </CheckboxCardInput>
               ))}
             </div>

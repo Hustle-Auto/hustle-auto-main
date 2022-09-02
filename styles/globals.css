@@ -15,6 +15,7 @@
   }
 
   /* ----------------------- Card ----------------------- */
+
   .card-image-top {
   }
 
@@ -28,6 +29,25 @@
 
   .card-body .card-text {
     
+  }
+
+  /* ----------------------- Forms ----------------------- */
+
+  .form-group {
+    @apply w-full;
+  }
+
+  .form-group .form-label {
+
+  }
+
+  .form-group .form-control {
+    @apply block mt-1 w-full
+  }
+
+  label[asterisk="true"]::after {
+    content: " *";
+    color: red;
   }
 
   /* ----------------------- Button ----------------------- */
