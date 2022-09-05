@@ -107,6 +107,8 @@
 
   /* ----------------------- Loader ----------------------- */
 
+  /* source: https://tobiasahlin.com/spinkit/, https://github.com/tobiasahlin/SpinKit */
+
   .sk-cube-grid {
     width: 20px;
     height: 20px;
