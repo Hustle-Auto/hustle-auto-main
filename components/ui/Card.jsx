@@ -1,13 +1,6 @@
-import classnames from "classnames";
-
-const Card = ({ children, className }) => {
+const Card = ({ children }) => {
   return (
-    <div
-      className={classnames(
-        "border border-gray-100 rounded-lg shadow-sm",
-        className
-      )}
-    >
+    <div className="border border-gray-100 rounded-lg shadow-sm">
       {children}
     </div>
   );

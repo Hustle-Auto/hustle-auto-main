@@ -1,13 +1,20 @@
+import { useEffect } from "react";
+
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Reoverlay } from "reoverlay";
 import * as Yup from "yup";
 
 import Layout from "../components/layout/Layout";
+import ServiceRequestFailedModal from "../components/modal/ServiceRequestFailedModal";
+import ServiceRequestSubmittedModal from "../components/modal/ServiceRequestSubmittedModal";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
 import PageSection from "../components/ui/PageSection";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
+
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const initialValues = {
   firstName: "",
@@ -46,11 +53,23 @@ const BookNowStage2 = () => {
     null
   );
 
-  const handleOnSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 400);
+  useEffect(() => {
+    Reoverlay.showModal(ServiceRequestSubmittedModal, {
+      onConfirm: () => {
+        Reoverlay.hideModal();
+      },
+    });
+  }, []);
+
+  const handleOnSubmit = async (values, { setSubmitting }) => {
+    await delay(1000);
+    setSubmitting(false);
+
+    Reoverlay.showModal(ServiceRequestSubmittedModal, {
+      onConfirm: () => {
+        Reoverlay.hideModal();
+      },
+    });
   };
 
   const totalPrice = calcTotalPriceOfServices({
@@ -90,7 +109,7 @@ const BookNowStage2 = () => {
             <article>
               <Card>
                 <div className="card-body">
-                  <h3 className="card-title font-bold">Summary</h3>
+                  <h3 className="font-bold card-title">Summary</h3>
                   <div className="card-text">
                     <section className="space-y-1">
                       <p>
@@ -124,7 +143,7 @@ const BookNowStage2 = () => {
               </Card>
             </article>
             <article className="col-span-2">
-              <div className="heading text-center">Contact Info</div>
+              <div className="text-center heading">Contact Info</div>
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -275,7 +294,7 @@ const BookNowStage2 = () => {
                     <ErrorMessage name="message" render={CustomErrorMessage} />
                   </div>
 
-                  <div className="mt-3 flex justify-end">
+                  <div className="flex justify-end mt-3">
                     <Button submit accent>
                       Request Service
                     </Button>

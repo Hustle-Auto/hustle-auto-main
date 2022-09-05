@@ -1,4 +1,5 @@
 import Check from "./Check";
+import Error from "./Error";
 import Facebook from "./Facebook";
 import Instagram from "./Instagram";
 import Twitter from "./Twitter";
@@ -8,6 +9,7 @@ const Icon = {
   Instagram: Instagram,
   Twitter: Twitter,
   Check: Check,
+  Error: Error,
 };
 
 export default Icon;
