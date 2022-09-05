@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         accent: "#EF4444",
+        "accent-light": "#f47c7c",
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-in-out",

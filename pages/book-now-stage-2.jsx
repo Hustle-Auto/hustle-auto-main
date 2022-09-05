@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { Reoverlay } from "reoverlay";
 import * as Yup from "yup";
 
+import Loader from "../components/icons/Loader";
 import Layout from "../components/layout/Layout";
 import ServiceRequestFailedModal from "../components/modal/ServiceRequestFailedModal";
 import ServiceRequestSubmittedModal from "../components/modal/ServiceRequestSubmittedModal";
@@ -53,23 +54,23 @@ const BookNowStage2 = () => {
     null
   );
 
-  useEffect(() => {
-    Reoverlay.showModal(ServiceRequestSubmittedModal, {
-      onConfirm: () => {
-        Reoverlay.hideModal();
-      },
-    });
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnSubmit = async (values, { setSubmitting }) => {
-    await delay(1000);
-    setSubmitting(false);
+    setIsLoading(true);
 
-    Reoverlay.showModal(ServiceRequestSubmittedModal, {
-      onConfirm: () => {
-        Reoverlay.hideModal();
-      },
-    });
+    try {
+      await delay(1000);
+
+      Reoverlay.showModal(ServiceRequestSubmittedModal, {
+        onConfirm: () => {
+          Reoverlay.hideModal();
+        },
+      });
+    } finally {
+      setSubmitting(false);
+      setIsLoading(false);
+    }
   };
 
   const totalPrice = calcTotalPriceOfServices({
@@ -104,6 +105,7 @@ const BookNowStage2 = () => {
     <Layout>
       <main>
         <h2 className="page-heading">Book Now</h2>
+
         <PageSection>
           <section className="grid grid-cols-3 gap-10">
             <article>
@@ -295,8 +297,13 @@ const BookNowStage2 = () => {
                   </div>
 
                   <div className="flex justify-end mt-3">
-                    <Button submit accent>
-                      Request Service
+                    <Button
+                      submit
+                      accent
+                      disabled={isLoading}
+                      loading={isLoading}
+                    >
+                      <div>Request Service</div>
                     </Button>
                   </div>
                 </Form>
