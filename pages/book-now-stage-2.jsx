@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import axios from "axios";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useRouter } from "next/router";
 import { Reoverlay } from "reoverlay";
@@ -32,15 +33,25 @@ const initialValues = {
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
+// const validationSchema = Yup.object({
+//   firstName: Yup.string()
+//     .max(15, "Must be 15 characters or less")
+//     .required("Required"),
+//   lastName: Yup.string().max(20, "Must be 20 characters or less"),
+//   email: Yup.string().email("Invalid email address").required("Required"),
+//   phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number"),
+//   carDetails: Yup.string().required("Required"),
+//   preferredServiceDate: Yup.string().required("Required"),
+//   message: Yup.string(),
+// });
+
 const validationSchema = Yup.object({
-  firstName: Yup.string()
-    .max(15, "Must be 15 characters or less")
-    .required("Required"),
+  firstName: Yup.string().max(15, "Must be 15 characters or less"),
   lastName: Yup.string().max(20, "Must be 20 characters or less"),
-  email: Yup.string().email("Invalid email address").required("Required"),
+  email: Yup.string().email("Invalid email address"),
   phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number"),
-  carDetails: Yup.string().required("Required"),
-  preferredServiceDate: Yup.string().required("Required"),
+  carDetails: Yup.string(),
+  preferredServiceDate: Yup.string(),
   message: Yup.string(),
 });
 
@@ -57,13 +68,37 @@ const BookNowStage2 = () => {
   );
 
   const [isLoading, setIsLoading] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
   const router = useRouter();
+
+  useEffect(() => {
+    setTotalPrice(
+      calcTotalPriceOfServices({
+        carType: userServiceSelections?.carType,
+        service: userServiceSelections?.service,
+        addOns: userServiceSelections?.addOns,
+      })
+    );
+  }, [userServiceSelections]);
 
   const handleOnSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
 
     try {
-      await delay(1000);
+      const response = await axios({
+        method: "POST",
+        url: "/.netlify/functions/service-request",
+        data: {
+          some: "thing",
+        },
+      });
+
+      // {
+      //   userServiceSelections: { ...userServiceSelections, totalPrice },
+      //   contactInfo: { ...values },
+      // }
+
+      console.log(`response: ${JSON.stringify(response, null, 2)}`);
 
       Reoverlay.showModal(ServiceRequestSubmittedModal, {
         onConfirm: () => {
@@ -79,12 +114,6 @@ const BookNowStage2 = () => {
   const handleBackClick = () => {
     router.push("/book-now");
   };
-
-  const totalPrice = calcTotalPriceOfServices({
-    carType: userServiceSelections?.carType,
-    service: userServiceSelections?.service,
-    addOns: userServiceSelections?.addOns,
-  });
 
   let selectedCarTypeString = "No Car Type Selected";
   let selectedServiceString = "No Service Selected";
