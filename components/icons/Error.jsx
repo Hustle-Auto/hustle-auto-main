@@ -2,9 +2,10 @@ const Error = (props) => {
   return (
     <>
       <svg
+        xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 35 35"
         fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6"
         {...props}
       >
         <path

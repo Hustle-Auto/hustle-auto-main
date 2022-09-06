@@ -9,17 +9,20 @@ import CheckboxCardInput from "../components/ui/CheckboxCardInput.jsx";
 import PageSection from "../components/ui/PageSection";
 import RadioCardInput from "../components/ui/RadioCardInput";
 import { carTypes, serviceTypes, services, addOns } from "../data/services";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useSessionStorage from "../hooks/useSessionStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
 
 const BookNow = () => {
   const router = useRouter();
-  const [userInput, setUserInput] = useLocalStorage("user-service-selections", {
-    carType: null,
-    serviceType: null,
-    service: null,
-    addOns: [],
-  });
+  const [userInput, setUserInput] = useSessionStorage(
+    "user-service-selections",
+    {
+      carType: null,
+      serviceType: null,
+      service: null,
+      addOns: [],
+    }
+  );
   const [totalPrice, setTotalPrice] = useState(0);
 
   const handleCarTypeChange = (e) => {

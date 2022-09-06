@@ -1,3 +1,4 @@
+import ArrowLeft from "./ArrowLeft";
 import Check from "./Check";
 import Error from "./Error";
 import Facebook from "./Facebook";
@@ -10,6 +11,7 @@ const Icon = {
   Twitter: Twitter,
   Check: Check,
   Error: Error,
+  ArrowLeft: ArrowLeft,
 };
 
 export default Icon;

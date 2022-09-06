@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useRouter } from "next/router";
 import { Reoverlay } from "reoverlay";
 import * as Yup from "yup";
 
-import Loader from "../components/icons/Loader";
+import Icon from "../components/icons/Icon";
 import Layout from "../components/layout/Layout";
 import ServiceRequestFailedModal from "../components/modal/ServiceRequestFailedModal";
 import ServiceRequestSubmittedModal from "../components/modal/ServiceRequestSubmittedModal";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
+import IconButton from "../components/ui/IconButton";
 import PageSection from "../components/ui/PageSection";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useSessionStorage from "../hooks/useSessionStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -49,12 +51,13 @@ const isRequired = (field) => {
 };
 
 const BookNowStage2 = () => {
-  const [userServiceSelections, _] = useLocalStorage(
+  const [userServiceSelections, _] = useSessionStorage(
     "user-service-selections",
     null
   );
 
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleOnSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
@@ -71,6 +74,10 @@ const BookNowStage2 = () => {
       setSubmitting(false);
       setIsLoading(false);
     }
+  };
+
+  const handleBackClick = () => {
+    router.push("/book-now");
   };
 
   const totalPrice = calcTotalPriceOfServices({
@@ -104,10 +111,20 @@ const BookNowStage2 = () => {
   return (
     <Layout>
       <main>
-        <h2 className="page-heading">Book Now</h2>
-
         <PageSection>
-          <section className="grid grid-cols-3 gap-10">
+          <div className="relative">
+            <p
+              className="absolute flex items-center space-x-1"
+              onClick={handleBackClick}
+            >
+              <IconButton>
+                <Icon.ArrowLeft />
+              </IconButton>
+              <span>Back</span>
+            </p>
+            <h2 className="page-heading">Book Now</h2>
+          </div>
+          <section className="grid grid-cols-3 gap-10 my-10">
             <article>
               <Card>
                 <div className="card-body">
