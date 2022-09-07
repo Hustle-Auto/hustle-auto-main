@@ -33,25 +33,15 @@ const initialValues = {
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
-// const validationSchema = Yup.object({
-//   firstName: Yup.string()
-//     .max(15, "Must be 15 characters or less")
-//     .required("Required"),
-//   lastName: Yup.string().max(20, "Must be 20 characters or less"),
-//   email: Yup.string().email("Invalid email address").required("Required"),
-//   phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number"),
-//   carDetails: Yup.string().required("Required"),
-//   preferredServiceDate: Yup.string().required("Required"),
-//   message: Yup.string(),
-// });
-
 const validationSchema = Yup.object({
-  firstName: Yup.string().max(15, "Must be 15 characters or less"),
+  firstName: Yup.string()
+    .max(15, "Must be 15 characters or less")
+    .required("Required"),
   lastName: Yup.string().max(20, "Must be 20 characters or less"),
-  email: Yup.string().email("Invalid email address"),
+  email: Yup.string().email("Invalid email address").required("Required"),
   phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number"),
-  carDetails: Yup.string(),
-  preferredServiceDate: Yup.string(),
+  carDetails: Yup.string().required("Required"),
+  preferredServiceDate: Yup.string().required("Required"),
   message: Yup.string(),
 });
 
@@ -85,22 +75,24 @@ const BookNowStage2 = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios({
-        method: "POST",
-        url: "/.netlify/functions/service-request",
-        data: {
-          some: "thing",
-        },
+      const payload = {
+        userServiceSelections: { ...userServiceSelections, totalPrice },
+        userContactInfo: { ...values },
+      };
+
+      const response = await axios.post("/.netlify/functions/send-email", {
+        subject: "Service Request",
+        message: `${JSON.stringify(payload, null, 2)}`,
       });
 
-      // {
-      //   userServiceSelections: { ...userServiceSelections, totalPrice },
-      //   contactInfo: { ...values },
-      // }
-
-      console.log(`response: ${JSON.stringify(response, null, 2)}`);
-
       Reoverlay.showModal(ServiceRequestSubmittedModal, {
+        onConfirm: () => {
+          Reoverlay.hideModal();
+          router.push("/");
+        },
+      });
+    } catch (err) {
+      Reoverlay.showModal(ServiceRequestFailedModal, {
         onConfirm: () => {
           Reoverlay.hideModal();
         },
