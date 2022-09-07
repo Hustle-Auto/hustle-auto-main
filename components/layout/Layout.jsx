@@ -1,14 +1,16 @@
 import Footer from "./Footer";
-import Header from "./Header";
+import Menu from "./Menu";
+// import Header from "./Header";
 
 const Layout = ({ children }) => {
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <Header />
-        {children}
+        {/* <Header /> */}
+        <Menu></Menu>
+        <div className="flex-1">{children}</div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };
