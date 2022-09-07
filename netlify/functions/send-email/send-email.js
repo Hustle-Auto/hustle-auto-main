@@ -1,10 +1,10 @@
 const client = require("@sendgrid/mail");
 
-// CONTEXT is set by netlify, it is the name of the build’s deploy context. It can be production, deploy-preview, branch-deploy, or dev
-const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL, CONTEXT } =
-  process.env;
-
 exports.handler = async function (event, context, callback) {
+  // CONTEXT is set by netlify, it is the name of the build’s deploy context. It can be production, deploy-preview, branch-deploy, or dev
+  const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL, CONTEXT } =
+    process.env;
+
   if (
     !SENDGRID_API_KEY ||
     !SENDGRID_TO_EMAIL ||
