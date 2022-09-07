@@ -5,6 +5,11 @@ exports.handler = async function (event, context, callback) {
   const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL, CONTEXT } =
     process.env;
 
+  console.log(`SENDGRID_API_KEY: '${SENDGRID_API_KEY}'`);
+  console.log(`SENDGRID_TO_EMAIL: '${SENDGRID_TO_EMAIL}'`);
+  console.log(`SENDGRID_FROM_EMAIL: '${SENDGRID_FROM_EMAIL}'`);
+  console.log(`CONTEXT: '${CONTEXT}'`);
+
   if (
     !SENDGRID_API_KEY ||
     !SENDGRID_TO_EMAIL ||
