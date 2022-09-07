@@ -195,6 +195,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="firstName"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "firstName",
                         }).toString()}
@@ -215,6 +216,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="lastName"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "lastName",
                         }).toString()}
@@ -238,6 +240,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="email"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "email",
                         }).toString()}
@@ -255,6 +258,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="phoneNumber"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "phoneNumber",
                         }).toString()}
@@ -278,6 +282,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="carDetails"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "carDetails",
                         }).toString()}
@@ -299,6 +304,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="preferredServiceDate"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "preferredServiceDate",
                         }).toString()}
@@ -320,6 +326,7 @@ const BookNowStage2 = () => {
                     <label
                       htmlFor="message"
                       className="form-label"
+                      // eslint-disable-next-line react/no-unknown-property
                       asterisk={isRequired({
                         name: "message",
                       }).toString()}
