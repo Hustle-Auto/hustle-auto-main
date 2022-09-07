@@ -1,13 +1,24 @@
+import { useEffect, useState } from "react";
+
+import axios from "axios";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useRouter } from "next/router";
+import { Reoverlay } from "reoverlay";
 import * as Yup from "yup";
 
+import Icon from "../components/icons/Icon";
 import Layout from "../components/layout/Layout";
+import ServiceRequestFailedModal from "../components/modal/ServiceRequestFailedModal";
+import ServiceRequestSubmittedModal from "../components/modal/ServiceRequestSubmittedModal";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
+import IconButton from "../components/ui/IconButton";
 import PageSection from "../components/ui/PageSection";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useSessionStorage from "../hooks/useSessionStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
+
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const initialValues = {
   firstName: "",
@@ -41,23 +52,60 @@ const isRequired = (field) => {
 };
 
 const BookNowStage2 = () => {
-  const [userServiceSelections, _] = useLocalStorage(
+  const [userServiceSelections, _] = useSessionStorage(
     "user-service-selections",
     null
   );
 
-  const handleOnSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+  const [isLoading, setIsLoading] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const router = useRouter();
+
+  useEffect(() => {
+    setTotalPrice(
+      calcTotalPriceOfServices({
+        carType: userServiceSelections?.carType,
+        service: userServiceSelections?.service,
+        addOns: userServiceSelections?.addOns,
+      })
+    );
+  }, [userServiceSelections]);
+
+  const handleOnSubmit = async (values, { setSubmitting }) => {
+    setIsLoading(true);
+
+    try {
+      const payload = {
+        userServiceSelections: { ...userServiceSelections, totalPrice },
+        userContactInfo: { ...values },
+      };
+
+      const response = await axios.post("/.netlify/functions/send-email", {
+        subject: "Service Request",
+        message: `${JSON.stringify(payload, null, 2)}`,
+      });
+
+      Reoverlay.showModal(ServiceRequestSubmittedModal, {
+        onConfirm: () => {
+          Reoverlay.hideModal();
+          router.push("/");
+        },
+      });
+    } catch (err) {
+      Reoverlay.showModal(ServiceRequestFailedModal, {
+        onConfirm: () => {
+          Reoverlay.hideModal();
+        },
+      });
+    } finally {
       setSubmitting(false);
-    }, 400);
+      setIsLoading(false);
+    }
   };
 
-  const totalPrice = calcTotalPriceOfServices({
-    carType: userServiceSelections?.carType,
-    service: userServiceSelections?.service,
-    addOns: userServiceSelections?.addOns,
-  });
+  const handleBackClick = () => {
+    router.push("/book-now");
+  };
 
   let selectedCarTypeString = "No Car Type Selected";
   let selectedServiceString = "No Service Selected";
@@ -84,13 +132,24 @@ const BookNowStage2 = () => {
   return (
     <Layout>
       <main>
-        <h2 className="page-heading">Book Now</h2>
         <PageSection>
-          <section className="grid grid-cols-3 gap-10">
+          <div className="relative">
+            <p
+              className="absolute flex items-center space-x-1"
+              onClick={handleBackClick}
+            >
+              <IconButton>
+                <Icon.ArrowLeft />
+              </IconButton>
+              <span>Back</span>
+            </p>
+            <h2 className="page-heading">Book Now</h2>
+          </div>
+          <section className="grid grid-cols-3 gap-10 my-10">
             <article>
               <Card>
                 <div className="card-body">
-                  <h3 className="card-title font-bold">Summary</h3>
+                  <h3 className="font-bold card-title">Summary</h3>
                   <div className="card-text">
                     <section className="space-y-1">
                       <p>
@@ -124,7 +183,7 @@ const BookNowStage2 = () => {
               </Card>
             </article>
             <article className="col-span-2">
-              <div className="heading text-center">Contact Info</div>
+              <div className="text-center heading">Contact Info</div>
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -136,6 +195,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="firstName"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "firstName",
                         }).toString()}
@@ -156,6 +216,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="lastName"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "lastName",
                         }).toString()}
@@ -179,6 +240,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="email"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "email",
                         }).toString()}
@@ -196,6 +258,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="phoneNumber"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "phoneNumber",
                         }).toString()}
@@ -219,6 +282,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="carDetails"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "carDetails",
                         }).toString()}
@@ -240,6 +304,7 @@ const BookNowStage2 = () => {
                       <label
                         htmlFor="preferredServiceDate"
                         className="form-label"
+                        // eslint-disable-next-line react/no-unknown-property
                         asterisk={isRequired({
                           name: "preferredServiceDate",
                         }).toString()}
@@ -261,6 +326,7 @@ const BookNowStage2 = () => {
                     <label
                       htmlFor="message"
                       className="form-label"
+                      // eslint-disable-next-line react/no-unknown-property
                       asterisk={isRequired({
                         name: "message",
                       }).toString()}
@@ -275,9 +341,14 @@ const BookNowStage2 = () => {
                     <ErrorMessage name="message" render={CustomErrorMessage} />
                   </div>
 
-                  <div className="mt-3 flex justify-end">
-                    <Button submit accent>
-                      Request Service
+                  <div className="flex justify-end mt-3">
+                    <Button
+                      submit
+                      accent
+                      disabled={isLoading}
+                      loading={isLoading}
+                    >
+                      <div>Request Service</div>
                     </Button>
                   </div>
                 </Form>
