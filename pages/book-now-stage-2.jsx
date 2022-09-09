@@ -8,8 +8,8 @@ import * as Yup from "yup";
 
 import Icon from "../components/icons/Icon";
 import Layout from "../components/layout/Layout";
-import ServiceRequestFailedModal from "../components/modal/ServiceRequestFailedModal";
-import ServiceRequestSubmittedModal from "../components/modal/ServiceRequestSubmittedModal";
+import ErrorModal from "../components/modal/ErrorModal";
+import SuccessModal from "../components/modal/SuccessModal";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
@@ -85,14 +85,16 @@ const BookNowStage2 = () => {
         message: `${JSON.stringify(payload, null, 2)}`,
       });
 
-      Reoverlay.showModal(ServiceRequestSubmittedModal, {
+      Reoverlay.showModal(SuccessModal, {
+        title: "We Have Received Your Request!",
+        message: "We will contact you shortly to confirm your booking.",
         onConfirm: () => {
           Reoverlay.hideModal();
           router.push("/");
         },
       });
     } catch (err) {
-      Reoverlay.showModal(ServiceRequestFailedModal, {
+      Reoverlay.showModal(ErrorModal, {
         onConfirm: () => {
           Reoverlay.hideModal();
         },
