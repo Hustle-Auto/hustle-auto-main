@@ -34,8 +34,10 @@ const validationSchema = Yup.object({
     .max(15, "Must be 15 characters or less")
     .required("Required"),
   lastName: Yup.string().max(20, "Must be 20 characters or less"),
-  email: Yup.string().email("Invalid email address").required("Required"),
-  phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number"),
+  email: Yup.string().email("Invalid email address"),
+  phoneNumber: Yup.string()
+    .matches(phoneRegExp, "Invalid phone number")
+    .required("Required"),
   message: Yup.string(),
 });
 
@@ -129,20 +131,6 @@ const ContactUs = () => {
               <section className="grid grid-cols-2 gap-5">
                 <div className="form-group">
                   <label
-                    htmlFor="email"
-                    className="form-label"
-                    // eslint-disable-next-line react/no-unknown-property
-                    asterisk={isRequired({
-                      name: "email",
-                    }).toString()}
-                  >
-                    Email Address
-                  </label>
-                  <Field name="email" type="email" className="form-control" />
-                  <ErrorMessage name="email" render={CustomErrorMessage} />
-                </div>
-                <div className="form-group">
-                  <label
                     htmlFor="phoneNumber"
                     className="form-label"
                     // eslint-disable-next-line react/no-unknown-property
@@ -161,6 +149,20 @@ const ContactUs = () => {
                     name="phoneNumber"
                     render={CustomErrorMessage}
                   />
+                </div>
+                <div className="form-group">
+                  <label
+                    htmlFor="email"
+                    className="form-label"
+                    // eslint-disable-next-line react/no-unknown-property
+                    asterisk={isRequired({
+                      name: "email",
+                    }).toString()}
+                  >
+                    Email Address
+                  </label>
+                  <Field name="email" type="email" className="form-control" />
+                  <ErrorMessage name="email" render={CustomErrorMessage} />
                 </div>
               </section>
 
