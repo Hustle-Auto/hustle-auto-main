@@ -164,48 +164,6 @@ const ContactUs = () => {
                 </div>
               </section>
 
-              <section className="grid grid-cols-2 gap-5">
-                <div className="form-group">
-                  <label
-                    htmlFor="carDetails"
-                    className="form-label"
-                    // eslint-disable-next-line react/no-unknown-property
-                    asterisk={isRequired({
-                      name: "carDetails",
-                    }).toString()}
-                  >
-                    Car Details
-                  </label>
-                  <Field
-                    name="carDetails"
-                    type="text"
-                    className="form-control"
-                  />
-                  <ErrorMessage name="carDetails" render={CustomErrorMessage} />
-                </div>
-
-                <div className="form-group">
-                  <label
-                    htmlFor="preferredServiceDate"
-                    className="form-label"
-                    // eslint-disable-next-line react/no-unknown-property
-                    asterisk={isRequired({
-                      name: "preferredServiceDate",
-                    }).toString()}
-                  >
-                    Preferred Service Date
-                  </label>
-                  <Field
-                    name="preferredServiceDate"
-                    type="date"
-                    className="form-control"
-                  />
-                  <ErrorMessage
-                    name="preferredServiceDate"
-                    render={CustomErrorMessage}
-                  />
-                </div>
-              </section>
               <div className="form-group">
                 <label
                   htmlFor="message"
