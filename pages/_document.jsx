@@ -26,6 +26,7 @@ class MyDocument extends Document {
             </Script>
           </div>
         </Head>
+
         <body>
           <Main />
           <NextScript />
