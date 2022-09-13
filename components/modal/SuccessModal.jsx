@@ -1,27 +1,28 @@
 import Icon from "../icons/Icon";
 import Button from "../ui/Button";
+import Card from "../ui/Card";
 import ModalCard from "./ModalCard";
 import ModalWrapper from "./ModalWrapper";
 
-const ServiceRequestFailedModal = ({ onConfirm }) => {
+const SuccessModal = (props) => {
   return (
     <ModalWrapper>
       <ModalCard>
         <div className="modal-card-image-top">
-          <div className="text-black ">
-            <Icon.Error className="h-full" />
+          <div className="text-accent">
+            <Icon.Check className="h-full" />
           </div>
         </div>
+
         <div className="modal-card-body">
-          <div className="modal-card-title">Something Went Wrong!</div>
-          <p className="modal-card-text">
-            Please try again. If the issue persists, please contact us at
-            hustleaservices@gmail.com.
-          </p>
+          <div className="modal-card-title">{props.title}</div>
+          <p className="modal-card-text">{props.message}</p>
         </div>
         <div className="modal-card-footer">
           <div className="flex justify-center">
-            <Button onClick={onConfirm}>Got It!</Button>
+            <Button accent onClick={props.onConfirm}>
+              Got It!
+            </Button>
           </div>
         </div>
       </ModalCard>
@@ -29,4 +30,4 @@ const ServiceRequestFailedModal = ({ onConfirm }) => {
   );
 };
 
-export default ServiceRequestFailedModal;
+export default SuccessModal;

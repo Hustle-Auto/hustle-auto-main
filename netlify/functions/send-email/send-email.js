@@ -1,15 +1,18 @@
 const client = require("@sendgrid/mail");
 
-exports.handler = async function (event, context, callback) {
-  // CONTEXT is set by netlify, it is the name of the build’s deploy context. It can be production, deploy-preview, branch-deploy, or dev
-  const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL, CONTEXT } =
-    process.env;
+const {
+  SENDGRID_API_KEY,
+  SENDGRID_TO_EMAIL,
+  SENDGRID_FROM_EMAIL,
+  EMAIL_SUBJECT_TAG,
+} = process.env;
 
+exports.handler = async function (event, context, callback) {
   if (
     !SENDGRID_API_KEY ||
     !SENDGRID_TO_EMAIL ||
     !SENDGRID_FROM_EMAIL ||
-    !CONTEXT
+    !EMAIL_SUBJECT_TAG
   ) {
     console.error("Missing required environment variables");
     return {
@@ -28,7 +31,7 @@ exports.handler = async function (event, context, callback) {
   const data = {
     to: SENDGRID_TO_EMAIL,
     from: SENDGRID_FROM_EMAIL,
-    subject: `[${CONTEXT}] ${subject}`,
+    subject: `[${EMAIL_SUBJECT_TAG}] ${subject}`,
     html: message,
   };
 
