@@ -12,7 +12,7 @@ class MyDocument extends Document {
           <div className="gtag-container">
             {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
             <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
               strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
@@ -21,7 +21,7 @@ class MyDocument extends Document {
                 function gtag(){window.dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', '${process.env.GA_MEASUREMENT_ID}');
+                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
               `}
             </Script>
           </div>
