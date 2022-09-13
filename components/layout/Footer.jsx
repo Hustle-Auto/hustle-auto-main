@@ -1,7 +1,4 @@
-import Image from "next/image";
-
-import facebookLogo from "../../public/icons/facebook.svg";
-import Icon from "../icons/Icon";
+import Icon from "../icon";
 
 const Footer = () => {
   return (
@@ -24,7 +21,10 @@ const Footer = () => {
                 <Icon.Instagram />
               </div>
               <div className="w-6 h-6">
-                <Icon.Twitter />
+                <Icon.LinkedIn />
+              </div>
+              <div className="w-6 h-6">
+                <Icon.Google />
               </div>
             </ul>
           </article>

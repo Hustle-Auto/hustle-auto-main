@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { Reoverlay } from "reoverlay";
 import * as Yup from "yup";
 
-import Icon from "../components/icons/Icon";
+import Icon from "../components/icon";
 import Layout from "../components/layout/Layout";
 import ErrorModal from "../components/modal/ErrorModal";
 import SuccessModal from "../components/modal/SuccessModal";
