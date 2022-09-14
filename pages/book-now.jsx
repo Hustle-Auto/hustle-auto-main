@@ -71,17 +71,6 @@ const BookNow = () => {
     );
   }, [userServiceSelections]);
 
-  useEffect(() => {
-    Reoverlay.showModal(SuccessModal, {
-      title: "We Have Received Your Request!",
-      message: "We will contact you shortly to confirm your booking.",
-      onConfirm: () => {
-        Reoverlay.hideModal();
-        router.push("/");
-      },
-    });
-  }, []);
-
   const handleOnSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
 
