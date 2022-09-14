@@ -176,7 +176,7 @@ const BookNow = () => {
                     <section className="mt-3">
                       <hr className="my-3" />
                       <p className="font-bold">
-                        Total:{" "}
+                        Estimated Total:{" "}
                         <span className="text-accent"> ${totalPrice} </span>
                       </p>
                     </section>

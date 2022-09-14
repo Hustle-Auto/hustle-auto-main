@@ -211,7 +211,8 @@ const GetAQuote = () => {
         <PageSection>
           <div className="flex items-center justify-between max-w-md mx-auto">
             <p className="text-2xl font-bold">
-              Total: <span className="text-accent"> ${totalPrice} </span>
+              Estimated Total:{" "}
+              <span className="text-accent"> ${totalPrice} </span>
             </p>
             <div>
               <Button accent onClick={handleOnContinueClick}>
