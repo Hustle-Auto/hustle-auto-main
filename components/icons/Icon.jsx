@@ -1,4 +1,5 @@
 import ArrowLeft from "./ArrowLeft";
+import Burger from "./Burger";
 import Check from "./Check";
 import Error from "./Error";
 import Facebook from "./Facebook";
@@ -12,6 +13,7 @@ const Icon = {
   Check: Check,
   Error: Error,
   ArrowLeft: ArrowLeft,
+  Burger: Burger,
 };
 
 export default Icon;
