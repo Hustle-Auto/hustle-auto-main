@@ -12,7 +12,7 @@ import { carTypes, serviceTypes, services, addOns } from "../data/services";
 import useSessionStorage from "../hooks/useSessionStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
 
-const BookNow = () => {
+const GetAQuote = () => {
   const router = useRouter();
   const [userInput, setUserInput] = useSessionStorage(
     "user-service-selections",
@@ -225,4 +225,4 @@ const BookNow = () => {
   );
 };
 
-export default BookNow;
+export default GetAQuote;

@@ -117,7 +117,7 @@ const BookNowStage2 = () => {
   };
 
   const handleBackClick = () => {
-    router.push("/book-now");
+    router.push("/get-a-quote");
   };
 
   let selectedCarTypeString = "No Car Type Selected";
