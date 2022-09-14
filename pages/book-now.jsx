@@ -51,7 +51,7 @@ const isRequired = (field) => {
   );
 };
 
-const BookNowStage2 = () => {
+const BookNow = () => {
   const [userServiceSelections, _] = useSessionStorage(
     "user-service-selections",
     null
@@ -374,4 +374,4 @@ const BookNowStage2 = () => {
   );
 };
 
-export default BookNowStage2;
+export default BookNow;
