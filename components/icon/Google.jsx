@@ -1,13 +1,9 @@
 import Image from "next/image";
 
-import googleLogo from "../../public/icons/google.svg";
+import GoogleLogo from "../../public/icons/google.svg";
 
-const Google = () => {
-  return (
-    <a href="#" target="blank">
-      <Image src={googleLogo} alt="google" />
-    </a>
-  );
+const Google = (props) => {
+  return <GoogleLogo className="w-20 h-20" {...props} />;
 };
 
 export default Google;

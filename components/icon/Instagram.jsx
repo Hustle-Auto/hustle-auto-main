@@ -1,13 +1,9 @@
 import Image from "next/image";
 
-import instagramLogo from "../../public/icons/instagram.svg";
+import InstagramLogo from "../../public/icons/instagram.svg";
 
-const Instagram = () => {
-  return (
-    <a href="https://www.instagram.com/hustleautomotive/" target="blank">
-      <Image src={instagramLogo} alt="instagram" />
-    </a>
-  );
+const Instagram = (props) => {
+  return <InstagramLogo className="w-20 h-20" {...props} />;
 };
 
 export default Instagram;

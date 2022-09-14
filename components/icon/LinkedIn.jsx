@@ -1,13 +1,9 @@
 import Image from "next/image";
 
-import linkedInLogo from "../../public/icons/linkedin.svg";
+import LinkedInLogo from "../../public/icons/linkedin.svg";
 
-const LinkedIn = () => {
-  return (
-    <a href="#" target="blank">
-      <Image src={linkedInLogo} alt="linkedin" />
-    </a>
-  );
+const LinkedIn = (props) => {
+  return <LinkedInLogo className="w-20 h-20" {...props} />;
 };
 
 export default LinkedIn;

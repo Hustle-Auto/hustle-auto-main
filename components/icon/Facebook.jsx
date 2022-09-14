@@ -1,13 +1,9 @@
 import Image from "next/image";
 
-import facebookLogo from "../../public/icons/facebook.svg";
+import FacebookLogo from "../../public/icons/facebook.svg";
 
-const Facebook = () => {
-  return (
-    <a href="https://www.facebook.com/HustleAutomotive" target="blank">
-      <Image src={facebookLogo} alt="facebook" />
-    </a>
-  );
+const Facebook = (props) => {
+  return <FacebookLogo className="w-20 h-20" {...props} />;
 };
 
 export default Facebook;

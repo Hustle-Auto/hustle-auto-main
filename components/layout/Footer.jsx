@@ -13,20 +13,29 @@ const Footer = () => {
 
           <article className="text-white">
             <p>Calgary, Alberta</p>
-            <ul className="flex mt-3 space-x-3">
-              <div className="w-6 h-6">
-                <Icon.Facebook />
-              </div>
-              <div className="w-6 h-6">
-                <Icon.Instagram />
-              </div>
-              <div className="w-6 h-6">
-                <Icon.LinkedIn />
-              </div>
-              <div className="w-6 h-6">
-                <Icon.Google />
-              </div>
-            </ul>
+            <div className="flex mt-3 space-x-3">
+              <a
+                href="https://www.facebook.com/HustleAutomotive"
+                target="blank"
+              >
+                <Icon.Facebook className="w-6 h-6" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/hustleautomotive/"
+                target="blank"
+              >
+                <Icon.Instagram className="w-6 h-6" />
+              </a>
+
+              <a href="#" target="blank">
+                <Icon.LinkedIn className="w-6 h-6" />
+              </a>
+
+              <a href="#" target="blank">
+                <Icon.Google className="w-6 h-6" />
+              </a>
+            </div>
           </article>
         </div>
       </section>

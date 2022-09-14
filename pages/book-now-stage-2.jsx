@@ -71,6 +71,17 @@ const BookNowStage2 = () => {
     );
   }, [userServiceSelections]);
 
+  useEffect(() => {
+    Reoverlay.showModal(SuccessModal, {
+      title: "We Have Received Your Request!",
+      message: "We will contact you shortly to confirm your booking.",
+      onConfirm: () => {
+        Reoverlay.hideModal();
+        router.push("/");
+      },
+    });
+  }, []);
+
   const handleOnSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
 
@@ -141,7 +152,7 @@ const BookNowStage2 = () => {
               onClick={handleBackClick}
             >
               <IconButton>
-                <Icon.ArrowLeft />
+                <Icon.ArrowLeft className="w-6 h-6" />
               </IconButton>
               <span>Back</span>
             </p>
