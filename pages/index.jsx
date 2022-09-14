@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Image from "next/image";
+import Link from "next/link.js";
 
 import CustomerReview from "../components/CustomerReview.jsx";
 import Layout from "../components/layout/Layout.jsx";
@@ -29,7 +30,9 @@ export default function Home() {
           </p>
 
           <div className="mb-12 text-center">
-            <Button>Book Now!</Button>
+            <Link href="/get-a-quote">
+              <Button>Get A Quote!</Button>
+            </Link>
           </div>
         </PageSection>
       </section>
