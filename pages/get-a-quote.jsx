@@ -175,7 +175,12 @@ const GetAQuote = () => {
                         </div>
                       </div>
                       <div className="text-sm leading-6 card-text">
-                        {service.description}
+                        <div
+                          className="service-description"
+                          dangerouslySetInnerHTML={{
+                            __html: service.description,
+                          }}
+                        ></div>
                       </div>
                     </div>
                   </RadioCardInput>

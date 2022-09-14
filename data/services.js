@@ -48,11 +48,18 @@ export const addOns = [
 
 export const services = [
   {
-    id: "express-interior-detailing",
-    label: "Express Interior Detailing",
+    id: "regular-interior-detailing",
+    label: "Regular Interior Detailing",
     serviceType: "interior",
-    description:
-      "With our interior express detail, we aim to provide a quick service where the interior of the vehicle is cleaned of any dirt and any other contaminants on the surface. So when the customer leaves with their vehicle, they have the peace of mind that the vehicle is clean and sanitized!",
+    description: `
+    <ul>
+      <li>A thoroughly vacuum the interior carpets, mats, seats and truck space</li>
+      <li>Clean and sanitize all interior panels</li>
+      <li>Clean both exterior & interior windows</li>
+      <li>Steam clean the vents</li>
+      <li>Wash the rubber mats</li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",
@@ -60,11 +67,19 @@ export const services = [
     },
   },
   {
-    id: "premium-interior-detailing",
-    label: "Premium Interior Detailing",
+    id: "enhanced-interior-detailing",
+    label: "Enhanced Interior Detailing",
     serviceType: "interior",
-    description:
-      "Within Our Premium Interior Detail, We Add Onto The Express Detail By Removing All Contaminants From The Vehicle, Shampooing The Carpets, Mats And Seats! For Leather Seats We Clean And Condition Them. We Clean Each Crevice And Corner Of The Interior.",
+    description: `
+    <ul>
+      <li>Everything within the Regular Interior Included</li>
+      <li>Shampoo of mats, carpets of the vehicle and if vehicle is equipped with cloths seats, that will be shampooed as well</li>
+      <li>Clean and condition leather seats</li>
+      <li>Clean and condition vinyl and plastics </li>
+      <li>Remove any spots</li>
+      <li>Cleaning of door jams</li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",
@@ -72,11 +87,19 @@ export const services = [
     },
   },
   {
-    id: "ultimate-interior-detailing",
-    label: "Ultimate Interior Detailing",
+    id: "elite-interior-detailing",
+    label: "Elite Interior Detailing",
     serviceType: "interior",
-    description:
-      "With The Ultimate Package, We Go Deep Within The Vehicle Ensuring Every Inch Is Cleaned, Sanitized, And Detailed To Perfection! We Include Odor Removal, Clay Bar On Windows To Remove Contaminants Water Spots.",
+    description: `
+    <ul>
+      <li>Includes everything from Enhanced Interior detail</li>
+      <li>Cleaning of the headliner </li>
+      <li>Steam and clean of seat belts </li>
+      <li>Protection Coating to all Plastic, Vinyl and Rubber surfaces from stains and dirt</li>
+      <li>Protection Coating to all Leather Surfaces </li>
+      <li>Protection Coating to all fabric surfaces</li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",
@@ -84,11 +107,17 @@ export const services = [
     },
   },
   {
-    id: "express-exterior-detailing",
-    label: "Express Exterior Detailing",
+    id: "regular-exterior-detailing",
+    label: "Regular Exterior Detailing",
     serviceType: "exterior",
-    description:
-      "Come In To Get Our Exterior Express Detail! Within This Detail Will Remove Any Grime, Dirt Or Contaminants That Lay On Top Of Your Paint. And Rejuvenate The Paint Bringing Back The Shine Of Your Vehicle.",
+    description: `
+    <ul>
+      <li>Two bucket hand wash</li>
+      <li>Cleaning of tires and rims</li>
+      <li>Conditioning of tire with shine </li>
+      <li>Cleaning of all exterior windows </li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",
@@ -96,11 +125,17 @@ export const services = [
     },
   },
   {
-    id: "premium-exterior-detailing",
-    label: "Premium Exterior Detailing",
+    id: "enhanced-exterior-detailing",
+    label: "Enhanced Exterior Detailing",
     serviceType: "exterior",
-    description:
-      "With Our Premium Exterior Detail, We Take It A Step Further. We Remove All Dirt And Contaminates Found On The Paint But Also Tackle The More Difficult Aspects Of The Detail Such As The Badges, Any Dirt In The Crevices Of The Grill, As Well, The Removal Of Dead Bugs. Ensuring The Vehicle Look Spectacular When It Leaves.",
+    description: `
+    <ul>
+      <li>Includes everything in the Regular Exterior</li>
+      <li>Decontamination wash</li>
+      <li>Clay bar the vehicle removing any containments in the paint</li>
+      <li>A wax/sealant applied to the vehicle providing a deeper shine and protection to the vehicle</li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",
@@ -108,11 +143,18 @@ export const services = [
     },
   },
   {
-    id: "ultimate-exterior-detailing",
-    label: "Ultimate Exterior Detailing",
+    id: "elite-exterior-detailing",
+    label: "Elite Exterior Detailing",
     serviceType: "exterior",
-    description:
-      "In Our Ultimate Detail, We Aim To Bring Shine On The Exterior Of Your Vehicle Back To When It Originally Left The Factory! All Contaminates Found On The Paint Are Removed. As Well, We Provide A Deeper Shine By Doing A Stage 1 Polish, Removing A Majority Of The Paint Haze Created From UV Rays, Swirls In The Clear Coat Or Miniature Scratches Within The Paint. Ultimately Creating A Flawless Shine.",
+    description: `
+    <ul>
+      <li>Includes berthing in the Enhanced Detail</li>
+      <li>Iron remover</li>
+      <li>A full exterior stage 1 polish</li>
+      <li>Protection added of Wax to help protect that clear and enriched polish</li>
+      <li>With protection to all plastic and rubber parts</li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",
@@ -120,11 +162,26 @@ export const services = [
     },
   },
   {
-    id: "premium-complete-package",
-    label: "Premium Complete Detailing",
+    id: "regular-complete-package",
+    label: "Regular Complete Detailing",
     serviceType: "complete",
-    description:
-      "With the Premium Complete Package, you will be receiving a combination of our Premium Exterior and Interior Detail, where the Hustle Automotive team transform your car from inside to out. We go into detail, removing any dirt or contaminates found and ensure the vehicle is detailed to the best of our abilities!",
+    description: `
+    <p>Interior</p>
+    <ul>
+      <li>A thorough vacuum of the interior carpets, mats, seats and truck space</li>
+      <li>Clean and sanitize all interior panels</li>
+      <li>Windows cleaned from both sides</li>
+      <li>Steam clean of the vents</li>
+      <li>Wash rubber mats</li>
+    </ul>
+    <p>Exterior</p>
+    <ul>
+      <li>Two bucket hand wash</li>
+      <li>Cleaning of tires and rims </li>
+      <li>Conditioning of tire with tire dressing</li>
+      <li>Cleaning of all exterior windows</li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",
@@ -132,11 +189,56 @@ export const services = [
     },
   },
   {
-    id: "ultimate-complete-package",
-    label: "Ultimate Complete Detailing",
+    id: "enhanced-complete-package",
+    label: "Enhanced Complete Detailing",
     serviceType: "complete",
-    description:
-      "With the Ultimate Complete Package we do not just clean the vehicle. We ensure that the vehicle receives the ultimate detail with the mix of our ultimate exterior and interior details. With this package, we will completely transform your vehicle!",
+    description: `
+    <p>Interior</p>
+    <ul>
+      <li>Includes everything from the Regular Interior Detail</li>
+      <li>Shampoo of mats, carpets of the vehicle and if vehicle is equipped with cloths seats, they will be shampooed as well</li>
+      <li>Clean and condition leather seats</li>
+      <li>Clean and condition vinyl and plastics</li>
+      <li>Remove any spots</li>
+      <li>Cleaning of door jams</li>
+    </ul>
+    <p>Exterior</p>
+    <ul>
+      <li>Includes everything in the Regular Exterior </li>
+      <li>Decontamination wash </li>
+      <li>Clay bar the vehicle, removing any containments in the paint</li>
+      <li>A wax/sealant applied to the vehicle providing a deeper shine and protection to the vehicle</li>
+    </ul>
+    `,
+    prices: {
+      sedan: "100",
+      suv: "200",
+      truck: "300",
+    },
+  },
+  {
+    id: "elite-complete-package",
+    label: "Elite Complete Detailing",
+    serviceType: "complete",
+    description: `
+    <p>Interior</p>
+    <ul>
+      <li>Includes everything from Enhanced Interior detail</li>
+      <li>Cleaning of the headliner</li>
+      <li>Steam clean of seat belts</li>
+      <li>Protection coating of all Plastic, Vinyl and Rubber surfaces from stains and dirt</li>
+      <li>Protection coating on all leather surfaces</li>
+      <li>Protection coating on all fabric surfaces</li>
+    </ul>
+    <p>Exterior</p>
+    <ul>
+      <li>Includes everything in the Enhanced Detail </li>
+      <li>Iron remover</li>
+      <li>A full exterior stage 1 polish</li>
+      <li>Wax to help protect paint, and bring a  clear and enriched polish </li>
+      <li>Protection on all plastic and rubber parts </li>
+    </ul>
+    `,
     prices: {
       sedan: "100",
       suv: "200",

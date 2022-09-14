@@ -31,6 +31,14 @@
     
   }
 
+  .service-description p {
+    @apply font-bold my-3
+  }
+  
+  .service-description ul {
+   @apply list-disc pl-6
+  }
+
   .modal-card-image-top {
     @apply h-20 flex justify-center
   }
