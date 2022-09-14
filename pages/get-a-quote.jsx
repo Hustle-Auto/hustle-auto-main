@@ -84,7 +84,7 @@ const GetAQuote = () => {
   };
 
   const handleOnContinueClick = () => {
-    router.push("/book-now-stage-2");
+    router.push("/book-now");
   };
 
   useEffect(() => {
