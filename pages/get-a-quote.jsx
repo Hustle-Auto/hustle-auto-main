@@ -215,7 +215,7 @@ const GetAQuote = () => {
             </p>
             <div>
               <Button accent onClick={handleOnContinueClick}>
-                Continue
+                Book Now
               </Button>
             </div>
           </div>
