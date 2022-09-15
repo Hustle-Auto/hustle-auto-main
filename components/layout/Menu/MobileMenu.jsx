@@ -46,9 +46,9 @@ const MobileMenu = (props) => {
 
             <div className="p-4 mx-auto my-12 ">
               <nav>
-                <ul className="[&>*]:border [&>*]:my-12 [&>*]:p-4 [&>*]:rounded-lg [&>*]:bg-gray-600/25 [&>*]:text-white [&>*]:opacity-50 [&>*]:shadow-xl">
+                <ul className="[&>li>*]:border [&>li>*]:my-12 [&>li>*]:p-4 [&>li>*]:rounded-lg [&>li>*]:bg-gray-600/25 [&>li>*]:text-white [&>*]:opacity-50 [&>li>*]:shadow-xl [&>li>*]:block">
                   <li
-                    onClick={toggleBurgerMenu}
+                    onClick={isActiveLink("/") ? toggleBurgerMenu : null}
                     className={classnames({
                       [activeLinkClass]: isActiveLink("/"),
                     })}
@@ -58,7 +58,9 @@ const MobileMenu = (props) => {
                     </Link>
                   </li>
                   <li
-                    onClick={toggleBurgerMenu}
+                    onClick={
+                      isActiveLink("/contact-us") ? toggleBurgerMenu : null
+                    }
                     className={classnames({
                       [activeLinkClass]: isActiveLink("/contact-us"),
                     })}
@@ -68,7 +70,9 @@ const MobileMenu = (props) => {
                     </Link>
                   </li>
                   <li
-                    onClick={toggleBurgerMenu}
+                    onClick={
+                      isActiveLink("/book-now") ? toggleBurgerMenu : null
+                    }
                     className={classnames({
                       [activeLinkClass]: isActiveLink("/book-now"),
                     })}
