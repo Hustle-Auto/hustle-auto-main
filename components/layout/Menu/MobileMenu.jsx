@@ -14,6 +14,7 @@ const MobileMenu = (props) => {
 
   const toggleBurgerMenu = () => {
     setIsBurgerMenuOpen(!isBurgerMenuOpen);
+    document.body.classList.toggle("overflow-hidden");
   };
 
   const isActiveLink = (url) => router.pathname === url;
@@ -21,11 +22,13 @@ const MobileMenu = (props) => {
 
   return (
     <>
-      <section className={props.className}>
+      <section
+        className={classnames([props.className, "sticky top-0 bg-white z-30"])}
+      >
         <section
           className={classnames([
             { hidden: !isBurgerMenuOpen },
-            "bg-accent  backdrop-opacity-95 bg-opacity-90 fixed right-0 px-4 p-12 z-50 animate-fade-in duration-75 rounded-b-lg w-2/4",
+            "bg-accent absolute right-0 px-4 p-12 z-50 animate-fade-in duration-75 rounded-b-lg w-full h-screen",
           ])}
         >
           <div className="mx-auto 0 min-w-7xl">
@@ -37,7 +40,7 @@ const MobileMenu = (props) => {
 
             <div className="p-4 mx-auto my-12 ">
               <nav className="">
-                <ul className="  [&>li>*]:my-12 [&>li>*]:p-4 [&>li>*]:rounded-lg [&>li>*]:bg-gray-600/25 [&>li>*]:text-white [&>*]:opacity-80 [&>li>*]:shadow-xl [&>li>*]:block">
+                <ul className="[&>li>*]:my-12 [&>li>*]:p-4 [&>li>*]:rounded-lg [&>li>*]:bg-gray-600/25 [&>li>*]:text-white [&>*]:opacity-80 [&>li>*]:shadow-xl [&>li>*]:block">
                   <li
                     onClick={isActiveLink("/") ? toggleBurgerMenu : null}
                     className={classnames({
@@ -85,7 +88,7 @@ const MobileMenu = (props) => {
         </section>
         {/* ===============BURGER MENU ABOVE===================== */}
         <section className="">
-          <div className="p-4 mx-auto max-w-7xl ">
+          <div className="p-2 mx-auto max-w-7xl">
             <div className="flex items-center ">
               <div className="w-24 mr-auto">
                 <Link href="/">
