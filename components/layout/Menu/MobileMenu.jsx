@@ -14,12 +14,10 @@ const MobileMenu = (props) => {
 
   const toggleBurgerMenu = () => {
     setIsBurgerMenuOpen(!isBurgerMenuOpen);
-    //  prevent body scrolling when burger menu is open
-    document.body.classList.toggle("overflow-hidden");
   };
 
   const isActiveLink = (url) => router.pathname === url;
-  const activeLinkClass = "!opacity-100";
+  const activeLinkClass = "!opacity-100 [&>*]:border";
 
   return (
     <>
@@ -27,26 +25,19 @@ const MobileMenu = (props) => {
         <section
           className={classnames([
             { hidden: !isBurgerMenuOpen },
-            "bg-gray-700 absolute w-full h-screen z-50 animate-fade-in duration-75",
+            "bg-accent  backdrop-opacity-95 bg-opacity-90 fixed right-0 px-4 p-12 z-50 animate-fade-in duration-75 rounded-b-lg w-2/4",
           ])}
         >
-          <div className="p-4 mx-auto 0 max-w-7xl">
-            <div className="flex items-center">
-              <div className="w-24 mr-auto">
-                <Link href="/">
-                  <a onClick={toggleBurgerMenu}>
-                    <Image src={logo} alt="logo"></Image>
-                  </a>
-                </Link>
-              </div>
+          <div className="mx-auto 0 min-w-7xl">
+            <div className="flex justify-end">
               <button onClick={toggleBurgerMenu}>
                 <Icon.Burger isNavOpen={true}></Icon.Burger>
               </button>
             </div>
 
             <div className="p-4 mx-auto my-12 ">
-              <nav>
-                <ul className="[&>li>*]:border [&>li>*]:my-12 [&>li>*]:p-4 [&>li>*]:rounded-lg [&>li>*]:bg-gray-600/25 [&>li>*]:text-white [&>*]:opacity-50 [&>li>*]:shadow-xl [&>li>*]:block">
+              <nav className="">
+                <ul className="  [&>li>*]:my-12 [&>li>*]:p-4 [&>li>*]:rounded-lg [&>li>*]:bg-gray-600/25 [&>li>*]:text-white [&>*]:opacity-80 [&>li>*]:shadow-xl [&>li>*]:block">
                   <li
                     onClick={isActiveLink("/") ? toggleBurgerMenu : null}
                     className={classnames({
@@ -83,6 +74,12 @@ const MobileMenu = (props) => {
                   </li>
                 </ul>
               </nav>
+
+              <div className="flex justify-center [&>*]:border [&>*]:rounded-full [&>*]:p-2 space-x-7">
+                <span>FB</span>
+                <span>INSTA</span>
+                <span>LINK</span>
+              </div>
             </div>
           </div>
         </section>
