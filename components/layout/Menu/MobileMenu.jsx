@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Logo from "../../../public/images/logo.png";
-import Icon from "../../icons/icon";
+import logo from "../../../public/images/logo.png";
+import Icon from "../../icons/Icon";
+
 const MobileMenu = (props) => {
   const router = useRouter();
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ const MobileMenu = (props) => {
               <div className="w-24 mr-auto">
                 <Link href="/">
                   <a onClick={toggleBurgerMenu}>
-                    <Image src={Logo} alt="logo"></Image>
+                    <Image src={logo} alt="logo"></Image>
                   </a>
                 </Link>
               </div>
@@ -85,7 +86,7 @@ const MobileMenu = (props) => {
               <div className="w-24 mr-auto">
                 <Link href="/">
                   <a>
-                    <Image src={Logo} alt="logo"></Image>
+                    <Image src={logo} alt="logo"></Image>
                   </a>
                 </Link>
               </div>

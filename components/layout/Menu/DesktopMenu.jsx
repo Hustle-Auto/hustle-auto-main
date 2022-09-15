@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Logo from "../../../public/images/logo.png";
+import logo from "../../../public/images/logo.png";
 
 const DesktopMenu = (props) => {
   const router = useRouter();
@@ -17,7 +17,7 @@ const DesktopMenu = (props) => {
             <div className="w-24 mr-auto">
               <Link href="/">
                 <a>
-                  <Image src={Logo} alt="logo"></Image>
+                  <Image src={logo} alt="logo"></Image>
                 </a>
               </Link>
             </div>
