@@ -18,15 +18,11 @@ import PageSection from "../components/ui/PageSection";
 import useSessionStorage from "../hooks/useSessionStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
 
-const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-
 const initialValues = {
   firstName: "",
   lastName: "",
   email: "",
   phoneNumber: "",
-  carDetails: "",
-  preferredServiceDate: "",
   message: "",
 };
 
@@ -40,9 +36,7 @@ const validationSchema = Yup.object({
   lastName: Yup.string().max(20, "Must be 20 characters or less"),
   email: Yup.string().email("Invalid email address").required("Required"),
   phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number"),
-  carDetails: Yup.string().required("Required"),
-  preferredServiceDate: Yup.string().required("Required"),
-  message: Yup.string(),
+  message: Yup.string().required("Required"),
 });
 
 const isRequired = (field) => {
@@ -51,43 +45,26 @@ const isRequired = (field) => {
   );
 };
 
-const BookNowStage2 = () => {
-  const [userServiceSelections, _] = useSessionStorage(
-    "user-service-selections",
-    null
-  );
-
+const ContactUs = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [totalPrice, setTotalPrice] = useState(0);
   const router = useRouter();
-
-  useEffect(() => {
-    setTotalPrice(
-      calcTotalPriceOfServices({
-        carType: userServiceSelections?.carType,
-        service: userServiceSelections?.service,
-        addOns: userServiceSelections?.addOns,
-      })
-    );
-  }, [userServiceSelections]);
 
   const handleOnSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
 
     try {
       const payload = {
-        userServiceSelections: { ...userServiceSelections, totalPrice },
         userContactInfo: { ...values },
       };
 
       const response = await axios.post("/.netlify/functions/send-email", {
-        subject: "Service Request",
+        subject: "Contact Request",
         message: `${JSON.stringify(payload, null, 2)}`,
       });
 
       Reoverlay.showModal(SuccessModal, {
-        title: "We Have Received Your Request!",
-        message: "We will contact you shortly to confirm your booking.",
+        title: "We Have Received Your Message!",
+        message: "We will contact you shortly.",
         onConfirm: () => {
           Reoverlay.hideModal();
           router.push("/");
@@ -105,87 +82,28 @@ const BookNowStage2 = () => {
     }
   };
 
-  const handleBackClick = () => {
-    router.push("/book-now");
-  };
-
-  let selectedCarTypeString = "No Car Type Selected";
-  let selectedServiceString = "No Service Selected";
-  let selectedAddOnsString = "No Add Ons Selected";
-
-  if (userServiceSelections) {
-    const { carType, service, addOns } = userServiceSelections;
-    if (carType) {
-      selectedCarTypeString = carType.label;
-    }
-
-    if (service && carType) {
-      const price = service.prices[carType.id];
-      selectedServiceString = `${service.label} ($${price})`;
-    }
-
-    if (addOns && addOns.length > 0) {
-      selectedAddOnsString = addOns
-        .map((addOn) => `${addOn.label} ($${addOn.price})`)
-        .join(", ");
-    }
-  }
-
   return (
     <Layout>
       <main>
         <PageSection>
-          <div className="relative">
-            <p
-              className="absolute flex items-center space-x-1"
-              onClick={handleBackClick}
-            >
-              <IconButton>
-                <Icon.ArrowLeft />
-              </IconButton>
-              <span>Back</span>
-            </p>
-            <h2 className="page-heading">Book Now</h2>
-          </div>
+          <h2 className="page-heading">Contact Us</h2>
+
           <section className="grid grid-cols-3 gap-10 my-10">
             <article>
               <Card>
                 <div className="card-body">
-                  <h3 className="font-bold card-title">Summary</h3>
+                  <h3 className="font-bold card-title">Contact Info</h3>
                   <div className="card-text">
                     <section className="space-y-1">
-                      <p>
-                        <span>Car Type: </span>
-                        <span className="font-semibold">
-                          {selectedCarTypeString}
-                        </span>
-                      </p>
-                      <p>
-                        <span>Selected Package: </span>
-                        <span className="font-semibold">
-                          {selectedServiceString}
-                        </span>
-                      </p>
-                      <p>
-                        <span>Add-Ons: </span>
-                        <span className="font-semibold">
-                          {selectedAddOnsString}
-                        </span>
-                      </p>
-                    </section>
-                    <section className="mt-3">
-                      <hr className="my-3" />
-                      <p className="font-bold">
-                        Total:{" "}
-                        <span className="text-accent"> ${totalPrice} </span>
-                      </p>
+                      <p>hustleaservices@gmail.com</p>
+                      <p>(587) 436 - 0142</p>
                     </section>
                   </div>
                 </div>
               </Card>
             </article>
             <article className="col-span-2">
-              <div className="text-center heading">Contact Info</div>
+              <div className="text-center heading">Send Us A Message</div>
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -279,51 +197,6 @@ const BookNowStage2 = () => {
                     </div>
                   </section>
 
-                  <section className="grid grid-cols-2 gap-5">
-                    <div className="form-group">
-                      <label
-                        htmlFor="carDetails"
-                        className="form-label"
-                        // eslint-disable-next-line react/no-unknown-property
-                        asterisk={isRequired({
-                          name: "carDetails",
-                        }).toString()}
-                      >
-                        Car Details
-                      </label>
-                      <Field
-                        name="carDetails"
-                        type="text"
-                        className="form-control"
-                      />
-                      <ErrorMessage
-                        name="carDetails"
-                        render={CustomErrorMessage}
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label
-                        htmlFor="preferredServiceDate"
-                        className="form-label"
-                        // eslint-disable-next-line react/no-unknown-property
-                        asterisk={isRequired({
-                          name: "preferredServiceDate",
-                        }).toString()}
-                      >
-                        Preferred Service Date
-                      </label>
-                      <Field
-                        name="preferredServiceDate"
-                        type="date"
-                        className="form-control"
-                      />
-                      <ErrorMessage
-                        name="preferredServiceDate"
-                        render={CustomErrorMessage}
-                      />
-                    </div>
-                  </section>
                   <div className="form-group">
                     <label
                       htmlFor="message"
@@ -350,7 +223,7 @@ const BookNowStage2 = () => {
                       disabled={isLoading}
                       loading={isLoading}
                     >
-                      <div>Request Service</div>
+                      <div>Submit</div>
                     </Button>
                   </div>
                 </Form>
@@ -363,4 +236,4 @@ const BookNowStage2 = () => {
   );
 };
 
-export default BookNowStage2;
+export default ContactUs;
