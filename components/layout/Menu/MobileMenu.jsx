@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import logo from "../../../public/images/logo.png";
-import Icon from "../../icons/Icon";
+import Icon from "../../icon";
 
 const MobileMenu = (props) => {
   const router = useRouter();
