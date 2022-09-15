@@ -7,18 +7,25 @@ export const carTypes = [
     imageHeight: "273",
   },
   {
-    id: "suv",
-    label: "SUV",
-    imageSrc: "/images/car-types/suv.png",
+    id: "mid-size-suv",
+    label: "Mid-Size SUV",
+    imageSrc: "/images/car-types/midsize-suv.png",
     imageWidth: "1000",
     imageHeight: "369",
   },
   {
-    id: "truck",
+    id: "pickup-truck",
     label: "Truck",
     imageSrc: "/images/car-types/truck.png",
     imageWidth: "1000",
     imageHeight: "334",
+  },
+  {
+    id: "full-size-suv",
+    label: "Full-Size SUV",
+    imageSrc: "/images/car-types/car.png",
+    imageWidth: "965",
+    imageHeight: "500",
   },
 ];
 
@@ -61,9 +68,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 80.0,
+      "mid-size-suv": 100.0,
+      "pickup-truck": 100.0,
+      "full-size-suv": 110.0,
     },
   },
   {
@@ -81,9 +89,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 120.0,
+      "mid-size-suv": 150.0,
+      "pickup-truck": 150.0,
+      "full-size-suv": 170.0,
     },
   },
   {
@@ -101,9 +110,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 180.0,
+      "mid-size-suv": 210.0,
+      "pickup-truck": 210.0,
+      "full-size-suv": 225.0,
     },
   },
   {
@@ -119,9 +129,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 60.0,
+      "mid-size-suv": 70.0,
+      "pickup-truck": 80.0,
+      "full-size-suv": 80.0,
     },
   },
   {
@@ -137,9 +148,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 75.0,
+      "mid-size-suv": 80.0,
+      "pickup-truck": 90.0,
+      "full-size-suv": 90.0,
     },
   },
   {
@@ -156,9 +168,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 90.0,
+      "mid-size-suv": 95.0,
+      "pickup-truck": 110.0,
+      "full-size-suv": 110.0,
     },
   },
   {
@@ -183,9 +196,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 130.0,
+      "mid-size-suv": 160.0,
+      "pickup-truck": 190.0,
+      "full-size-suv": 180.0,
     },
   },
   {
@@ -211,9 +225,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 180.0,
+      "mid-size-suv": 215.0,
+      "pickup-truck": 230.0,
+      "full-size-suv": 250.0,
     },
   },
   {
@@ -240,9 +255,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: "100",
-      suv: "200",
-      truck: "300",
+      sedan: 220.0,
+      "mid-size-suv": 285.0,
+      "pickup-truck": 300.0,
+      "full-size-suv": 320.0,
     },
   },
 ];
