@@ -23,7 +23,7 @@ const DesktopMenu = (props) => {
             </div>
             <div>
               <nav>
-                <ul className="flex space-x-6 [&>*]:p-2 ">
+                <ul className="flex space-x-6 [&>*]:p-2">
                   <li
                     className={classnames([
                       { [activeLinkClass]: isActiveLink("/") },
