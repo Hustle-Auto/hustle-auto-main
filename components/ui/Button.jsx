@@ -1,6 +1,6 @@
 import classnames from "classnames";
 
-import Loader from "../icons/Loader";
+import Icon from "../icon";
 
 const Button = ({
   children,
@@ -30,7 +30,7 @@ const Button = ({
       <button type={buttonType} className={buttonClassName} onClick={onClick}>
         <div className="flex items-center space-x-3">
           {children}
-          <Loader />
+          <Icon.Loader />
         </div>
       </button>
     );

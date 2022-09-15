@@ -11,3 +11,7 @@ export function calcTotalPriceOfServices({ carType, service, addOns }) {
 
   return total;
 }
+
+export function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

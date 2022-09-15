@@ -1,4 +1,4 @@
-import Icon from "../icons/Icon";
+import Icon from "../icon";
 import Button from "../ui/Button";
 import ModalCard from "./ModalCard";
 import ModalWrapper from "./ModalWrapper";

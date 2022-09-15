@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { Reoverlay } from "reoverlay";
 import * as Yup from "yup";
 
-import Icon from "../components/icons/Icon";
+import Icon from "../components/icon";
 import Layout from "../components/layout/Layout";
 import ErrorModal from "../components/modal/ErrorModal";
 import SuccessModal from "../components/modal/SuccessModal";
@@ -70,6 +70,17 @@ const BookNowStage2 = () => {
       })
     );
   }, [userServiceSelections]);
+
+  useEffect(() => {
+    Reoverlay.showModal(SuccessModal, {
+      title: "We Have Received Your Request!",
+      message: "We will contact you shortly to confirm your booking.",
+      onConfirm: () => {
+        Reoverlay.hideModal();
+        router.push("/");
+      },
+    });
+  }, []);
 
   const handleOnSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
@@ -141,7 +152,7 @@ const BookNowStage2 = () => {
               onClick={handleBackClick}
             >
               <IconButton>
-                <Icon.ArrowLeft />
+                <Icon.ArrowLeft className="w-6 h-6" />
               </IconButton>
               <span>Back</span>
             </p>
