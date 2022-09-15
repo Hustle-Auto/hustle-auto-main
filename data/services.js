@@ -33,7 +33,7 @@ export const serviceTypes = [
   { id: "interior", label: "Interior Detailing" },
   { id: "exterior", label: "Exterior Detailing" },
   { id: "complete", label: "Complete Packages" },
-  { id: "paint-correction", label: "Pain Correction" },
+  { id: "paint-correction", label: "Paint Correction" },
 ];
 
 export const addOns = [
