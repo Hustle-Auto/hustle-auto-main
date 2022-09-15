@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Script
         strategy="lazyOnload"
+        async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
 
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function etag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
             page_path: window.location.pathname,
             });
