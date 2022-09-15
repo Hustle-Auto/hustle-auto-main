@@ -42,6 +42,7 @@ const DesktopMenu = (props) => {
                       <a>Contact</a>
                     </Link>
                   </li>
+
                   <li
                     className={classnames([
                       { [activeLinkClass]: isActiveLink("/book-now") },
