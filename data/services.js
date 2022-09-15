@@ -33,6 +33,7 @@ export const serviceTypes = [
   { id: "interior", label: "Interior Detailing" },
   { id: "exterior", label: "Exterior Detailing" },
   { id: "complete", label: "Complete Packages" },
+  { id: "paint-correction", label: "Pain Correction" },
 ];
 
 export const addOns = [
@@ -259,6 +260,59 @@ export const services = [
       "mid-size-suv": 285.0,
       "pickup-truck": 300.0,
       "full-size-suv": 320.0,
+    },
+  },
+  {
+    id: "stage-1-paint-correction",
+    label: "Stage 1 Paint Correction",
+    serviceType: "paint-correction",
+    description: `
+    <p>All Paint Corrections</p>
+    <ul>
+      <li>Cleaning off rims and tires</li>
+      <li>Two bucket hand wash</li>
+      <li>Clay bar of the vehicle (if required)</li>
+      <li>A decontamination wash iron deposits</li>
+      <li>Paint correction prep</li>
+    </ul>
+    <p>Stage 1 Paint Correction</p>
+    <ul>
+      <li>1 step of compounding of larger swirl, scratches and any other defects</li>
+      <li>1 step polish of refining the paint, removing of minor scratches and swirls, and improving clarity of the paint</li>
+      <li>Here you achieve a 80% to 90% clarity</li>
+    </ul>
+    `,
+    prices: {
+      sedan: 300.0,
+      "mid-size-suv": 350.0,
+      "pickup-truck": 380.0,
+      "full-size-suv": 400.0,
+    },
+  },
+  {
+    id: "stage-2-paint-correction",
+    label: "Stage 2 Paint Correction",
+    serviceType: "paint-correction",
+    description: `
+    <p>All Paint Corrections</p>
+    <ul>
+      <li>Cleaning off rims and tires</li>
+      <li>Two bucket hand wash</li>
+      <li>Clay bar of the vehicle (if required)</li>
+      <li>A decontamination wash iron deposits</li>
+      <li>Paint correction prep</li>
+    </ul>
+    <p>Stage 2 Paint Correction</p>
+    <ul>
+      <li>2 step correction of compound of removal defects, marks, scratches and swirls with more in-depth</li>
+      <li>1 step correction polish to refine the finish to achieve 90% to 99% clarity</li>
+    </ul>
+    `,
+    prices: {
+      sedan: 400.0,
+      "mid-size-suv": 450.0,
+      "pickup-truck": 480.0,
+      "full-size-suv": 500.0,
     },
   },
 ];
