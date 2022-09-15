@@ -11,7 +11,7 @@ const BurgerMenu = (props) => {
 
   const isActiveLink = (url) => router.pathname === url;
 
-  const activeLinkClass = "opacity-100";
+  const activeLinkClass = "!opacity-100";
   return (
     <>
       {/* HAMBURGER MENU */}
