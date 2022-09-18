@@ -7,7 +7,7 @@ import Layout from "../components/layout/Layout.jsx";
 import Button from "../components/ui/Button.jsx";
 import PageSection from "../components/ui/PageSection.jsx";
 import customerReviews from "../data/customer-reviews";
-import logo from "../public/images/logo.svg";
+import logo from "../public/images/logo.png";
 
 export default function Home() {
   const [userInput, setUserInput] = useState({ carSize: [] });
