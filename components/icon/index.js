@@ -6,6 +6,7 @@ import Google from "./Google";
 import Instagram from "./Instagram";
 import LinkedIn from "./LinkedIn";
 import Loader from "./Loader";
+import WrenchScrewDriver from "./WrenchScrewDriver";
 
 const Icon = {
   Facebook: Facebook,
@@ -16,6 +17,7 @@ const Icon = {
   Error: Error,
   ArrowLeft: ArrowLeft,
   Loader: Loader,
+  WrenchScrewDriver: WrenchScrewDriver,
 };
 
 export default Icon;
