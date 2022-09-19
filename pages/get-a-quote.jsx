@@ -105,7 +105,7 @@ const GetAQuote = () => {
     <Layout>
       <main>
         <PageSection>
-          <h2 className="page-heading">Book Now</h2>
+          <h2 className="page-heading">Get A Quote</h2>
           <section className="my-10">
             <p className="heading">Select Your Car Size</p>
             <div className="grid grid-cols-3 gap-8">
