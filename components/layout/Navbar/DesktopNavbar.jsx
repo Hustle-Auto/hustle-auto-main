@@ -45,13 +45,13 @@ const DesktopNavbar = (props) => {
                   </li>
                   <li>
                     <NavbarLink
-                      href="/book-now"
+                      href="/get-a-quote"
                       className={
                         "text-white bg-black px-3 py-2 rounded-md shadow-md hover:scale-105 transition"
                       }
                       activeLinkClassName={"font-bold"}
                     >
-                      Book Now
+                      Get A Quote
                     </NavbarLink>
                   </li>
                 </ul>

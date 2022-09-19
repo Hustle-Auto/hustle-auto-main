@@ -72,12 +72,12 @@ const MobileNavbar = (props) => {
                   </li>
                   <li>
                     <NavbarLink
-                      href="/book-now"
+                      href="/get-a-quote"
                       className={linkClassName}
                       activeLinkClassName={activeLinkClassName}
                       onClick={closeBurgerMenu}
                     >
-                      Book Now
+                      Get A Quote
                     </NavbarLink>
                   </li>
                 </ul>
