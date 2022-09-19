@@ -1,6 +1,4 @@
-import React from "react";
-
-const Burger = (props) => {
+const X = (props) => {
   return (
     <svg
       className="w-20 h-20"
@@ -11,9 +9,9 @@ const Burger = (props) => {
       aria-hidden="true"
       {...props}
     >
-      <path d="M4 6h16M4 12h16M4 18h16" />
+      <path d="M6 18L18 6M6 6l12 12" />
     </svg>
   );
 };
 
-export default Burger;
+export default X;

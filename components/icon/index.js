@@ -7,6 +7,7 @@ import Google from "./Google";
 import Instagram from "./Instagram";
 import LinkedIn from "./LinkedIn";
 import Loader from "./Loader";
+import X from "./X";
 
 const Icon = {
   Facebook: Facebook,
@@ -17,6 +18,7 @@ const Icon = {
   Error: Error,
   ArrowLeft: ArrowLeft,
   Burger: Burger,
+  X: X,
   Loader: Loader,
 };
 

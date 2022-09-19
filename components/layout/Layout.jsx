@@ -1,12 +1,12 @@
 import Footer from "./Footer";
-import Menu from "./Menu";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <Menu />
-        <div className="flex-1 ">{children}</div>
+        <Navbar />
+        <div className="flex-1">{children}</div>
         <Footer />
       </div>
     </>
