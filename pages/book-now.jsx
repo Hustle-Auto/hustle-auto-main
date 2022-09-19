@@ -208,6 +208,7 @@ const BookNow = () => {
                         name="firstName"
                         type="text"
                         className="form-control"
+                        placeholder="Sanjay"
                       />
                       <ErrorMessage
                         name="firstName"
@@ -229,6 +230,7 @@ const BookNow = () => {
                         name="lastName"
                         type="text"
                         className="form-control"
+                        placeholder="Smith"
                       />
                       <ErrorMessage
                         name="lastName"
@@ -253,6 +255,7 @@ const BookNow = () => {
                         name="phoneNumber"
                         type="text"
                         className="form-control"
+                        placeholder="123-456-7890"
                       />
                       <ErrorMessage
                         name="phoneNumber"
@@ -274,6 +277,7 @@ const BookNow = () => {
                         name="email"
                         type="email"
                         className="form-control"
+                        placeholder="sanjay.smith@gmail.com"
                       />
                       <ErrorMessage name="email" render={CustomErrorMessage} />
                     </div>
@@ -296,6 +300,7 @@ const BookNow = () => {
                         name="carDetails"
                         type="text"
                         className="form-control"
+                        placeholder="Honda Civic 2019"
                       />
                       <ErrorMessage
                         name="carDetails"
@@ -340,6 +345,7 @@ const BookNow = () => {
                       name="message"
                       as="textarea"
                       className="form-control"
+                      placeholder="Anything else you'd like us to know? eg. My windshield is broken, My car is an auction car, My car was repossessed."
                     />
                     <ErrorMessage name="message" render={CustomErrorMessage} />
                   </div>
