@@ -7,6 +7,7 @@ import Google from "./Google";
 import Instagram from "./Instagram";
 import LinkedIn from "./LinkedIn";
 import Loader from "./Loader";
+import WrenchScrewDriver from "./WrenchScrewDriver";
 import X from "./X";
 
 const Icon = {
@@ -20,6 +21,7 @@ const Icon = {
   Burger: Burger,
   X: X,
   Loader: Loader,
+  WrenchScrewDriver: WrenchScrewDriver,
 };
 
 export default Icon;
