@@ -3,14 +3,12 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import logo from "../../../public/images/logo.png";
 import Icon from "../../icon";
 import NavbarLink from "./NavbarLink";
 
-const MobileNavbar = (props) => {
-  const router = useRouter();
+const MobileNavbar = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
   const linkClassName = "p-4 rounded-md text-white border-2 border-white";

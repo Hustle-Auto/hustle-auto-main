@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import axios from "axios";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -6,17 +6,13 @@ import { useRouter } from "next/router";
 import { Reoverlay } from "reoverlay";
 import * as Yup from "yup";
 
-import Icon from "../components/icon";
 import Layout from "../components/layout/Layout";
 import ErrorModal from "../components/modal/ErrorModal";
 import SuccessModal from "../components/modal/SuccessModal";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
-import IconButton from "../components/ui/IconButton";
 import PageSection from "../components/ui/PageSection";
-import useSessionStorage from "../hooks/useSessionStorage";
-import { calcTotalPriceOfServices } from "../utils/utils";
 
 const initialValues = {
   firstName: "",
