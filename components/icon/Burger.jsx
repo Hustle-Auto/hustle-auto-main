@@ -3,6 +3,7 @@ import React from "react";
 const Burger = (props) => {
   return (
     <svg
+      // default className, can be overwritten in props
       className="w-20 h-20"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

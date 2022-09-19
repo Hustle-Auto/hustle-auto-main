@@ -4,10 +4,10 @@ import MobileNavbar from "./MobileNavbar";
 const Navbar = () => {
   return (
     <>
-      <section className="block lg:hidden">
+      <section className="block sm:hidden">
         <MobileNavbar />
       </section>
-      <section className="hidden lg:block">
+      <section className="hidden sm:block">
         <DesktopNavbar />
       </section>
     </>

@@ -88,22 +88,22 @@ const MobileNavbar = (props) => {
                   href="https://www.facebook.com/HustleAutomotive"
                   target="blank"
                 >
-                  <Icon.Facebook className="w-8 h-8 bg-white border-4 border-white rounded-full" />
+                  <Icon.Facebook className="w-10 h-10 bg-white border-4 border-white rounded-md" />
                 </a>
 
                 <a
                   href="https://www.instagram.com/hustleautomotive/"
                   target="blank"
                 >
-                  <Icon.Instagram className="w-8 h-8 bg-white border-4 border-white rounded-full" />
+                  <Icon.Instagram className="w-10 h-10 bg-white border-4 border-white rounded-md" />
                 </a>
 
                 <a href="#" target="blank">
-                  <Icon.LinkedIn className="w-8 h-8 bg-white border-4 border-white rounded-full" />
+                  <Icon.LinkedIn className="w-10 h-10 bg-white border-4 border-white rounded-md" />
                 </a>
 
                 <a href="#" target="blank">
-                  <Icon.Google className="w-8 h-8 bg-white border-4 border-white rounded-full" />
+                  <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
                 </a>
               </div>
             </div>
