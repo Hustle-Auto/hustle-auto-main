@@ -1,4 +1,5 @@
 import ArrowLeft from "./ArrowLeft";
+import Burger from "./Burger";
 import Check from "./Check";
 import Error from "./Error";
 import Facebook from "./Facebook";
@@ -7,6 +8,7 @@ import Instagram from "./Instagram";
 import LinkedIn from "./LinkedIn";
 import Loader from "./Loader";
 import WrenchScrewDriver from "./WrenchScrewDriver";
+import X from "./X";
 
 const Icon = {
   Facebook: Facebook,
@@ -16,6 +18,8 @@ const Icon = {
   Check: Check,
   Error: Error,
   ArrowLeft: ArrowLeft,
+  Burger: Burger,
+  X: X,
   Loader: Loader,
   WrenchScrewDriver: WrenchScrewDriver,
 };
