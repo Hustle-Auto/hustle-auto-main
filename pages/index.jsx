@@ -10,8 +10,6 @@ import customerReviews from "../data/customer-reviews";
 import logo from "../public/images/logo.png";
 
 export default function Home() {
-  const [userInput, setUserInput] = useState({ carSize: [] });
-
   return (
     <Layout>
       <section className="bg-black">

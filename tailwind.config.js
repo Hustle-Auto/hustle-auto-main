@@ -15,7 +15,7 @@ module.exports = {
         "accent-light": "#f47c7c",
       },
       animation: {
-        "fade-in": "fade-in 0.5s ease-in-out",
+        "fade-in": "fade-in 0.25s ease-in-out",
       },
       keyframes: {
         "fade-in": {

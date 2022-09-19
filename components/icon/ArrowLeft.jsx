@@ -7,6 +7,7 @@ const ArrowLeft = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
+        // default className, can be overwritten in props
         className="w-20 h-20"
         {...props}
       >
