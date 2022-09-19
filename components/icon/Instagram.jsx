@@ -1,9 +1,18 @@
 import Image from "next/image";
 
-import InstagramLogo from "../../public/icons/instagram.svg";
+import InstagramLogo from "../../public/icons/instagram.png";
 
 const Instagram = (props) => {
-  return <InstagramLogo className="w-20 h-20" {...props} />;
+  return (
+    <div {...props}>
+      <Image
+        src={InstagramLogo}
+        width="4322"
+        height="4322"
+        alt="instagram logo"
+      />
+    </div>
+  );
 };
 
 export default Instagram;

@@ -83,27 +83,37 @@ const MobileNavbar = (props) => {
                 </ul>
               </nav>
 
-              <div className="flex justify-center space-x-7">
+              <div className="flex items-stretch justify-center space-x-7">
                 <a
                   href="https://www.facebook.com/HustleAutomotive"
                   target="blank"
+                  className="p-2 rounded-md bg-white/90"
                 >
-                  <Icon.Facebook className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                  <Icon.Facebook className="w-10 h-10 rounded-md" />
                 </a>
 
                 <a
                   href="https://www.instagram.com/hustleautomotive/"
                   target="blank"
+                  className="p-2 rounded-md bg-white/90"
                 >
-                  <Icon.Instagram className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                  <Icon.Instagram className="w-10 h-10 rounded-md" />
                 </a>
 
-                <a href="#" target="blank">
-                  <Icon.LinkedIn className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <a
+                  href="#"
+                  target="blank"
+                  className="flex items-center p-2 rounded-md bg-white/90"
+                >
+                  <Icon.LinkedIn className="w-10 h-8 rounded-md" />
                 </a>
 
-                <a href="#" target="blank">
-                  <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <a
+                  href="#"
+                  target="blank"
+                  className="p-2 rounded-md bg-white/90"
+                >
+                  <Icon.Google className="w-10 h-10 rounded-md" />
                 </a>
               </div>
             </div>

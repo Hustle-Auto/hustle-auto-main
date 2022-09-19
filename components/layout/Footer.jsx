@@ -13,7 +13,7 @@ const Footer = () => {
 
           <article className="text-white">
             <p>Calgary, Alberta</p>
-            <div className="flex mt-3 space-x-3">
+            <div className="flex items-center mt-3 space-x-3">
               <a
                 href="https://www.facebook.com/HustleAutomotive"
                 target="blank"
@@ -29,7 +29,7 @@ const Footer = () => {
               </a>
 
               <a href="#" target="blank">
-                <Icon.LinkedIn className="w-6 h-6" />
+                <Icon.LinkedIn className="w-6 h-5" />
               </a>
 
               <a href="#" target="blank">
