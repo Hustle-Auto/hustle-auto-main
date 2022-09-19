@@ -289,7 +289,8 @@ const BookNow = () => {
                           name: "carDetails",
                         }).toString()}
                       >
-                        Car Details
+                        Car Details{" "}
+                        <span className="text-gray-400">(Make/Model/Year)</span>
                       </label>
                       <Field
                         name="carDetails"
