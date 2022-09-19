@@ -23,7 +23,7 @@ export default function Home() {
             Striving To Be the Best Detailers in the City!
           </h1>
 
-          <p className="mb-12 text-2xl text-center text-white capitalize">
+          <p className="mb-12 text-3xl text-center text-white capitalize font-heading">
             We Hustle To Provide The Best Service You Can Get!
           </p>
 
