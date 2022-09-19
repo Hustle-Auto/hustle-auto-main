@@ -126,6 +126,7 @@ const ContactUs = () => {
                         name="firstName"
                         type="text"
                         className="form-control"
+                        placeholder="Sanjay"
                       />
                       <ErrorMessage
                         name="firstName"
@@ -147,6 +148,7 @@ const ContactUs = () => {
                         name="lastName"
                         type="text"
                         className="form-control"
+                        placeholder="Smith"
                       />
                       <ErrorMessage
                         name="lastName"
@@ -171,6 +173,7 @@ const ContactUs = () => {
                         name="email"
                         type="email"
                         className="form-control"
+                        placeholder="sanjay.smith@gmail.com"
                       />
                       <ErrorMessage name="email" render={CustomErrorMessage} />
                     </div>
@@ -189,6 +192,7 @@ const ContactUs = () => {
                         name="phoneNumber"
                         type="text"
                         className="form-control"
+                        placeholder="123-456-7890"
                       />
                       <ErrorMessage
                         name="phoneNumber"
@@ -212,6 +216,7 @@ const ContactUs = () => {
                       name="message"
                       as="textarea"
                       className="form-control"
+                      placeholder="Enter your message here..."
                     />
                     <ErrorMessage name="message" render={CustomErrorMessage} />
                   </div>
