@@ -13,7 +13,7 @@ const MobileNavbar = (props) => {
   const router = useRouter();
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
-  const linkClassName = "my-12 p-4 rounded-md text-white border-2 border-white";
+  const linkClassName = "p-4 rounded-md text-white border-2 border-white";
 
   const activeLinkClassName = "bg-white/25";
 
@@ -48,8 +48,8 @@ const MobileNavbar = (props) => {
             </div>
 
             <div className="p-4 mx-auto my-12 ">
-              <nav className="">
-                <ul>
+              <nav>
+                <ul className="space-y-8">
                   <li>
                     <NavbarLink
                       href="/"
@@ -58,6 +58,26 @@ const MobileNavbar = (props) => {
                       onClick={closeBurgerMenu}
                     >
                       Home
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
+                      href="/services"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                      onClick={closeBurgerMenu}
+                    >
+                      Services
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
+                      href="/gallery"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                      onClick={closeBurgerMenu}
+                    >
+                      Gallery
                     </NavbarLink>
                   </li>
                   <li>
@@ -83,7 +103,7 @@ const MobileNavbar = (props) => {
                 </ul>
               </nav>
 
-              <div className="flex items-stretch justify-center space-x-7">
+              <div className="flex items-stretch justify-center mt-10 space-x-7">
                 <a
                   href="https://www.facebook.com/HustleAutomotive"
                   target="blank"

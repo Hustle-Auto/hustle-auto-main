@@ -36,6 +36,24 @@ const DesktopNavbar = (props) => {
                   </li>
                   <li>
                     <NavbarLink
+                      href="/services"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                    >
+                      Services
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
+                      href="/gallery"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                    >
+                      Gallery
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
                       href="/contact-us"
                       className={linkClassName}
                       activeLinkClassName={activeLinkClassName}
