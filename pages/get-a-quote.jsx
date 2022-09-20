@@ -94,7 +94,6 @@ const GetAQuote = () => {
   };
 
   const handleDetailingLocationChange = (e) => {
-    console.log(`e.target.value: '${e.target.value}'`);
     const selectedDetailingLocation = detailingLocations.find(
       (detailingLocation) => detailingLocation.id === e.target.value
     );

@@ -16,7 +16,7 @@ import CustomErrorMessage from "../components/ui/CustomErrorMessage";
 import IconButton from "../components/ui/IconButton";
 import PageSection from "../components/ui/PageSection";
 import useSessionStorage from "../hooks/useSessionStorage";
-import { calcTotalPriceOfServices } from "../utils/utils";
+import { generateUserSelectionsSummary } from "../utils/utils";
 
 const initialValues = {
   firstName: "",
@@ -57,18 +57,17 @@ const BookNow = () => {
     null
   );
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [totalPrice, setTotalPrice] = useState(0);
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [userSelectionsSummary, setUserSelectionsSummary] = useState(null);
 
   useEffect(() => {
-    setTotalPrice(
-      calcTotalPriceOfServices({
-        carType: userServiceSelections?.carType,
-        service: userServiceSelections?.service,
-        addOns: userServiceSelections?.addOns,
-        detailingLocation: userServiceSelections?.detailingLocation,
-      })
+    if (!userServiceSelections) {
+      return;
+    }
+
+    setUserSelectionsSummary(
+      generateUserSelectionsSummary(userServiceSelections)
     );
   }, [userServiceSelections]);
 
@@ -77,9 +76,11 @@ const BookNow = () => {
 
     try {
       const payload = {
-        userServiceSelections: { ...userServiceSelections, totalPrice },
+        userSelectionsSummary,
         userContactInfo: { ...values },
       };
+
+      console.log(`payload: ${JSON.stringify(payload, null, 2)}`);
 
       const response = await axios.post("/.netlify/functions/send-email", {
         subject: "Service Request",
@@ -110,35 +111,6 @@ const BookNow = () => {
     router.push("/get-a-quote");
   };
 
-  let selectedCarTypeString = "No Car Type Selected";
-  let selectedServiceString = "No Service Selected";
-  let selectedAddOnsString = "No Add Ons Selected";
-  let selectedDetailingLocationString = "No Detailing Location Selected";
-
-  if (userServiceSelections) {
-    const { carType, service, addOns, detailingLocation } =
-      userServiceSelections;
-
-    if (carType) {
-      selectedCarTypeString = carType.label;
-    }
-
-    if (service && carType) {
-      const price = service.prices[carType.id];
-      selectedServiceString = `${service.label} ($${price})`;
-    }
-
-    if (addOns && addOns.length > 0) {
-      selectedAddOnsString = addOns
-        .map((addOn) => `${addOn.label} ($${addOn.price})`)
-        .join(", ");
-    }
-
-    if (detailingLocation) {
-      selectedDetailingLocationString = `${detailingLocation.label} ($${detailingLocation.price})`;
-    }
-  }
-
   return (
     <Layout>
       <main>
@@ -165,25 +137,25 @@ const BookNow = () => {
                       <p>
                         <span>Car Type: </span>
                         <span className="font-semibold">
-                          {selectedCarTypeString}
+                          {userSelectionsSummary?.carType}
                         </span>
                       </p>
                       <p>
                         <span>Selected Package: </span>
                         <span className="font-semibold">
-                          {selectedServiceString}
+                          {userSelectionsSummary?.service}
                         </span>
                       </p>
                       <p>
                         <span>Add-Ons: </span>
                         <span className="font-semibold">
-                          {selectedAddOnsString}
+                          {userSelectionsSummary?.addOns}
                         </span>
                       </p>
                       <p>
                         <span>Detailing Location: </span>
                         <span className="font-semibold">
-                          {selectedDetailingLocationString}
+                          {userSelectionsSummary?.detailingLocation}
                         </span>
                       </p>
                     </section>
@@ -191,7 +163,9 @@ const BookNow = () => {
                       <hr className="my-3" />
                       <p className="font-bold">
                         Estimated Total:{" "}
-                        <span className="text-accent"> ${totalPrice} </span>
+                        <span className="text-accent">
+                          ${userSelectionsSummary?.totalPrice}
+                        </span>
                       </p>
                     </section>
                   </div>
