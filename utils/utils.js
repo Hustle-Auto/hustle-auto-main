@@ -1,4 +1,9 @@
-export function calcTotalPriceOfServices({ carType, service, addOns }) {
+export function calcTotalPriceOfServices({
+  carType,
+  service,
+  addOns,
+  detailingLocation,
+}) {
   let total = 0;
   if (carType && service) {
     total += parseFloat(service.prices[carType.id]);
@@ -7,6 +12,9 @@ export function calcTotalPriceOfServices({ carType, service, addOns }) {
     addOns.forEach((addOn) => {
       total += parseFloat(addOn.price);
     });
+  }
+  if (detailingLocation) {
+    total += parseFloat(detailingLocation.price);
   }
 
   return total;

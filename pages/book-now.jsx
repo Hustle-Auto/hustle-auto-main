@@ -67,6 +67,7 @@ const BookNow = () => {
         carType: userServiceSelections?.carType,
         service: userServiceSelections?.service,
         addOns: userServiceSelections?.addOns,
+        detailingLocation: userServiceSelections?.detailingLocation,
       })
     );
   }, [userServiceSelections]);
@@ -112,9 +113,12 @@ const BookNow = () => {
   let selectedCarTypeString = "No Car Type Selected";
   let selectedServiceString = "No Service Selected";
   let selectedAddOnsString = "No Add Ons Selected";
+  let selectedDetailingLocationString = "No Detailing Location Selected";
 
   if (userServiceSelections) {
-    const { carType, service, addOns } = userServiceSelections;
+    const { carType, service, addOns, detailingLocation } =
+      userServiceSelections;
+
     if (carType) {
       selectedCarTypeString = carType.label;
     }
@@ -128,6 +132,10 @@ const BookNow = () => {
       selectedAddOnsString = addOns
         .map((addOn) => `${addOn.label} ($${addOn.price})`)
         .join(", ");
+    }
+
+    if (detailingLocation) {
+      selectedDetailingLocationString = `${detailingLocation.label} ($${detailingLocation.price})`;
     }
   }
 
@@ -170,6 +178,12 @@ const BookNow = () => {
                         <span>Add-Ons: </span>
                         <span className="font-semibold">
                           {selectedAddOnsString}
+                        </span>
+                      </p>
+                      <p>
+                        <span>Detailing Location: </span>
+                        <span className="font-semibold">
+                          {selectedDetailingLocationString}
                         </span>
                       </p>
                     </section>
