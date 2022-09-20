@@ -108,7 +108,7 @@ const GetAQuote = () => {
           <h2 className="page-heading">Book Now</h2>
           <section className="my-10">
             <p className="heading">Select Your Car Size</p>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
               {carTypes.map((carType) => (
                 <RadioCardInput
                   key={carType.id}
@@ -139,7 +139,7 @@ const GetAQuote = () => {
 
           <section className="my-10">
             <p className="heading">Select Your Service</p>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
               {!userInput.carType && <p>Please Select A Car Type</p>}
               {userInput.carType &&
                 serviceTypes.map((serviceType) => (
@@ -157,7 +157,7 @@ const GetAQuote = () => {
 
           <section className="my-10">
             <p className="heading">Select Your Package</p>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="md:grid md:grid-cols-3 md:gap-8">
               {!userInput.serviceType && <p>Please Select A Service Type</p>}
               {userInput.serviceType &&
                 filteredServices.map((service) => (
@@ -190,7 +190,7 @@ const GetAQuote = () => {
 
           <section>
             <p className="heading">Select Your Add-Ons</p>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
               {addOns.map((addOn) => (
                 <CheckboxCardInput
                   key={addOn.id}
@@ -214,12 +214,12 @@ const GetAQuote = () => {
           </section>
         </PageSection>
         <PageSection>
-          <div className="flex items-center justify-between max-w-md mx-auto">
+          <div className="items-center justify-between max-w-md mx-auto sm:flex">
             <p className="text-2xl font-bold">
               Estimated Total:{" "}
               <span className="text-accent"> ${totalPrice} </span>
             </p>
-            <div>
+            <div className="flex justify-center my-8 sm:my-0">
               <Button accent onClick={handleOnContinueClick}>
                 Book Now
               </Button>

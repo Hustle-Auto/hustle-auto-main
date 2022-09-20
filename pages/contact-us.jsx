@@ -87,9 +87,8 @@ const ContactUs = () => {
       <main>
         <PageSection>
           <h2 className="page-heading">Contact Us</h2>
-
-          <section className="grid grid-cols-3 gap-10 my-10">
-            <article>
+          <section className="flex flex-col-reverse my-10 lg:gap-10 lg:grid lg:grid-cols-3">
+            <article className="p-4 ">
               <Card>
                 <div className="card-body">
                   <h3 className="font-bold card-title">Contact Info</h3>
@@ -102,7 +101,7 @@ const ContactUs = () => {
                 </div>
               </Card>
             </article>
-            <article className="col-span-2">
+            <article className="col-span-2 p-4">
               <div className="text-center heading">Send Us A Message</div>
               <Formik
                 initialValues={initialValues}
