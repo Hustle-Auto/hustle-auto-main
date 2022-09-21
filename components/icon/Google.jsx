@@ -1,9 +1,13 @@
 import Image from "next/image";
 
-import GoogleLogo from "../../public/icons/google.svg";
+import GoogleLogo from "../../public/icons/google.png";
 
 const Google = (props) => {
-  return <GoogleLogo className="w-20 h-20" {...props} />;
+  return (
+    <div {...props}>
+      <Image src={GoogleLogo} width="512" height="512" alt="google logo" />
+    </div>
+  );
 };
 
 export default Google;

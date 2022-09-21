@@ -1,7 +1,6 @@
 import classnames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import logo from "../../../public/images/logo.png";
 import NavbarLink from "./NavbarLink";
@@ -36,6 +35,24 @@ const DesktopNavbar = (props) => {
                   </li>
                   <li>
                     <NavbarLink
+                      href="/services"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                    >
+                      Services
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
+                      href="/gallery"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                    >
+                      Gallery
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
                       href="/contact-us"
                       className={linkClassName}
                       activeLinkClassName={activeLinkClassName}
@@ -45,13 +62,13 @@ const DesktopNavbar = (props) => {
                   </li>
                   <li>
                     <NavbarLink
-                      href="/book-now"
+                      href="/get-a-quote"
                       className={
                         "text-white bg-black px-3 py-2 rounded-md shadow-md hover:scale-105 transition"
                       }
                       activeLinkClassName={"font-bold"}
                     >
-                      Book Now
+                      Get A Quote
                     </NavbarLink>
                   </li>
                 </ul>

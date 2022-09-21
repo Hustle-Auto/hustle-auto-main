@@ -1,3 +1,42 @@
+export const addOns = [
+  {
+    id: "pet-hair-removal",
+    label: "Pet Hair Removal",
+    price: "25",
+  },
+  {
+    id: "tough-stain-removal",
+    label: "Tough Stain Removal",
+    price: "50",
+  },
+  {
+    id: "foul-odor-elimination",
+    label: "Foul Odor Elimination",
+    price: "75",
+  },
+];
+
+export const detailingLocations = [
+  {
+    id: "at-hustle-auto",
+    label: "At HustleAuto's Location",
+    description: "We will perform the service in our location in Airdrie",
+    price: 0,
+  },
+  {
+    id: "close-calgary-location",
+    label: "At your location in Calgary NE, SE & NW",
+    description: "We will come to you to perform the service",
+    price: 20.0,
+  },
+  {
+    id: "far-calgary-location",
+    label: "At your location in Calgary SW",
+    description: "We will come to you to perform the service",
+    price: 25.0,
+  },
+];
+
 export const carTypes = [
   {
     id: "sedan",
@@ -34,24 +73,6 @@ export const serviceTypes = [
   { id: "exterior", label: "Exterior Detailing" },
   { id: "complete", label: "Complete Packages" },
   { id: "paint-correction", label: "Paint Correction" },
-];
-
-export const addOns = [
-  {
-    id: "pet-hair-removal",
-    label: "Pet Hair Removal",
-    price: "25",
-  },
-  {
-    id: "tough-stain-removal",
-    label: "Tough Stain Removal",
-    price: "50",
-  },
-  {
-    id: "foul-odor-elimination",
-    label: "Foul Odor Elimination",
-    price: "75",
-  },
 ];
 
 export const services = [

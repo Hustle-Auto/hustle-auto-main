@@ -3,17 +3,15 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import logo from "../../../public/images/logo.png";
 import Icon from "../../icon";
 import NavbarLink from "./NavbarLink";
 
-const MobileNavbar = (props) => {
-  const router = useRouter();
+const MobileNavbar = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
-  const linkClassName = "my-12 p-4 rounded-md text-white border-2 border-white";
+  const linkClassName = "p-4 rounded-md text-white border-2 border-white";
 
   const activeLinkClassName = "bg-white/25";
 
@@ -48,8 +46,8 @@ const MobileNavbar = (props) => {
             </div>
 
             <div className="p-4 mx-auto my-12 ">
-              <nav className="">
-                <ul>
+              <nav>
+                <ul className="space-y-8">
                   <li>
                     <NavbarLink
                       href="/"
@@ -58,6 +56,26 @@ const MobileNavbar = (props) => {
                       onClick={closeBurgerMenu}
                     >
                       Home
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
+                      href="/services"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                      onClick={closeBurgerMenu}
+                    >
+                      Services
+                    </NavbarLink>
+                  </li>
+                  <li>
+                    <NavbarLink
+                      href="/gallery"
+                      className={linkClassName}
+                      activeLinkClassName={activeLinkClassName}
+                      onClick={closeBurgerMenu}
+                    >
+                      Gallery
                     </NavbarLink>
                   </li>
                   <li>
@@ -72,38 +90,48 @@ const MobileNavbar = (props) => {
                   </li>
                   <li>
                     <NavbarLink
-                      href="/book-now"
+                      href="/get-a-quote"
                       className={linkClassName}
                       activeLinkClassName={activeLinkClassName}
                       onClick={closeBurgerMenu}
                     >
-                      Book Now
+                      Get A Quote
                     </NavbarLink>
                   </li>
                 </ul>
               </nav>
 
-              <div className="flex justify-center space-x-7">
+              <div className="flex items-stretch justify-center mt-10 space-x-7">
                 <a
                   href="https://www.facebook.com/HustleAutomotive"
                   target="blank"
+                  className="p-2 rounded-md bg-white/90"
                 >
-                  <Icon.Facebook className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                  <Icon.Facebook className="w-10 h-10 rounded-md" />
                 </a>
 
                 <a
                   href="https://www.instagram.com/hustleautomotive/"
                   target="blank"
+                  className="p-2 rounded-md bg-white/90"
                 >
-                  <Icon.Instagram className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                  <Icon.Instagram className="w-10 h-10 rounded-md" />
                 </a>
 
-                <a href="#" target="blank">
-                  <Icon.LinkedIn className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <a
+                  href="#"
+                  target="blank"
+                  className="flex items-center p-2 rounded-md bg-white/90"
+                >
+                  <Icon.LinkedIn className="w-10 h-8 rounded-md" />
                 </a>
 
-                <a href="#" target="blank">
-                  <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <a
+                  href="#"
+                  target="blank"
+                  className="p-2 rounded-md bg-white/90"
+                >
+                  <Icon.Google className="w-10 h-10 rounded-md" />
                 </a>
               </div>
             </div>
