@@ -209,6 +209,7 @@ const GetAQuote = () => {
                     </div>
                   </RadioCardInput>
                 ))}
+
             </div>
           </section>
           <section className="my-10">
@@ -239,7 +240,7 @@ const GetAQuote = () => {
           </section>
           <section className="my-10">
             <p className="heading">Select Your Detailing Location</p>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
               {!userInput.service && <p>Please Select A Package</p>}
               {userInput.service &&
                 detailingLocations.map((detailingLocation) => (

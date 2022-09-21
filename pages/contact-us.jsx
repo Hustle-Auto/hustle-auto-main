@@ -105,7 +105,7 @@ const ContactUs = () => {
                 onSubmit={handleOnSubmit}
               >
                 <Form className="space-y-5">
-                  <section className="grid grid-cols-2 gap-5">
+                  <section className="sm:grid sm:grid-cols-2 sm:gap-5">
                     <div className="form-group">
                       <label
                         htmlFor="firstName"
@@ -152,7 +152,7 @@ const ContactUs = () => {
                     </div>
                   </section>
 
-                  <section className="grid grid-cols-2 gap-5">
+                  <section className="sm:grid sm:grid-cols-2 sm:gap-5">
                     <div className="form-group">
                       <label
                         htmlFor="email"

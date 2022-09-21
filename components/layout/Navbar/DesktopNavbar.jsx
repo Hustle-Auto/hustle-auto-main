@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import logo from "../../../public/images/logo.png";
+import Button from "../../ui/Button";
 import PageSection from "../../ui/PageSection";
 import NavbarLink from "./NavbarLink";
 
@@ -24,7 +25,7 @@ const DesktopNavbar = () => {
               </div>
               <div>
                 <nav>
-                  <ul className="flex md:space-x-6">
+                  <ul className="flex items-center md:space-x-6 ">
                     <li>
                       <NavbarLink
                         href="/"
@@ -64,12 +65,14 @@ const DesktopNavbar = () => {
                     <li>
                       <NavbarLink
                         href="/get-a-quote"
-                        className={
-                          "text-white bg-black px-3 py-2 rounded-md shadow-md hover:scale-105 transition"
-                        }
+
                         activeLinkClassName={"font-bold"}
                       >
-                        Get A Quote
+                        <Button
+                          submit
+                        >
+                          <div>Get A Quote</div>
+                        </Button>
                       </NavbarLink>
                     </li>
                   </ul>
