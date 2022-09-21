@@ -8,7 +8,13 @@ import Button from "../components/ui/Button";
 import CheckboxCardInput from "../components/ui/CheckboxCardInput.jsx";
 import PageSection from "../components/ui/PageSection";
 import RadioCardInput from "../components/ui/RadioCardInput";
-import { carTypes, serviceTypes, services, addOns } from "../data/services";
+import {
+  carTypes,
+  serviceTypes,
+  services,
+  addOns,
+  detailingLocations,
+} from "../data/services";
 import useSessionStorage from "../hooks/useSessionStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
 
@@ -21,6 +27,7 @@ const GetAQuote = () => {
       serviceType: null,
       service: null,
       addOns: [],
+      detailingLocation: null,
     }
   );
   const [totalPrice, setTotalPrice] = useState(0);
@@ -35,6 +42,8 @@ const GetAQuote = () => {
       carType: selectedCarType,
       serviceType: null,
       service: null,
+      addOns: [],
+      detailingLocation: null,
     };
 
     setUserInput(newUserInput);
@@ -47,9 +56,10 @@ const GetAQuote = () => {
 
     const newUserInput = {
       ...userInput,
-      carType: userInput.carType,
       serviceType: selectedServiceType,
       service: null,
+      addOns: [],
+      detailingLocation: null,
     };
 
     setUserInput(newUserInput);
@@ -62,9 +72,9 @@ const GetAQuote = () => {
 
     const newUserInput = {
       ...userInput,
-      carType: userInput.carType,
-      serviceType: userInput.serviceType,
       service: selectedService,
+      addOns: [],
+      detailingLocation: null,
     };
 
     setUserInput(newUserInput);
@@ -83,6 +93,19 @@ const GetAQuote = () => {
     setUserInput({ ...userInput, addOns: newAddOns });
   };
 
+  const handleDetailingLocationChange = (e) => {
+    const selectedDetailingLocation = detailingLocations.find(
+      (detailingLocation) => detailingLocation.id === e.target.value
+    );
+
+    const newUserInput = {
+      ...userInput,
+      detailingLocation: selectedDetailingLocation,
+    };
+
+    setUserInput(newUserInput);
+  };
+
   const handleOnContinueClick = () => {
     router.push("/book-now");
   };
@@ -93,6 +116,7 @@ const GetAQuote = () => {
         carType: userInput.carType,
         service: userInput.service,
         addOns: userInput.addOns,
+        detailingLocation: userInput.detailingLocation,
       })
     );
   }, [userInput]);
@@ -105,7 +129,7 @@ const GetAQuote = () => {
     <Layout>
       <main>
         <PageSection>
-          <h2 className="page-heading">Book Now</h2>
+          <h2 className="page-heading">Get A Quote</h2>
           <section className="my-10">
             <p className="heading">Select Your Car Size</p>
             <div className="sm:grid sm:grid-cols-3 sm:gap-8">
@@ -187,29 +211,59 @@ const GetAQuote = () => {
                 ))}
             </div>
           </section>
-
-          <section>
+          <section className="my-10">
             <p className="heading">Select Your Add-Ons</p>
             <div className="sm:grid sm:grid-cols-3 sm:gap-8">
-              {addOns.map((addOn) => (
-                <CheckboxCardInput
-                  key={addOn.id}
-                  value={addOn.id}
-                  checked={userInput.addOns
-                    .map((addOn) => addOn.id)
-                    .includes(addOn.id)}
-                  onChange={handleAddOnChange}
-                >
-                  <div className="card-body">
-                    <div className="text-center card-text">
-                      <div className="mb-2">{addOn.label}</div>
-                      <div className="font-bold text-center">
-                        ${addOn.price}
+              {!userInput.service && <p>Please Select A Package</p>}
+              {userInput.service &&
+                addOns.map((addOn) => (
+                  <CheckboxCardInput
+                    key={addOn.id}
+                    value={addOn.id}
+                    checked={userInput.addOns
+                      .map((addOn) => addOn.id)
+                      .includes(addOn.id)}
+                    onChange={handleAddOnChange}
+                  >
+                    <div className="card-body">
+                      <div className="text-center card-text">
+                        <div className="mb-2">{addOn.label}</div>
+                        <div className="font-bold text-center">
+                          ${addOn.price}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CheckboxCardInput>
-              ))}
+                  </CheckboxCardInput>
+                ))}
+            </div>
+          </section>
+          <section className="my-10">
+            <p className="heading">Select Your Detailing Location</p>
+            <div className="grid grid-cols-3 gap-8">
+              {!userInput.service && <p>Please Select A Package</p>}
+              {userInput.service &&
+                detailingLocations.map((detailingLocation) => (
+                  <RadioCardInput
+                    key={detailingLocation.id}
+                    value={detailingLocation.id}
+                    checked={
+                      detailingLocation.id === userInput.detailingLocation?.id
+                    }
+                    onChange={handleDetailingLocationChange}
+                  >
+                    <div className="card-body">
+                      <div className="text-center card-text">
+                        <div className="mb-2">{detailingLocation.label}</div>
+                        <div className="font-bold text-center">
+                          ${detailingLocation.price}
+                        </div>
+                        <div className="mt-3 text-sm leading-6 card-text">
+                          {detailingLocation.description}
+                        </div>
+                      </div>
+                    </div>
+                  </RadioCardInput>
+                ))}
             </div>
           </section>
         </PageSection>

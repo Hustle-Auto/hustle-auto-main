@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <>
-      <section className="px-4 text-sm bg-black sm:text-base ">
+      <section className="px-4 text-sm bg-black sm:text-base">
         <PageSection>
           <div className="container flex justify-between mx-auto">
             <article className="text-white ">
@@ -17,12 +17,12 @@ const Footer = () => {
               <p>12pm - 8pm Thursday & Friday</p>
               <p>9am - 8pm Saturday & Sunday</p>
             </article>
-            <article className="text-white ">
-              <article className="text-white ">
+            <article className="text-white">
+              <article className="text-white">
                 <h2 className="font-bold">Location</h2>
-                <p className="">Calgary, Alberta</p>
+                <p >Calgary, Alberta</p>
               </article>
-              <div className="flex mt-3 space-x-3 ">
+              <div className="flex mt-3 space-x-3">
                 <a
                   href="https://www.facebook.com/HustleAutomotive"
                   target="blank"

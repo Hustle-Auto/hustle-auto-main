@@ -24,7 +24,7 @@ const DesktopNavbar = () => {
               </div>
               <div>
                 <nav>
-                  <ul className="flex space-x-6">
+                  <ul className="flex md:space-x-6">
                     <li>
                       <NavbarLink
                         href="/"
@@ -32,6 +32,24 @@ const DesktopNavbar = () => {
                         activeLinkClassName={activeLinkClassName}
                       >
                         Home
+                      </NavbarLink>
+                    </li>
+                    <li>
+                      <NavbarLink
+                        href="/services"
+                        className={linkClassName}
+                        activeLinkClassName={activeLinkClassName}
+                      >
+                        Services
+                      </NavbarLink>
+                    </li>
+                    <li>
+                      <NavbarLink
+                        href="/gallery"
+                        className={linkClassName}
+                        activeLinkClassName={activeLinkClassName}
+                      >
+                        Gallery
                       </NavbarLink>
                     </li>
                     <li>
@@ -45,13 +63,13 @@ const DesktopNavbar = () => {
                     </li>
                     <li>
                       <NavbarLink
-                        href="/book-now"
+                        href="/get-a-quote"
                         className={
                           "text-white bg-black px-3 py-2 rounded-md shadow-md hover:scale-105 transition"
                         }
                         activeLinkClassName={"font-bold"}
                       >
-                        Book Now
+                        Get A Quote
                       </NavbarLink>
                     </li>
                   </ul>
@@ -61,6 +79,9 @@ const DesktopNavbar = () => {
           </nav>
         </PageSection>
       </section>
+
+
+
     </>
   );
 };

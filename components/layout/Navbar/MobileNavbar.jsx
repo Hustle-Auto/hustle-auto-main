@@ -45,9 +45,9 @@ const MobileNavbar = () => {
             </button>
           </div>
 
-          <div className="p-4 mx-auto my-12 space-y-8">
+          <div className="p-4 mx-auto my-1 space-y-8 ">
             <nav className="space-y-8">
-              <ul className="space-y-8 ">
+              <ul className="space-y-8">
                 <li>
                   <NavbarLink
                     href="/"
@@ -56,6 +56,26 @@ const MobileNavbar = () => {
                     onClick={closeBurgerMenu}
                   >
                     Home
+                  </NavbarLink>
+                </li>
+                <li>
+                  <NavbarLink
+                    href="/services"
+                    className={linkClassName}
+                    activeLinkClassName={activeLinkClassName}
+                    onClick={closeBurgerMenu}
+                  >
+                    Services
+                  </NavbarLink>
+                </li>
+                <li>
+                  <NavbarLink
+                    href="/gallery"
+                    className={linkClassName}
+                    activeLinkClassName={activeLinkClassName}
+                    onClick={closeBurgerMenu}
+                  >
+                    Gallery
                   </NavbarLink>
                 </li>
                 <li>
@@ -70,45 +90,55 @@ const MobileNavbar = () => {
                 </li>
                 <li>
                   <NavbarLink
-                    href="/book-now"
+                    href="/get-a-quote"
                     className={linkClassName}
                     activeLinkClassName={activeLinkClassName}
                     onClick={closeBurgerMenu}
                   >
-                    Book Now
+                    Get A Quote
                   </NavbarLink>
                 </li>
               </ul>
             </nav>
 
-            <div className="flex justify-center space-x-7">
+            <div className="flex items-stretch justify-center mt-10 space-x-7">
               <a
                 href="https://www.facebook.com/HustleAutomotive"
                 target="blank"
+                className="p-2 rounded-md bg-white/90"
               >
-                <Icon.Facebook className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <Icon.Facebook className="w-10 h-10 bg-white border-4 border-white rounded-md " />
               </a>
 
               <a
                 href="https://www.instagram.com/hustleautomotive/"
                 target="blank"
+                className="p-2 rounded-md bg-white/90"
               >
                 <Icon.Instagram className="w-10 h-10 bg-white border-4 border-white rounded-md" />
               </a>
 
-              <a href="#" target="blank">
-                <Icon.LinkedIn className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+              <a
+                href="#"
+                target="blank"
+                className="flex items-center p-2 rounded-md bg-white/90"
+              >
+                <Icon.LinkedIn className="w-10 h-8 rounded-md" />
               </a>
 
-              <a href="#" target="blank">
+              <a
+                href="#"
+                target="blank"
+                className="p-2 rounded-md bg-white/90"
+              >
                 <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
               </a>
             </div>
           </div>
         </PageSection>
-      </section>
+      </section >
       {/* ===============BURGER MENU ABOVE===================== */}
-      <section className="">
+      < section className="" >
         <div className="p-2 mx-auto max-w-7xl">
           <div className="flex items-center ">
             <div className="w-24 mr-auto">
@@ -123,7 +153,7 @@ const MobileNavbar = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 };
