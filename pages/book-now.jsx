@@ -117,7 +117,7 @@ const BookNow = () => {
         <PageSection>
           <div className="relative">
             <p
-              className="absolute flex items-center space-x-1"
+              className="absolute flex items-center space-x-1 -top-8"
               onClick={handleBackClick}
             >
               <IconButton>
@@ -127,7 +127,7 @@ const BookNow = () => {
             </p>
             <h2 className="page-heading">Book Now</h2>
           </div>
-          <section className="grid grid-cols-3 gap-10 my-10">
+          <section className="my-10 lg:grid lg:grid-cols-3 lg:gap-10">
             <article>
               <Card>
                 <div className="card-body">
@@ -172,7 +172,7 @@ const BookNow = () => {
                 </div>
               </Card>
             </article>
-            <article className="col-span-2">
+            <article className="col-span-2 py-8 lg:p-0">
               <div className="text-center heading">Contact Info</div>
               <Formik
                 initialValues={initialValues}
@@ -180,7 +180,7 @@ const BookNow = () => {
                 onSubmit={handleOnSubmit}
               >
                 <Form className="space-y-5">
-                  <section className="grid grid-cols-2 gap-5">
+                  <section className="sm:grid sm:grid-cols-2 sm:gap-5">
                     <div className="form-group">
                       <label
                         htmlFor="firstName"
@@ -227,7 +227,7 @@ const BookNow = () => {
                     </div>
                   </section>
 
-                  <section className="grid grid-cols-2 gap-5">
+                  <section className="sm:grid sm:grid-cols-2 sm:gap-5">
                     <div className="form-group">
                       <label
                         htmlFor="phoneNumber"
@@ -271,7 +271,7 @@ const BookNow = () => {
                     </div>
                   </section>
 
-                  <section className="grid grid-cols-2 gap-5">
+                  <section className="sm:grid sm:grid-cols-2 sm:gap-5">
                     <div className="form-group">
                       <label
                         htmlFor="carDetails"

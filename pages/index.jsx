@@ -11,9 +11,9 @@ import logo from "../public/images/logo.png";
 export default function Home() {
   return (
     <Layout>
-      <section className="bg-black">
+      <section className="bg-black ">
         <PageSection>
-          <div className="w-3/4 max-w-sm mx-auto">
+          <div className="w-3/4 max-w-sm mx-auto shadow-2xl brightness-200 contrast-200">
             <Image src={logo} alt="logo" />
           </div>
 
@@ -32,7 +32,6 @@ export default function Home() {
           </div>
         </PageSection>
       </section>
-
       <PageSection>
         <h2 className="page-heading">Our Reviews</h2>
 
