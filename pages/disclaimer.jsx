@@ -8,6 +8,7 @@ const Disclaimer = () => {
         <PageSection>
           <div className="space-y-9">
             <h1 className="text-2xl underline">Disclaimer</h1>
+
             <p>Customer acknowledges that all information above is accurate,</p>
             <p>
               While it our intent to provide you with the BEST available service
