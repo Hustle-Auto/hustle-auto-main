@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Icon from "../icon";
 import PageSection from "../ui/PageSection";
 
@@ -20,7 +22,7 @@ const Footer = () => {
             <article className="text-white">
               <article className="text-white">
                 <h2 className="font-bold">Location</h2>
-                <p >Calgary, Alberta</p>
+                <p>Calgary, Alberta</p>
               </article>
               <div className="flex mt-3 space-x-3">
                 <a
@@ -47,13 +49,19 @@ const Footer = () => {
             </article>
           </div>
         </PageSection>
-        <footer>
-          <p className="p-2 text-center text-white bg-black border-t-2 border-white ">
+        <footer className="text-center text-white bg-black border-t-2 border-white">
+          <div className="p-1 px-4 space-x-7 ">
             <small>
               &copy; Copyright {currentYear()}, Hustle Automotive. All rights
               reserved.
             </small>
-          </p>
+            <span>|</span>
+            <small>
+              <Link href="/disclaimer">
+                <a>Disclaimer</a>
+              </Link>
+            </small>
+          </div>
         </footer>
       </section>
     </>

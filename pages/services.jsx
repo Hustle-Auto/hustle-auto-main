@@ -17,10 +17,10 @@ const services = () => {
             </div>
             <div className="font-bold">Currently Under Construction</div>
             <p>
-              For a brief summary, please visit the{" "}
+              For a brief summary, please visit the
               <Link href="/get-a-quote">
                 <a className="text-accent">Get A Quote</a>
-              </Link>{" "}
+              </Link>
               Page.
             </p>
           </div>
