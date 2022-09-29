@@ -9,7 +9,7 @@ const Disclaimer = () => {
           <div className="space-y-9">
             <h1 className="text-2xl underline">Disclaimer</h1>
 
-            <p>Customer acknowledges that all information above is accurate,</p>
+            <p>Customer agrees with all the information below</p>
             <p>
               While it our intent to provide you with the BEST available service
               and the finest workmanship in reconditioning of your vehicle, it
