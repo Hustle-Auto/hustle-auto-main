@@ -1,9 +1,16 @@
+import Head from 'next/head';
+
 import Layout from "../components/layout/Layout";
 import PageSection from "../components/ui/PageSection";
 
 const Disclaimer = () => {
   return (
     <>
+      <Head>
+        <title>Disclaimer</title>
+        <meta name='description' content='You can view the disclaimer for Hustle Automotive' />
+      </Head>
+
       <Layout>
         <PageSection>
           <div className="space-y-9">
