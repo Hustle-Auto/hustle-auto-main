@@ -13,16 +13,24 @@ class MyDocument extends Document {
             content="Hustle Automotive is a mobile detailing service that provides quality and affordable car detailing services. We are based in the Greater Calgary Area. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
           <meta name="robots" content="index, follow" />
-
+          {/* Open Graph meta tags for t,fb,insta */}
           <meta property="og:title" content="Hustle Automotive Services" />
+          <meta property="og:type" content="website" />
           <meta
             property="og:description"
             content="Hustle Automotive is a mobile detailing service that provides quality and affordable car detailing services. We are based in the Greater Calgary Area. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
           <meta
-            property="og:image"
-            content="https://example.com/images/cool-page.jpg"
+            property="og:url"
+            content="https://hustleauto.com/"
           />
+          <meta
+            property="og:image"
+            content="https://hustleauto-staging.netlify.app/images/logo.png"
+          />
+          {/* content="https://hustleauto.com//images/logo.png" */}
+
+
         </Head>
 
         <body>
