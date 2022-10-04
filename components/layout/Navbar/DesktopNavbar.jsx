@@ -7,7 +7,8 @@ import PageSection from "../../ui/PageSection";
 import NavbarLink from "./NavbarLink";
 
 const DesktopNavbar = () => {
-  const linkClassName = "p-2 border-b-2 border-transparent";
+  const linkClassName =
+    "p-2 border-b-2 border-transparent hover:border-black duration-700 transition-[border]";
   const activeLinkClassName = "font-bold !border-black";
 
   return (
@@ -65,12 +66,9 @@ const DesktopNavbar = () => {
                     <li>
                       <NavbarLink
                         href="/get-a-quote"
-
                         activeLinkClassName={"font-bold"}
                       >
-                        <Button
-                          submit
-                        >
+                        <Button submit>
                           <div>Get A Quote</div>
                         </Button>
                       </NavbarLink>
@@ -82,9 +80,6 @@ const DesktopNavbar = () => {
           </nav>
         </PageSection>
       </section>
-
-
-
     </>
   );
 };
