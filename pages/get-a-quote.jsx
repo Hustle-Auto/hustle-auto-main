@@ -143,7 +143,7 @@ const GetAQuote = () => {
                 >
                   <Card.Body>
                     <Card.Text>
-                      <p className="text-center">{carType.label}</p>
+                      <div className="text-center">{carType.label}</div>
                     </Card.Text>
                   </Card.Body>
                 </RadioCardInput>
@@ -187,12 +187,12 @@ const GetAQuote = () => {
                   >
                     <Card.Body>
                       <Card.Text>
-                        <p className="mb-3 space-y-1 text-center">
+                        <div className="mb-3 space-y-1 text-center">
                           <div>{service.label}</div>
                           <div className="font-bold">
                             ${service.prices[userInput.carType?.id]}
                           </div>
-                        </p>
+                        </div>
                         <div className="text-sm leading-6">
                           <div
                             className="service-description"
@@ -223,10 +223,10 @@ const GetAQuote = () => {
                   >
                     <Card.Body>
                       <Card.Text>
-                        <p className="space-y-1 text-center">
+                        <div className="space-y-1 text-center">
                           <div>{addOn.label}</div>
                           <div className="font-bold">${addOn.price}</div>
-                        </p>
+                        </div>
                       </Card.Text>
                     </Card.Body>
                   </CheckboxCardInput>
@@ -249,12 +249,12 @@ const GetAQuote = () => {
                   >
                     <Card.Body>
                       <Card.Text>
-                        <p className="mb-3 space-y-1 text-center">
+                        <div className="mb-3 space-y-1 text-center">
                           <div>{detailingLocation.label}</div>
                           <div className="font-bold">
                             ${detailingLocation.price}
                           </div>
-                        </p>
+                        </div>
                         <div className="text-sm text-center">
                           {detailingLocation.description}
                         </div>

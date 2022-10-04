@@ -26,7 +26,7 @@ const CardTitle = ({ children }) => {
 };
 
 const CardText = ({ children }) => {
-  return <p>{children}</p>;
+  return <div>{children}</div>;
 };
 
 Card.ImageTop = CardImageTop;
