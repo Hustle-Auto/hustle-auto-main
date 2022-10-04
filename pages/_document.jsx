@@ -18,8 +18,9 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta
             property="og:description"
-            content="Hustle Automotive based in Calgary. A mobile detailing service."
+            content="Hustle Automotive is a mobile detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
+          {/* // content="Hustle Automotive based in Calgary. A mobile detailing service." */}
           <meta
             property="og:url"
             content="https://hustleauto.com/"
