@@ -12,6 +12,7 @@ import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
 import PageSection from "../components/ui/PageSection";
+import HUS from "../data/hus";
 
 const initialValues = {
   firstName: "",
@@ -90,11 +91,11 @@ const ContactUs = () => {
                   <section className="space-y-1">
                     <a
                       className="text-accent"
-                      href="mailto:hustleaservices@gmail.com"
+                      href={`mailto:${HUS.HUSTLE_AUTO_EMAIl}`}
                     >
-                      hustleaservices@gmail.com
+                      {HUS.HUSTLE_AUTO_EMAIl}
                     </a>
-                    <p>(587) 436 - 0142</p>
+                    <p>{HUS.HUSTLE_AUTO_PHONE_NUMBER}</p>
                     <p>Calgary, Alberta</p>
                   </section>
                 </Card.Text>

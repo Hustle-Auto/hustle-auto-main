@@ -4,6 +4,7 @@ import classnames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
+import HUS from "../../../data/hus";
 import logo from "../../../public/images/logo.png";
 import Icon from "../../icon";
 import PageSection from "../../ui/PageSection";
@@ -102,14 +103,14 @@ const MobileNavbar = () => {
             </nav>
 
             <div className="space-y-1 text-center text-white">
-              <p>hustleaservices@gmail.com</p>
-              <p>(587) 436 - 0142</p>
+              <p>{HUS.HUSTLE_AUTO_EMAIl}</p>
+              <p>{HUS.HUSTLE_AUTO_PHONE_NUMBER}</p>
               <p>Calgary, Alberta</p>
             </div>
 
             <div className="flex items-stretch justify-center mt-10 space-x-7">
               <a
-                href="https://www.facebook.com/HustleAutomotive"
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.FACEBOOK}`}
                 target="blank"
                 className="p-2 rounded-md bg-white/90"
               >
@@ -117,7 +118,7 @@ const MobileNavbar = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/hustleautomotive/"
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.INSTAGRAM}`}
                 target="blank"
                 className="p-2 rounded-md bg-white/90"
               >
@@ -125,14 +126,18 @@ const MobileNavbar = () => {
               </a>
 
               <a
-                href="#"
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.LINKEDIN}`}
                 target="blank"
                 className="flex items-center p-2 rounded-md bg-white/90"
               >
                 <Icon.LinkedIn className="w-10 h-8 rounded-md" />
               </a>
 
-              <a href="#" target="blank" className="p-2 rounded-md bg-white/90">
+              <a
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.GOOGLE}`}
+                target="blank"
+                className="p-2 rounded-md bg-white/90"
+              >
                 <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
               </a>
             </div>

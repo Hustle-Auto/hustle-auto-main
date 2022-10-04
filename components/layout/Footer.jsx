@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import HUS from "../../data/hus";
 import Icon from "../icon";
 import PageSection from "../ui/PageSection";
 
@@ -26,23 +27,29 @@ const Footer = () => {
               </article>
               <div className="flex mt-3 space-x-3">
                 <a
-                  href="https://www.facebook.com/HustleAutomotive"
+                  href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.FACEBOOK}`}
                   target="blank"
                 >
                   <Icon.Facebook className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://www.instagram.com/hustleautomotive/"
+                  href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.INSTAGRAM}`}
                   target="blank"
                 >
                   <Icon.Instagram className="w-6 h-6" />
                 </a>
 
-                <a href="#" target="blank">
+                <a
+                  href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.LINKEDIN}`}
+                  target="blank"
+                >
                   <Icon.LinkedIn className="w-6 h-6" />
                 </a>
 
-                <a href="#" target="blank">
+                <a
+                  href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.GOOGLE}`}
+                  target="blank"
+                >
                   <Icon.Google className="w-6 h-6" />
                 </a>
               </div>

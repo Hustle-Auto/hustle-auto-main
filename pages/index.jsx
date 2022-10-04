@@ -26,7 +26,9 @@ export default function Home() {
 
           <div className="mb-12 text-center">
             <Link href="/get-a-quote">
-              <Button>Get A Quote!</Button>
+              <a>
+                <Button>Get A Quote!</Button>
+              </a>
             </Link>
           </div>
         </PageSection>

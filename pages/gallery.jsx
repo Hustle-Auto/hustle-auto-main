@@ -1,5 +1,6 @@
 import Icon from "../components/icon";
 import PageSection from "../components/ui/PageSection";
+import HUS from "../data/hus";
 
 const gallery = () => {
   return (
@@ -15,7 +16,7 @@ const gallery = () => {
           <p>
             Please have a look at our{" "}
             <a
-              href="https://www.facebook.com/HustleAutomotive"
+              href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.FACEBOOK}`}
               target="blank"
               className="text-accent"
             >
@@ -23,18 +24,26 @@ const gallery = () => {
             </a>
             ,{" "}
             <a
-              href="https://www.instagram.com/hustleautomotive/"
+              href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.INSTAGRAM}`}
               target="blank"
               className="text-accent"
             >
               Instagram
             </a>
             ,{" "}
-            <a href="#" target="blank" className="text-accent">
+            <a
+              href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.LINKEDIN}`}
+              target="blank"
+              className="text-accent"
+            >
               LinkedIn
             </a>
             , and{" "}
-            <a href="#" target="blank" className="text-accent">
+            <a
+              href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.GOOGLE}`}
+              target="blank"
+              className="text-accent"
+            >
               Google
             </a>{" "}
             pages for pictures.
