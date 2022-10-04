@@ -12,7 +12,6 @@ class MyDocument extends Document {
             name="description"
             content="Hustle Automotive is a mobile detailing service that provides quality and affordable car detailing services. We are based in the Greater Calgary Area. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
-          <link rel="icon" href="../public/favicon.ico"></link>
           <meta name="robots" content="index, follow" />
 
           <meta property="og:title" content="Hustle Automotive Services" />
