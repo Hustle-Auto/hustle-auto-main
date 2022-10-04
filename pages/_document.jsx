@@ -13,14 +13,14 @@ class MyDocument extends Document {
             content="Hustle Automotive is a mobile detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
           <meta name="robots" content="index, follow" />
-          {/* Open Graph meta tags for t,fb,insta */}
+
+          {/* Open Graph meta tags for linkedIn, Facebook, Instagram */}
           <meta property="og:title" content="Hustle Automotive Services" />
           <meta property="og:type" content="website" />
           <meta
             property="og:description"
-            content="Hustle Automotive is a mobile detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
+            content="Hustle Automotive is a mobile/in-house detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
-          {/* // content="Hustle Automotive based in Calgary. A mobile detailing service." */}
           <meta
             property="og:url"
             content="https://hustleauto.com/"
@@ -29,8 +29,6 @@ class MyDocument extends Document {
             property="og:image"
             content="https://hustleauto.com/images/logo.png"
           />
-
-
         </Head>
 
         <body>
