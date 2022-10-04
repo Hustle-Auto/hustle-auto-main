@@ -26,9 +26,8 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://hustleauto-staging.netlify.app/images/logo.png"
+            content="https://hustleauto.com//images/logo.png"
           />
-          {/* content="https://hustleauto.com//images/logo.png" */}
 
 
         </Head>
