@@ -88,8 +88,14 @@ const ContactUs = () => {
                 <Card.Title>Contact Info</Card.Title>
                 <Card.Text>
                   <section className="space-y-1">
-                    <p>hustleaservices@gmail.com</p>
+                    <a
+                      className="text-accent"
+                      href="mailto:hustleaservices@gmail.com"
+                    >
+                      hustleaservices@gmail.com
+                    </a>
                     <p>(587) 436 - 0142</p>
+                    <p>Calgary, Alberta</p>
                   </section>
                 </Card.Text>
               </Card.Body>

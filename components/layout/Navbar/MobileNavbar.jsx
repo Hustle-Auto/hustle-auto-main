@@ -101,6 +101,12 @@ const MobileNavbar = () => {
               </ul>
             </nav>
 
+            <div className="space-y-1 text-center text-white">
+              <p>hustleaservices@gmail.com</p>
+              <p>(587) 436 - 0142</p>
+              <p>Calgary, Alberta</p>
+            </div>
+
             <div className="flex items-stretch justify-center mt-10 space-x-7">
               <a
                 href="https://www.facebook.com/HustleAutomotive"
@@ -126,19 +132,15 @@ const MobileNavbar = () => {
                 <Icon.LinkedIn className="w-10 h-8 rounded-md" />
               </a>
 
-              <a
-                href="#"
-                target="blank"
-                className="p-2 rounded-md bg-white/90"
-              >
+              <a href="#" target="blank" className="p-2 rounded-md bg-white/90">
                 <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
               </a>
             </div>
           </div>
         </PageSection>
-      </section >
+      </section>
       {/* ===============BURGER MENU ABOVE===================== */}
-      < section className="" >
+      <section className="">
         <div className="p-2 mx-auto max-w-7xl">
           <div className="flex items-center ">
             <div className="w-24 mr-auto">
@@ -153,7 +155,7 @@ const MobileNavbar = () => {
             </button>
           </div>
         </div>
-      </section >
+      </section>
     </>
   );
 };
