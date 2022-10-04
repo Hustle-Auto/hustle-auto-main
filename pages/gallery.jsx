@@ -9,7 +9,7 @@ const gallery = () => {
     <>
       <Head>
         <title>Gallery</title>
-        <meta name='description' content='You can contact Hustle Motive using the form' />
+        <meta name='description' content='You can contact Hustle Automotive using the form' />
       </Head>
       <Layout>
         <main>
