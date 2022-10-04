@@ -10,7 +10,7 @@ class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="Hustle Automotive is a mobile detailing service that provides quality and affordable car detailing services. We are based in the Greater Calgary Area. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
+            content="Hustle Automotive is a mobile detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
           <meta name="robots" content="index, follow" />
           {/* Open Graph meta tags for t,fb,insta */}
@@ -26,7 +26,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://hustleauto.com//images/logo.png"
+            content="https://hustleauto.com/images/logo.png"
           />
 
 
