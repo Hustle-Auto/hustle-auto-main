@@ -11,7 +11,7 @@ const CustomerReview = ({
 }) => {
   return (
     <Card>
-      <section className="card-image-top">
+      <Card.ImageTop>
         <Image
           src={imageSrc}
           width={imageWidth}
@@ -19,13 +19,11 @@ const CustomerReview = ({
           alt="review"
           layout="responsive"
         />
-      </section>
-      <section className="card-body">
-        <h4 className="text-2xl font-semibold tracking-tight uppercase card-title font-heading">
-          {customerName}
-        </h4>
-        <p className="card-text">{description}</p>
-      </section>
+      </Card.ImageTop>
+      <Card.Body>
+        <Card.Title>{customerName}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+      </Card.Body>
     </Card>
   );
 };

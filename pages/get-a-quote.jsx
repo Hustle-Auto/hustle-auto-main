@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 import Layout from "../components/layout/Layout";
 import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
 import CheckboxCardInput from "../components/ui/CheckboxCardInput.jsx";
 import PageSection from "../components/ui/PageSection";
 import RadioCardInput from "../components/ui/RadioCardInput";
@@ -140,22 +141,11 @@ const GetAQuote = () => {
                   checked={carType.id === userInput.carType?.id}
                   onChange={handleCarTypeChange}
                 >
-                  <div className="card-body">
-                    <div className="text-center card-title">
-                      {carType.label}
-                    </div>
-                    <div className="card-text">
-                      <div className="px-10">
-                        <Image
-                          src={carType.imageSrc}
-                          alt={carType.label}
-                          width={carType.imageWidth}
-                          height={carType.imageHeight}
-                          layout="responsive"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <Card.Body>
+                    <Card.Text>
+                      <p className="text-center">{carType.label}</p>
+                    </Card.Text>
+                  </Card.Body>
                 </RadioCardInput>
               ))}
             </div>
@@ -173,7 +163,11 @@ const GetAQuote = () => {
                     checked={serviceType.id === userInput.serviceType?.id}
                     onChange={handleServiceTypeChange}
                   >
-                    <div className="card-body">{serviceType.label}</div>
+                    <Card.Body>
+                      <Card.Text>
+                        <p className="text-center">{serviceType.label}</p>
+                      </Card.Text>
+                    </Card.Body>
                   </RadioCardInput>
                 ))}
             </div>
@@ -191,25 +185,26 @@ const GetAQuote = () => {
                     checked={service.id === userInput.service?.id}
                     onChange={handleServiceChange}
                   >
-                    <div className="card-body">
-                      <div className="text-center card-title">
-                        <div className="mb-2">{service.label}</div>
-                        <div className="font-bold text-center">
-                          ${service.prices[userInput.carType?.id]}
+                    <Card.Body>
+                      <Card.Text>
+                        <p className="mb-3 space-y-1 text-center">
+                          <div>{service.label}</div>
+                          <div className="font-bold">
+                            ${service.prices[userInput.carType?.id]}
+                          </div>
+                        </p>
+                        <div className="text-sm leading-6">
+                          <div
+                            className="service-description"
+                            dangerouslySetInnerHTML={{
+                              __html: service.description,
+                            }}
+                          ></div>
                         </div>
-                      </div>
-                      <div className="text-sm leading-6 card-text">
-                        <div
-                          className="service-description"
-                          dangerouslySetInnerHTML={{
-                            __html: service.description,
-                          }}
-                        ></div>
-                      </div>
-                    </div>
+                      </Card.Text>
+                    </Card.Body>
                   </RadioCardInput>
                 ))}
-
             </div>
           </section>
           <section className="my-10">
@@ -226,14 +221,14 @@ const GetAQuote = () => {
                       .includes(addOn.id)}
                     onChange={handleAddOnChange}
                   >
-                    <div className="card-body">
-                      <div className="text-center card-text">
-                        <div className="mb-2">{addOn.label}</div>
-                        <div className="font-bold text-center">
-                          ${addOn.price}
-                        </div>
-                      </div>
-                    </div>
+                    <Card.Body>
+                      <Card.Text>
+                        <p className="space-y-1 text-center">
+                          <div>{addOn.label}</div>
+                          <div className="font-bold">${addOn.price}</div>
+                        </p>
+                      </Card.Text>
+                    </Card.Body>
                   </CheckboxCardInput>
                 ))}
             </div>
@@ -252,17 +247,19 @@ const GetAQuote = () => {
                     }
                     onChange={handleDetailingLocationChange}
                   >
-                    <div className="card-body">
-                      <div className="text-center card-text">
-                        <div className="mb-2">{detailingLocation.label}</div>
-                        <div className="font-bold text-center">
-                          ${detailingLocation.price}
-                        </div>
-                        <div className="mt-3 text-sm leading-6 card-text">
+                    <Card.Body>
+                      <Card.Text>
+                        <p className="mb-3 space-y-1 text-center">
+                          <div>{detailingLocation.label}</div>
+                          <div className="font-bold">
+                            ${detailingLocation.price}
+                          </div>
+                        </p>
+                        <div className="text-sm text-center">
                           {detailingLocation.description}
                         </div>
-                      </div>
-                    </div>
+                      </Card.Text>
+                    </Card.Body>
                   </RadioCardInput>
                 ))}
             </div>

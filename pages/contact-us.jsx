@@ -86,15 +86,15 @@ const ContactUs = () => {
           <section className="flex flex-col-reverse my-10 lg:gap-10 lg:grid lg:grid-cols-3">
             <article className="p-4 ">
               <Card>
-                <div className="card-body">
-                  <h3 className="font-bold card-title">Contact Info</h3>
-                  <div className="card-text">
+                <Card.Body>
+                  <Card.Title>Contact Info</Card.Title>
+                  <Card.Text>
                     <section className="space-y-1">
                       <p>hustleaservices@gmail.com</p>
                       <p>(587) 436 - 0142</p>
                     </section>
-                  </div>
-                </div>
+                  </Card.Text>
+                </Card.Body>
               </Card>
             </article>
             <article className="col-span-2 p-4">

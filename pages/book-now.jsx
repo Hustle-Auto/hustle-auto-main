@@ -130,9 +130,9 @@ const BookNow = () => {
           <section className="my-10 lg:grid lg:grid-cols-3 lg:gap-10">
             <article>
               <Card>
-                <div className="card-body">
-                  <h3 className="font-bold card-title">Summary</h3>
-                  <div className="card-text">
+                <Card.Body>
+                  <Card.Title>Summary</Card.Title>
+                  <Card.Text>
                     <section className="space-y-1">
                       <p>
                         <span>Car Type: </span>
@@ -168,8 +168,8 @@ const BookNow = () => {
                         </span>
                       </p>
                     </section>
-                  </div>
-                </div>
+                  </Card.Text>
+                </Card.Body>
               </Card>
             </article>
             <article className="col-span-2 py-8 lg:p-0">
