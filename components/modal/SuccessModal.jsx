@@ -1,6 +1,5 @@
 import Icon from "../icon";
 import Button from "../ui/Button";
-import Card from "../ui/Card";
 import ModalCard from "./ModalCard";
 import ModalWrapper from "./ModalWrapper";
 
