@@ -72,8 +72,6 @@ const GetAQuote = () => {
     const newUserInput = {
       ...userInput,
       service: selectedService,
-      addOns: [],
-      detailingLocation: null,
     };
 
     setUserInput(newUserInput);
