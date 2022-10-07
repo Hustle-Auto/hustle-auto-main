@@ -22,17 +22,20 @@ const initialValues = {
   message: "",
 };
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const phoneRegExp = /^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/;
 
 const validationSchema = Yup.object({
   firstName: Yup.string()
+    .trim()
     .max(15, "Must be 15 characters or less")
     .required("Required"),
-  lastName: Yup.string().max(20, "Must be 20 characters or less"),
-  email: Yup.string().email("Invalid email address").required("Required"),
-  phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number"),
-  message: Yup.string().required("Required"),
+  lastName: Yup.string().trim().max(20, "Must be 20 characters or less"),
+  email: Yup.string()
+    .trim()
+    .email("Invalid email address")
+    .required("Required"),
+  phoneNumber: Yup.string().trim().matches(phoneRegExp, "Invalid phone number"),
+  message: Yup.string().trim().required("Required"),
 });
 
 const isRequired = (field) => {
@@ -46,6 +49,9 @@ const ContactUs = () => {
   const router = useRouter();
 
   const handleOnSubmit = async (values, { setSubmitting }) => {
+    // cast values to match validation schema (aka trim strings)
+    values = validationSchema.cast(values);
+
     setIsLoading(true);
 
     try {
