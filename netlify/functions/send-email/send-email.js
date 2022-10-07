@@ -5,6 +5,7 @@ const {
   SENDGRID_TO_EMAIL,
   SENDGRID_FROM_EMAIL,
   EMAIL_SUBJECT_TAG,
+  SENDGRID_CONTACT_US_EMAIL_TEMPLATE_ID,
 } = process.env;
 
 exports.handler = async function (event, context, callback) {
@@ -12,7 +13,8 @@ exports.handler = async function (event, context, callback) {
     !SENDGRID_API_KEY ||
     !SENDGRID_TO_EMAIL ||
     !SENDGRID_FROM_EMAIL ||
-    !EMAIL_SUBJECT_TAG
+    !EMAIL_SUBJECT_TAG ||
+    !SENDGRID_CONTACT_US_EMAIL_TEMPLATE_ID
   ) {
     console.error("Missing required environment variables");
     return {
@@ -29,10 +31,25 @@ exports.handler = async function (event, context, callback) {
   client.setApiKey(SENDGRID_API_KEY);
 
   const data = {
-    to: SENDGRID_TO_EMAIL,
     from: SENDGRID_FROM_EMAIL,
     subject: `[${EMAIL_SUBJECT_TAG}] ${subject}`,
-    html: message,
+    personalizations: [
+      {
+        to: [
+          {
+            email: SENDGRID_TO_EMAIL,
+          },
+        ],
+        dynamic_template_data: {
+          firstName: "Pranav",
+          lastName: "Bodawala",
+          email: "pranav.bodawala@gmail.com",
+          phoneNumber: "123-456-7890",
+          message: "clean my car bitch",
+        },
+      },
+    ],
+    template_id: SENDGRID_CONTACT_US_EMAIL_TEMPLATE_ID,
   };
 
   try {
