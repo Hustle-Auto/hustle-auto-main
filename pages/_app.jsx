@@ -3,7 +3,7 @@ import { ModalContainer } from "reoverlay";
 import "../styles/globals.css";
 
 import Layout from "../components/layout/Layout";
-import Construction from "../pages/Construction";
+import Construction from "../pages/construction";
 
 function MyApp({ Component, pageProps }) {
   if (process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === "true") {
