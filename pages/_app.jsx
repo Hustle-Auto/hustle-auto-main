@@ -3,10 +3,11 @@ import { ModalContainer } from "reoverlay";
 import "../styles/globals.css";
 
 import Layout from "../components/layout/Layout";
+import HUS from "../data/hus";
 import Construction from "../pages/construction";
 
 function MyApp({ Component, pageProps }) {
-  if (process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === "true") {
+  if (HUS.UNDER_CONSTRUCTION) {
     return <Construction {...pageProps} />;
   }
 

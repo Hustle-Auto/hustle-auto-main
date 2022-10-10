@@ -9,6 +9,9 @@ const HUS = {
   HUSTLE_AUTO_PHONE_NUMBER:
     process.env["NEXT_PUBLIC_HUSTLE_AUTO_PHONE_NUMBER"] ??
     throwMissingEnvError("NEXT_PUBLIC_HUSTLE_AUTO_PHONE_NUMBER"),
+  UNDER_CONSTRUCTION:
+    (process.env["NEXT_PUBLIC_UNDER_CONSTRUCTION"] ??
+      throwMissingEnvError("NEXT_PUBLIC_HUSTLE_AUTO_PHONE_NUMBER")) === "true",
   HUSTLE_AUTO_SOCIAL_LINKS: {
     FACEBOOK: "https://www.facebook.com/HustleAutomotive",
     INSTAGRAM: "https://www.instagram.com/hustleautomotive/",
