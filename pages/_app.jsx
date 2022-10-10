@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Script from "next/script";
 import { ModalContainer } from "reoverlay";
 import "../styles/globals.css";
@@ -5,6 +6,13 @@ import "../styles/globals.css";
 import Layout from "../components/layout/Layout";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  // Don't use the layout on the construction page
+  if (router.asPath === "/construction") {
+    return <Component {...pageProps} />;
+  }
+
   return (
     <>
       <Script
