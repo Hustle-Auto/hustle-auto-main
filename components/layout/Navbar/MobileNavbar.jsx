@@ -112,33 +112,33 @@ const MobileNavbar = () => {
               <a
                 href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.FACEBOOK}`}
                 target="blank"
-                className="p-2 rounded-md bg-white/90"
+                className="p-2"
               >
-                <Icon.Facebook className="w-10 h-10 bg-white border-4 border-white rounded-md " />
+                <Icon.Facebook.White className="w-10 h-10" />
               </a>
 
               <a
                 href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.INSTAGRAM}`}
                 target="blank"
-                className="p-2 rounded-md bg-white/90"
+                className="p-2"
               >
-                <Icon.Instagram className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <Icon.Instagram.White className="w-10 h-10" />
               </a>
 
               <a
                 href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.LINKEDIN}`}
                 target="blank"
-                className="flex items-center p-2 rounded-md bg-white/90"
+                className="flex items-center p-2"
               >
-                <Icon.LinkedIn className="w-10 h-8 rounded-md" />
+                <Icon.LinkedIn.White className="w-10 h-8" />
               </a>
 
               <a
                 href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.GOOGLE}`}
                 target="blank"
-                className="p-2 rounded-md bg-white/90"
+                className="p-2"
               >
-                <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <Icon.Google.White className="w-10 h-10" />
               </a>
             </div>
           </div>
