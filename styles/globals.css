@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ----------------------- Typography ----------------------- */
+
+  .page-heading {
+    @apply mb-5 text-3xl font-semibold tracking-tight text-center uppercase font-heading;
+  }
+
+  .heading {
+    @apply mb-5 text-lg font-bold uppercase;
+  }
+
+  /* ----------------------- Service Description ----------------------- */
+
+  .service-description p {
+    @apply my-3 font-bold;
+  }
+
+  .service-description ul {
+    @apply pl-6 list-disc;
+  }
+
+  /* ----------------------- Forms ----------------------- */
+
+  .form-group {
+    @apply w-full;
+  }
+
+  .form-group .form-label {
+  }
+
+  .form-group .form-control {
+    @apply block w-full mt-1;
+  }
+
+  .form-group .form-control::placeholder {
+    @apply text-gray-400;
+  }
+
+  label[asterisk="true"]::after {
+    content: " *";
+    color: red;
+  }
+
+  /* ----------------------- Button ----------------------- */
+  .button {
+    @apply px-5 py-4 tracking-wide text-black uppercase border-2 border-black hover:text-white hover:border-white;
+
+    /* for transition */
+    @apply relative z-10 overflow-hidden transition duration-300 bg-white rounded;
+  }
+
+  .button::after {
+    content: "";
+    z-index: -1;
+
+    @apply absolute block transition-all duration-300 bg-black;
+    @apply left-0 right-0 top-full -bottom-full;
+
+    /* sets the "border" around the hover state of the button
+    margin: 0.1rem; */
+  }
+
+  .button:hover::after {
+    @apply top-0 bottom-0 left-0 right-0;
+  }
+
+  .button.accent {
+    @apply text-accent hover:text-white border-accent;
+  }
+
+  .button.accent::after {
+    @apply bg-accent;
+  }
+
+  .button.accent.disabled {
+    @apply text-white pointer-events-none bg-accent-light border-accent-light;
+  }
+
+  /* ----------------------- Loader ----------------------- */
+
+  /* source: https://tobiasahlin.com/spinkit/, https://github.com/tobiasahlin/SpinKit */
+
+  .sk-cube-grid {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  .sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: white;
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  }
+  .sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+  .sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+  .sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+  .sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+  }
+  .sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+  .sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+  .sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+  .sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+  }
+  .sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+
+  @-webkit-keyframes sk-cubeGridScaleDelay {
+    0%,
+    70%,
+    100% {
+      -webkit-transform: scale3D(1, 1, 1);
+      transform: scale3D(1, 1, 1);
+    }
+    35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+    }
+  }
+
+  @keyframes sk-cubeGridScaleDelay {
+    0%,
+    70%,
+    100% {
+      -webkit-transform: scale3D(1, 1, 1);
+      transform: scale3D(1, 1, 1);
+    }
+    35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+    }
+  }
+}
