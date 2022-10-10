@@ -1,0 +1,33 @@
+{
+  "name": "hustle-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "@svgr/webpack": "^6.3.1",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.2",
+    "formik": "^2.2.9",
+    "next": "12.2.5",
+    "parse-url": "^8.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "reoverlay": "^1.0.3",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5",
+    "eslint-plugin-import": "^2.26.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  }
+}
