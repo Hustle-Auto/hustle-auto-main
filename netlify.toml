@@ -1,9 +1,3 @@
 
 [build]
 functions = "./netlify/functions"
-
-[[redirects]]
-from = "/"
-to = "/construction"
-status = 302
-force = true
