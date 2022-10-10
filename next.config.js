@@ -11,15 +11,6 @@ const nextConfig = {
     });
     return config;
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/construction",
-        permanent: false,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
