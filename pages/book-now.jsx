@@ -80,16 +80,16 @@ const BookNow = () => {
 
     try {
       const payload = {
-        userSelectionsSummary,
         userContactInfo: { ...values },
+        userSelectionsSummary,
+        emailType: "book-now", // This is the email template to use. See /functions/send-email.js.
+        subject: `${values.firstName} ${values.lastName} wants to book a service!`,
       };
 
-      console.log(`payload: ${JSON.stringify(payload, null, 2)}`);
-
-      const response = await axios.post("/.netlify/functions/send-email", {
-        subject: "Service Request",
-        message: `${JSON.stringify(payload, null, 2)}`,
-      });
+      const response = await axios.post(
+        "/.netlify/functions/send-email",
+        payload
+      );
 
       Reoverlay.showModal(SuccessModal, {
         title: "We Have Received Your Request!",

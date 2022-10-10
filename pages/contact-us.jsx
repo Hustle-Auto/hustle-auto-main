@@ -58,13 +58,14 @@ const ContactUs = () => {
     try {
       const payload = {
         userContactInfo: { ...values },
-      };
-
-      const response = await axios.post("/.netlify/functions/send-email", {
         emailType: "contact-us", // This is the email template to use. See /functions/send-email.js.
         subject: `${values.firstName} ${values.lastName} wants to contact HustleAuto!`,
-        ...values,
-      });
+      };
+
+      const response = await axios.post(
+        "/.netlify/functions/send-email",
+        payload
+      );
 
       Reoverlay.showModal(SuccessModal, {
         title: "We Have Received Your Message!",

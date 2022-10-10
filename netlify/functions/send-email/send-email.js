@@ -11,6 +11,7 @@ const {
 
 const EMAIL_TYPE = {
   CONTACT_US: "contact-us",
+  BOOK_NOW: "book-now",
 };
 
 exports.handler = async function (event, context, callback) {
