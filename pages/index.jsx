@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link.js";
 
 import CustomerReview from "../components/CustomerReview.jsx";
-import Layout from "../components/layout/Layout.jsx";
 import Button from "../components/ui/Button.jsx";
 import PageSection from "../components/ui/PageSection.jsx";
 import customerReviews from "../data/customer-reviews";
@@ -14,9 +13,12 @@ export default function Home() {
     <>
       <Head>
         <title>Hustle Automotive Services</title>
-        <meta name='description' content='You can contact Hustle Automotive using the form' />
+        <meta
+          name="description"
+          content="You can contact Hustle Automotive using the form"
+        />
       </Head>
-      <Layout>
+      <main>
         <section className="bg-black ">
           <PageSection>
             <div className="w-3/4 max-w-sm mx-auto shadow-2xl brightness-200 contrast-200">
@@ -40,8 +42,7 @@ export default function Home() {
         </section>
         <PageSection>
           <h2 className="page-heading">Our Reviews</h2>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 my-10 md:grid-cols-2 lg:grid-cols-3">
             {customerReviews.map((review) => (
               <CustomerReview
                 key={review.customerName}
@@ -54,8 +55,7 @@ export default function Home() {
             ))}
           </div>
         </PageSection>
-      </Layout>
+      </main>
     </>
-
   );
 }

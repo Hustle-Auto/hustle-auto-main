@@ -5,15 +5,17 @@ const {
   SENDGRID_TO_EMAIL,
   SENDGRID_FROM_EMAIL,
   EMAIL_SUBJECT_TAG,
+  SENDGRID_CONTACT_US_EMAIL_TEMPLATE_ID,
+  SENDGRID_BOOK_NOW_EMAIL_TEMPLATE_ID,
 } = process.env;
 
+const EMAIL_TYPE = {
+  CONTACT_US: "contact-us",
+  BOOK_NOW: "book-now",
+};
+
 exports.handler = async function (event, context, callback) {
-  if (
-    !SENDGRID_API_KEY ||
-    !SENDGRID_TO_EMAIL ||
-    !SENDGRID_FROM_EMAIL ||
-    !EMAIL_SUBJECT_TAG
-  ) {
+  if (!areEnvVarsValid()) {
     console.error("Missing required environment variables");
     return {
       statusCode: 500,
@@ -21,22 +23,28 @@ exports.handler = async function (event, context, callback) {
     };
   }
 
-  const { message, subject } = JSON.parse(event.body);
+  console.info(
+    `Got Request, event.body: ${JSON.stringify(event.body, null, 2)}`
+  );
 
-  console.info("Got Request:");
-  console.info(`event.body: ${JSON.stringify(event.body, null, 2)}`);
-
+  const requestBody = JSON.parse(event.body);
   client.setApiKey(SENDGRID_API_KEY);
 
-  const data = {
-    to: SENDGRID_TO_EMAIL,
-    from: SENDGRID_FROM_EMAIL,
-    subject: `[${EMAIL_SUBJECT_TAG}] ${subject}`,
-    html: message,
-  };
+  let email;
+  if (requestBody.emailType === EMAIL_TYPE.CONTACT_US) {
+    email = createContactUsEmail(requestBody);
+  } else if (requestBody.emailType === EMAIL_TYPE.BOOK_NOW) {
+    email = createBookNowEmail(requestBody);
+  } else {
+    console.error("Invalid email type");
+    return {
+      statusCode: 400,
+      body: "Invalid email type",
+    };
+  }
 
   try {
-    await client.send(data);
+    await client.send(email);
     console.info("Email sent successfully");
     return {
       statusCode: 200,
@@ -51,3 +59,54 @@ exports.handler = async function (event, context, callback) {
     };
   }
 };
+
+function areEnvVarsValid() {
+  return (
+    SENDGRID_API_KEY &&
+    SENDGRID_TO_EMAIL &&
+    SENDGRID_FROM_EMAIL &&
+    EMAIL_SUBJECT_TAG &&
+    SENDGRID_CONTACT_US_EMAIL_TEMPLATE_ID &&
+    SENDGRID_BOOK_NOW_EMAIL_TEMPLATE_ID
+  );
+}
+
+function createContactUsEmail(requestBody) {
+  return {
+    from: SENDGRID_FROM_EMAIL,
+    personalizations: [
+      {
+        to: [
+          {
+            email: SENDGRID_TO_EMAIL,
+          },
+        ],
+        dynamic_template_data: {
+          ...requestBody,
+          subject: `[${EMAIL_SUBJECT_TAG}] ${requestBody.subject}`,
+        },
+      },
+    ],
+    template_id: SENDGRID_CONTACT_US_EMAIL_TEMPLATE_ID,
+  };
+}
+
+function createBookNowEmail(requestBody) {
+  return {
+    from: SENDGRID_FROM_EMAIL,
+    personalizations: [
+      {
+        to: [
+          {
+            email: SENDGRID_TO_EMAIL,
+          },
+        ],
+        dynamic_template_data: {
+          ...requestBody,
+          subject: `[${EMAIL_SUBJECT_TAG}] ${requestBody.subject}`,
+        },
+      },
+    ],
+    template_id: SENDGRID_BOOK_NOW_EMAIL_TEMPLATE_ID,
+  };
+}

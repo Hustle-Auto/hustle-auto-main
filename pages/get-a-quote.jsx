@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
-import Layout from "../components/layout/Layout";
 import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
 import CheckboxCardInput from "../components/ui/CheckboxCardInput.jsx";
 import PageSection from "../components/ui/PageSection";
 import RadioCardInput from "../components/ui/RadioCardInput";
@@ -74,8 +73,6 @@ const GetAQuote = () => {
     const newUserInput = {
       ...userInput,
       service: selectedService,
-      addOns: [],
-      detailingLocation: null,
     };
 
     setUserInput(newUserInput);
@@ -129,82 +126,78 @@ const GetAQuote = () => {
   return (
     <>
       <Head>
-        <title>Get A Quote  </title>
-        <meta name='description' content='You can fill in the form for services and take a look at the price estimate' />
+        <title>Get A Quote </title>
+        <meta
+          name="description"
+          content="You can fill in the form for services and take a look at the price estimate"
+        />
       </Head>
-      <Layout>
-        <main>
-          <PageSection>
-            <h2 className="page-heading">Get A Quote</h2>
-            <section className="my-10">
-              <p className="heading">Select Your Car Size</p>
-              <div className="sm:grid sm:grid-cols-3 sm:gap-8">
-                {carTypes.map((carType) => (
+      <main>
+        <PageSection>
+          <h2 className="page-heading">Get A Quote</h2>
+          <section className="my-10">
+            <p className="heading">Select Your Car Size</p>
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
+              {carTypes.map((carType) => (
+                <RadioCardInput
+                  key={carType.id}
+                  value={carType.id}
+                  checked={carType.id === userInput.carType?.id}
+                  onChange={handleCarTypeChange}
+                >
+                  <Card.Body>
+                    <Card.Text>
+                      <div className="text-center">{carType.label}</div>
+                    </Card.Text>
+                  </Card.Body>
+                </RadioCardInput>
+              ))}
+            </div>
+          </section>
+
+          <section className="my-10">
+            <p className="heading">Select Your Service</p>
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
+              {!userInput.carType && <p>Please Select A Car Type</p>}
+              {userInput.carType &&
+                serviceTypes.map((serviceType) => (
                   <RadioCardInput
-                    key={carType.id}
-                    value={carType.id}
-                    checked={carType.id === userInput.carType?.id}
-                    onChange={handleCarTypeChange}
+                    key={serviceType.id}
+                    value={serviceType.id}
+                    checked={serviceType.id === userInput.serviceType?.id}
+                    onChange={handleServiceTypeChange}
                   >
-                    <div className="card-body">
-                      <div className="text-center card-title">
-                        {carType.label}
-                      </div>
-                      <div className="card-text">
-                        <div className="px-10">
-                          <Image
-                            src={carType.imageSrc}
-                            alt={carType.label}
-                            width={carType.imageWidth}
-                            height={carType.imageHeight}
-                            layout="responsive"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <Card.Body>
+                      <Card.Text>
+                        <p className="text-center">{serviceType.label}</p>
+                      </Card.Text>
+                    </Card.Body>
                   </RadioCardInput>
                 ))}
-              </div>
-            </section>
+            </div>
+          </section>
 
-            <section className="my-10">
-              <p className="heading">Select Your Service</p>
-              <div className="sm:grid sm:grid-cols-3 sm:gap-8">
-                {!userInput.carType && <p>Please Select A Car Type</p>}
-                {userInput.carType &&
-                  serviceTypes.map((serviceType) => (
-                    <RadioCardInput
-                      key={serviceType.id}
-                      value={serviceType.id}
-                      checked={serviceType.id === userInput.serviceType?.id}
-                      onChange={handleServiceTypeChange}
-                    >
-                      <div className="card-body">{serviceType.label}</div>
-                    </RadioCardInput>
-                  ))}
-              </div>
-            </section>
-
-            <section className="my-10">
-              <p className="heading">Select Your Package</p>
-              <div className="md:grid md:grid-cols-3 md:gap-8">
-                {!userInput.serviceType && <p>Please Select A Service Type</p>}
-                {userInput.serviceType &&
-                  filteredServices.map((service) => (
-                    <RadioCardInput
-                      key={service.id}
-                      value={service.id}
-                      checked={service.id === userInput.service?.id}
-                      onChange={handleServiceChange}
-                    >
-                      <div className="card-body">
-                        <div className="text-center card-title">
-                          <div className="mb-2">{service.label}</div>
-                          <div className="font-bold text-center">
+          <section className="my-10">
+            <p className="heading">Select Your Package</p>
+            <div className="md:grid md:grid-cols-3 md:gap-8">
+              {!userInput.serviceType && <p>Please Select A Service Type</p>}
+              {userInput.serviceType &&
+                filteredServices.map((service) => (
+                  <RadioCardInput
+                    key={service.id}
+                    value={service.id}
+                    checked={service.id === userInput.service?.id}
+                    onChange={handleServiceChange}
+                  >
+                    <Card.Body>
+                      <Card.Text>
+                        <div className="mb-3 space-y-1 text-center">
+                          <div>{service.label}</div>
+                          <div className="font-bold">
                             ${service.prices[userInput.carType?.id]}
                           </div>
                         </div>
-                        <div className="text-sm leading-6 card-text">
+                        <div className="text-sm leading-6">
                           <div
                             className="service-description"
                             dangerouslySetInnerHTML={{
@@ -212,85 +205,85 @@ const GetAQuote = () => {
                             }}
                           ></div>
                         </div>
-                      </div>
-                    </RadioCardInput>
-                  ))}
-
-              </div>
-            </section>
-            <section className="my-10">
-              <p className="heading">Select Your Add-Ons</p>
-              <div className="sm:grid sm:grid-cols-3 sm:gap-8">
-                {!userInput.service && <p>Please Select A Package</p>}
-                {userInput.service &&
-                  addOns.map((addOn) => (
-                    <CheckboxCardInput
-                      key={addOn.id}
-                      value={addOn.id}
-                      checked={userInput.addOns
-                        .map((addOn) => addOn.id)
-                        .includes(addOn.id)}
-                      onChange={handleAddOnChange}
-                    >
-                      <div className="card-body">
-                        <div className="text-center card-text">
-                          <div className="mb-2">{addOn.label}</div>
-                          <div className="font-bold text-center">
-                            ${addOn.price}
-                          </div>
+                      </Card.Text>
+                    </Card.Body>
+                  </RadioCardInput>
+                ))}
+            </div>
+          </section>
+          <section className="my-10">
+            <p className="heading">Select Your Add-Ons</p>
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
+              {!userInput.service && <p>Please Select A Package</p>}
+              {userInput.service &&
+                addOns.map((addOn) => (
+                  <CheckboxCardInput
+                    key={addOn.id}
+                    value={addOn.id}
+                    checked={userInput.addOns
+                      .map((addOn) => addOn.id)
+                      .includes(addOn.id)}
+                    onChange={handleAddOnChange}
+                  >
+                    <Card.Body>
+                      <Card.Text>
+                        <div className="space-y-1 text-center">
+                          <div>{addOn.label}</div>
+                          <div className="font-bold">${addOn.price}</div>
                         </div>
-                      </div>
-                    </CheckboxCardInput>
-                  ))}
-              </div>
-            </section>
-            <section className="my-10">
-              <p className="heading">Select Your Detailing Location</p>
-              <div className="sm:grid sm:grid-cols-3 sm:gap-8">
-                {!userInput.service && <p>Please Select A Package</p>}
-                {userInput.service &&
-                  detailingLocations.map((detailingLocation) => (
-                    <RadioCardInput
-                      key={detailingLocation.id}
-                      value={detailingLocation.id}
-                      checked={
-                        detailingLocation.id === userInput.detailingLocation?.id
-                      }
-                      onChange={handleDetailingLocationChange}
-                    >
-                      <div className="card-body">
-                        <div className="text-center card-text">
-                          <div className="mb-2">{detailingLocation.label}</div>
-                          <div className="font-bold text-center">
+                      </Card.Text>
+                    </Card.Body>
+                  </CheckboxCardInput>
+                ))}
+            </div>
+          </section>
+          <section className="my-10">
+            <p className="heading">Select Your Detailing Location</p>
+            <div className="sm:grid sm:grid-cols-3 sm:gap-8">
+              {!userInput.service && <p>Please Select A Package</p>}
+              {userInput.service &&
+                detailingLocations.map((detailingLocation) => (
+                  <RadioCardInput
+                    key={detailingLocation.id}
+                    value={detailingLocation.id}
+                    checked={
+                      detailingLocation.id === userInput.detailingLocation?.id
+                    }
+                    onChange={handleDetailingLocationChange}
+                  >
+                    <Card.Body>
+                      <Card.Text>
+                        <div className="mb-3 space-y-1 text-center">
+                          <div>{detailingLocation.label}</div>
+                          <div className="font-bold">
                             ${detailingLocation.price}
                           </div>
-                          <div className="mt-3 text-sm leading-6 card-text">
-                            {detailingLocation.description}
-                          </div>
                         </div>
-                      </div>
-                    </RadioCardInput>
-                  ))}
-              </div>
-            </section>
-          </PageSection>
-          <PageSection>
-            <div className="items-center justify-between max-w-md mx-auto sm:flex">
-              <p className="text-2xl font-bold">
-                Estimated Total:{" "}
-                <span className="text-accent"> ${totalPrice} </span>
-              </p>
-              <div className="flex justify-center my-8 sm:my-0">
-                <Button accent onClick={handleOnContinueClick}>
-                  Book Now
-                </Button>
-              </div>
+                        <div className="text-sm text-center">
+                          {detailingLocation.description}
+                        </div>
+                      </Card.Text>
+                    </Card.Body>
+                  </RadioCardInput>
+                ))}
             </div>
-          </PageSection>
-        </main>
-      </Layout>
+          </section>
+        </PageSection>
+        <PageSection>
+          <div className="items-center justify-between max-w-md mx-auto sm:flex">
+            <p className="text-2xl font-bold">
+              Estimated Total:{" "}
+              <span className="text-accent"> ${totalPrice} </span>
+            </p>
+            <div className="flex justify-center my-8 sm:my-0">
+              <Button accent onClick={handleOnContinueClick}>
+                Book Now
+              </Button>
+            </div>
+          </div>
+        </PageSection>
+      </main>
     </>
-
   );
 };
 

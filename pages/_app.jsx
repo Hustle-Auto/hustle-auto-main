@@ -2,6 +2,8 @@ import Script from "next/script";
 import { ModalContainer } from "reoverlay";
 import "../styles/globals.css";
 
+import Layout from "../components/layout/Layout";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -20,7 +22,9 @@ function MyApp({ Component, pageProps }) {
         `}
       </Script>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <ModalContainer />
     </>
   );

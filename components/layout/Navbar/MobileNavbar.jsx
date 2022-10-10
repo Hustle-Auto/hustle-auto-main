@@ -4,6 +4,7 @@ import classnames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
+import HUS from "../../../data/hus";
 import logo from "../../../public/images/logo.png";
 import Icon from "../../icon";
 import PageSection from "../../ui/PageSection";
@@ -101,44 +102,50 @@ const MobileNavbar = () => {
               </ul>
             </nav>
 
+            <div className="space-y-1 text-center text-white">
+              <p>{HUS.HUSTLE_AUTO_EMAIl}</p>
+              <p>{HUS.HUSTLE_AUTO_PHONE_NUMBER}</p>
+              <p>Calgary, Alberta</p>
+            </div>
+
             <div className="flex items-stretch justify-center mt-10 space-x-7">
               <a
-                href="https://www.facebook.com/HustleAutomotive"
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.FACEBOOK}`}
                 target="blank"
-                className="p-2 rounded-md bg-white/90"
+                className="p-2"
               >
-                <Icon.Facebook className="w-10 h-10 bg-white border-4 border-white rounded-md " />
+                <Icon.Facebook.White className="w-10 h-10" />
               </a>
 
               <a
-                href="https://www.instagram.com/hustleautomotive/"
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.INSTAGRAM}`}
                 target="blank"
-                className="p-2 rounded-md bg-white/90"
+                className="p-2"
               >
-                <Icon.Instagram className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <Icon.Instagram.White className="w-10 h-10" />
               </a>
 
               <a
-                href="#"
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.LINKEDIN}`}
                 target="blank"
-                className="flex items-center p-2 rounded-md bg-white/90"
+                className="flex items-center p-2"
               >
-                <Icon.LinkedIn className="w-10 h-8 rounded-md" />
+                <Icon.LinkedIn.White className="w-10 h-8" />
               </a>
 
               <a
-                href="#"
+                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.GOOGLE}`}
                 target="blank"
-                className="p-2 rounded-md bg-white/90"
+                className="p-2"
               >
-                <Icon.Google className="w-10 h-10 bg-white border-4 border-white rounded-md" />
+                <Icon.Google.White className="w-10 h-10" />
               </a>
             </div>
           </div>
         </PageSection>
-      </section >
+      </section>
       {/* ===============BURGER MENU ABOVE===================== */}
-      < section className="" >
+      <section className="">
         <div className="p-2 mx-auto max-w-7xl">
           <div className="flex items-center ">
             <div className="w-24 mr-auto">
@@ -153,7 +160,7 @@ const MobileNavbar = () => {
             </button>
           </div>
         </div>
-      </section >
+      </section>
     </>
   );
 };

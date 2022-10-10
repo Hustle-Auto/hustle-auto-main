@@ -1,6 +1,5 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import Layout from "../components/layout/Layout";
 import PageSection from "../components/ui/PageSection";
 
 const Disclaimer = () => {
@@ -8,10 +7,12 @@ const Disclaimer = () => {
     <>
       <Head>
         <title>Disclaimer</title>
-        <meta name='description' content='You can view the disclaimer for Hustle Automotive' />
+        <meta
+          name="description"
+          content="You can view the disclaimer for Hustle Automotive"
+        />
       </Head>
-
-      <Layout>
+      <main>
         <PageSection>
           <div className="space-y-9">
             <h1 className="text-2xl underline">Disclaimer</h1>
@@ -44,7 +45,7 @@ const Disclaimer = () => {
             </p>
           </div>
         </PageSection>
-      </Layout>
+      </main>
     </>
   );
 };
