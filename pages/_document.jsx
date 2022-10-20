@@ -29,10 +29,9 @@ class MyDocument extends Document {
             property="og:image"
             content="https://hustleauto.com/images/logo.png"
           />
-
-          {/* Sitemap */}
+           {/* Sitemap */}
           <meta name="google-site-verification" content="1uRoJkepZNIJe_a-tC5oPrYv_-KQ_2pg4Z5Ul5-tpNc" />
-        </Head>
+         </Head>
 
         <body>
 
