@@ -30,7 +30,7 @@ class MyDocument extends Document {
             content="https://hustleauto.com/images/logo.png"
           />
           {/* Sitemap */}
-          <meta name="google-site-verification" content="yR-5z1JEv9yutJzjK3YNexvY5YzKF5dUBwC-xWGtc_A" />
+          <meta name="google-site-verification" content="1uRoJkepZNIJe_a-tC5oPrYv_-KQ_2pg4Z5Ul5-tpNc" />
         </Head>
 
         <body>
