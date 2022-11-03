@@ -3,11 +3,11 @@ import { ModalContainer } from "reoverlay";
 import "../styles/globals.css";
 
 import Layout from "../components/layout/Layout";
-import HUS from "../data/hus";
+import HUSTLE from "../data/hus";
 import Construction from "../pages/construction";
 
 function MyApp({ Component, pageProps }) {
-  if (HUS.UNDER_CONSTRUCTION) {
+  if (HUSTLE.SITE.UNDER_CONSTRUCTION) {
     return <Construction {...pageProps} />;
   }
 

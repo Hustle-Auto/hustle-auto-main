@@ -4,7 +4,7 @@ import classnames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
-import HUS from "../../../data/hus";
+import HUSTLE from "../../../data/hus";
 import logo from "../../../public/images/logo.png";
 import Icon from "../../icon";
 import PageSection from "../../ui/PageSection";
@@ -103,14 +103,14 @@ const MobileNavbar = () => {
             </nav>
 
             <div className="space-y-1 text-center text-white">
-              <p>{HUS.HUSTLE_AUTO_EMAIl}</p>
-              <p>{HUS.HUSTLE_AUTO_PHONE_NUMBER}</p>
+              <p>{HUSTLE.COMPANY.EMAIl}</p>
+              <p>{HUSTLE.COMPANY.PHONE_NUMBER}</p>
               <p>Calgary, Alberta</p>
             </div>
 
             <div className="flex items-stretch justify-center mt-10 space-x-7">
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.FACEBOOK}`}
+                href={`${HUSTLE.SOCIALS.FACEBOOK}`}
                 target="blank"
                 className="p-2"
               >
@@ -118,7 +118,7 @@ const MobileNavbar = () => {
               </a>
 
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.INSTAGRAM}`}
+                href={`${HUSTLE.SOCIALS.INSTAGRAM}`}
                 target="blank"
                 className="p-2"
               >
@@ -126,7 +126,7 @@ const MobileNavbar = () => {
               </a>
 
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.LINKEDIN}`}
+                href={`${HUSTLE.SOCIALS.LINKEDIN}`}
                 target="blank"
                 className="flex items-center p-2"
               >
@@ -134,7 +134,7 @@ const MobileNavbar = () => {
               </a>
 
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.GOOGLE}`}
+                href={`${HUSTLE.SOCIALS.GOOGLE}`}
                 target="blank"
                 className="p-2"
               >
