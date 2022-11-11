@@ -4,7 +4,7 @@ import classnames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
-import HUSTLE from "../../../data/hus";
+import HUSTLE from "../../../data/hustle";
 import logo from "../../../public/images/logo.png";
 import Icon from "../../icon";
 import PageSection from "../../ui/PageSection";

@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Icon from "../components/icon";
 import PageSection from "../components/ui/PageSection";
-import HUSTLE from "../data/hus";
+import HUSTLE from "../data/hustle";
 
 const gallery = () => {
   return (

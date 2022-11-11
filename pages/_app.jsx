@@ -3,7 +3,7 @@ import { ModalContainer } from "reoverlay";
 import "../styles/globals.css";
 
 import Layout from "../components/layout/Layout";
-import HUSTLE from "../data/hus";
+import HUSTLE from "../data/hustle";
 import Construction from "../pages/construction";
 
 function MyApp({ Component, pageProps }) {

@@ -1,5 +1,5 @@
 import PageSection from "../../components/ui/PageSection";
-import HUSTLE from "../../data/hus";
+import HUSTLE from "../../data/hustle";
 
 const TermsAndConditions = () => (
   <>

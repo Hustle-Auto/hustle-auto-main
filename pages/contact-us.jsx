@@ -13,7 +13,7 @@ import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
 import PageSection from "../components/ui/PageSection";
-import HUSTLE from "../data/hus";
+import HUSTLE from "../data/hustle";
 
 const initialValues = {
   firstName: "",

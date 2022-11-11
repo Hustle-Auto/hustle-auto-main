@@ -1,4 +1,4 @@
-import HUSTLE from "../../data/hus";
+import HUSTLE from "../../data/hustle";
 import Icon from "../icon";
 import Button from "../ui/Button";
 import ModalCard from "./ModalCard";
