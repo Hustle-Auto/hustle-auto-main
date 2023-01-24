@@ -21,10 +21,7 @@ class MyDocument extends Document {
             property="og:description"
             content="Hustle Automotive is a mobile/in-house detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
-          <meta
-            property="og:url"
-            content="https://hustleauto.com/"
-          />
+          <meta property="og:url" content="https://hustleauto.com/" />
           <meta
             property="og:image"
             content="https://hustleauto.com/images/logo.png"
@@ -32,7 +29,6 @@ class MyDocument extends Document {
         </Head>
 
         <body>
-
           <Main />
           <NextScript />
         </body>
