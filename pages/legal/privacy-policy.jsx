@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
     <PageSection>
       <main className="mx-auto prose">
         <h1 id="privacy-notice">PRIVACY NOTICE</h1>
-        <p>Last updated October 27, 2022</p>
+        <p>Last updated February 03, 2023</p>
         <p>
           This privacy notice for {HUSTLE.COMPANY.NAME} (&quot;Company,&quot;
           &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), describes how and

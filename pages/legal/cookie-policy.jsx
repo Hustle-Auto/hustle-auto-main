@@ -6,7 +6,7 @@ const CookiePolicy = () => {
     <PageSection>
       <main className="mx-auto prose">
         <h1 id="cookie-policy">COOKIE POLICY</h1>
-        <p>Last updated October 27, 2022</p>
+        <p>Last updated February 03, 2023</p>
         <p>
           This Cookie Policy explains how {HUSTLE.COMPANY.NAME}{" "}
           (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, and

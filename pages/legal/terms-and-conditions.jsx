@@ -6,7 +6,7 @@ const TermsAndConditions = () => (
     <PageSection>
       <main className="mx-auto prose">
         <h1 id="terms-and-conditions">TERMS AND CONDITIONS</h1>
-        <p>Last updated October 27, 2022</p>
+        <p>Last updated February 03, 2023</p>
         <h2 id="agreement-to-terms">AGREEMENT TO TERMS</h2>
         <p>
           These Terms of Use constitute a legally binding agreement made between
