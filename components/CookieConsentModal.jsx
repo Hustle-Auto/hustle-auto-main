@@ -29,9 +29,9 @@ const CookieConsentModal = (props) => {
   return (
     <>
       <CookieConsentModalWrapper>
-        <div className="p-8 space-y-5 rounded animate-fade-in bg-accent">
-          <h2 className="text-lg font-bold text-white">Cookie Consent</h2>
-          <p className="text-sm text-white">
+        <div className="p-8 bg-white border-2 rounded shadow-lg border-accent animate-fade-in">
+          <h2 className="mb-5 text-lg font-bold text-black">Cookie Consent</h2>
+          <p className="text-sm text-black">
             We use essential cookies to make our site work. With your consent,
             we may also use non-essential cookies to improve user experience,
             personalize content, and analyze website traffic. For these reasons,
@@ -43,16 +43,16 @@ const CookieConsentModal = (props) => {
             </a>
             .
           </p>
-          <div className="flex justify-center space-x-5">
+          <div className="flex justify-center mt-8 space-x-5">
             <button
               onClick={handleOnDecline}
-              className="px-5 py-2 text-sm bg-white rounded"
+              className="px-5 py-2 text-sm transition bg-transparent rounded hover:underline focus:ring-2 focus:ring-black focus:ring-offset-2 focus:outline-none"
             >
               <div>Decline</div>
             </button>
             <button
               onClick={handleOnAccept}
-              className="px-5 py-2 text-sm bg-white rounded"
+              className="px-5 py-3 text-sm text-white transition rounded hover:underline bg-accent hover:scale-105 active:scale-95 focus:ring-2 focus:ring-black focus:ring-offset-2 focus:outline-none"
             >
               Accept
             </button>
