@@ -3,6 +3,7 @@ import * as yup from "yup";
 let HUSTLE = {
   SITE: {
     UNDER_CONSTRUCTION: process.env["NEXT_PUBLIC_UNDER_CONSTRUCTION"],
+    GOOGLE_TAG_MANAGER_ID: process.env["NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID"],
   },
   COMPANY: {
     NAME: "Hustle Automotive Services INC",
@@ -25,6 +26,7 @@ let HUSTLE = {
 const validationSchema = yup.object().shape({
   SITE: yup.object().shape({
     UNDER_CONSTRUCTION: yup.boolean().required(),
+    GOOGLE_TAG_MANAGER_ID: yup.string().required(),
   }),
   COMPANY: yup.object().shape({
     NAME: yup.string().required(),

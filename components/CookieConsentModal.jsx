@@ -11,15 +11,17 @@ const CookieConsentModalWrapper = ({ children }) => {
 };
 
 const CookieConsentModal = (props) => {
-  const [cookieConsent, acceptCookieConsent, declineCookieConsent] =
+  const { cookieConsent, acceptCookieConsent, declineCookieConsent } =
     useCookieConsent(null);
 
-  const handleOnDecline = () => {
-    declineCookieConsent();
-  };
-  const handleOnAccept = () => {
-    acceptCookieConsent();
-  };
+  useEffect(() => {
+    if (cookieConsent === true) {
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+      });
+    }
+  }, [cookieConsent]);
 
   // if the user has accepted or declined cookies, don't show the modal
   if (cookieConsent === true || cookieConsent === false) {
@@ -45,13 +47,13 @@ const CookieConsentModal = (props) => {
           </p>
           <div className="flex justify-center mt-8 space-x-5">
             <button
-              onClick={handleOnDecline}
+              onClick={declineCookieConsent}
               className="px-5 py-2 text-sm transition bg-transparent rounded hover:underline focus:ring-2 focus:ring-black focus:ring-offset-2 focus:outline-none"
             >
               <div>Decline</div>
             </button>
             <button
-              onClick={handleOnAccept}
+              onClick={acceptCookieConsent}
               className="px-5 py-3 text-sm text-white transition rounded hover:underline bg-accent hover:scale-105 active:scale-95 focus:ring-2 focus:ring-black focus:ring-offset-2 focus:outline-none"
             >
               Accept
@@ -94,7 +96,7 @@ function useCookieConsent() {
     setCookieConsent(consent);
   };
 
-  return [cookieConsent, acceptCookieConsent, declineCookieConsent];
+  return { cookieConsent, acceptCookieConsent, declineCookieConsent };
 }
 
 export default CookieConsentModal;
