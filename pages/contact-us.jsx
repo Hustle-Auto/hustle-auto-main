@@ -100,7 +100,7 @@ const ContactUs = () => {
         <PageSection>
           <h2 className="page-heading">Contact Us</h2>
           <section className="flex flex-col-reverse my-10 lg:gap-10 lg:grid lg:grid-cols-3">
-            <article className="p-4 ">
+            <article className="p-4">
               <Card>
                 <Card.Body>
                   <Card.Title>Contact Info</Card.Title>

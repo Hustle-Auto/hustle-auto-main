@@ -3,6 +3,36 @@
 @tailwind utilities;
 
 @layer components {
+  /* ----------------------- Services Table ----------------------- */
+
+  #services-table {
+    @apply w-full overflow-scroll table-auto;
+  }
+
+  #services-table thead {
+    /* @apply bg-gray-100; */
+  }
+
+  #services-table th {
+    @apply px-2 py-4;
+  }
+
+  #services-table td {
+    @apply px-4 py-4;
+  }
+
+  #services-table tr {
+    @apply transition duration-500 border-b border-gray-300;
+  }
+
+  #services-table tr:nth-child(even) {
+    @apply bg-gray-100;
+  }
+
+  #services-table tr:hover {
+    @apply bg-gray-200;
+  }
+
   /* ----------------------- Typography ----------------------- */
 
   .page-heading {
