@@ -1,4 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+
+import HUSTLE from "../data/hustle";
 class MyDocument extends Document {
   render() {
     return (
@@ -21,10 +23,7 @@ class MyDocument extends Document {
             property="og:description"
             content="Hustle Automotive is a mobile/in-house detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
           />
-          <meta
-            property="og:url"
-            content="https://hustleauto.com/"
-          />
+          <meta property="og:url" content="https://hustleauto.com/" />
           <meta
             property="og:image"
             content="https://hustleauto.com/images/logo.png"
@@ -32,9 +31,13 @@ class MyDocument extends Document {
         </Head>
 
         <body>
-
           <Main />
           <NextScript />
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: ` <iframe src="https://www.googletagmanager.com/ns.html?id=${HUSTLE.SITE.GOOGLE_TAG_MANAGER_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          />
         </body>
       </Html>
     );

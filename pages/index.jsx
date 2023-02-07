@@ -1,12 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link.js";
 
 import CustomerReview from "../components/CustomerReview.jsx";
+import Icon from "../components/icon/index.js";
 import Button from "../components/ui/Button.jsx";
 import PageSection from "../components/ui/PageSection.jsx";
 import customerReviews from "../data/customer-reviews";
-import logo from "../public/images/logo.png";
 
 export default function Home() {
   return (
@@ -22,7 +21,7 @@ export default function Home() {
         <section className="bg-black ">
           <PageSection>
             <div className="w-3/4 max-w-sm mx-auto shadow-2xl brightness-200 contrast-200">
-              <Image src={logo} alt="logo" />
+              <Icon.HustleLogo />
             </div>
 
             <h1 className="mb-12 text-5xl font-semibold text-center text-white uppercase font-heading">
@@ -35,7 +34,9 @@ export default function Home() {
 
             <div className="mb-12 text-center">
               <Link href="/get-a-quote">
-                <Button>Get A Quote!</Button>
+                <a>
+                  <Button>Get A Quote!</Button>
+                </a>
               </Link>
             </div>
           </PageSection>
