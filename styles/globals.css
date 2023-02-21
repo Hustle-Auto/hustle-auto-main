@@ -17,20 +17,20 @@
   }
 
   #services-table td {
-    @apply px-4 py-2.5;
+    @apply px-4 py-2.5 text-sm;
   }
 
   #services-table tr {
-    @apply transition duration-500 border-b border-gray-300;
+    @apply transition duration-500 border-b border-gray-200;
   }
 
-  #services-table tr:nth-child(even) {
+  /* #services-table tr:nth-child(even) {
     @apply bg-gray-100;
   }
 
   #services-table tr:hover {
     @apply bg-gray-200;
-  }
+  } */
 
   /* ----------------------- Typography ----------------------- */
 
@@ -83,6 +83,10 @@
 
     /* for transition */
     @apply relative z-10 overflow-hidden transition duration-300 bg-white rounded;
+  }
+
+  .button.compact {
+    @apply px-4 py-3 text-sm;
   }
 
   .button::after {

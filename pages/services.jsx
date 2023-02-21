@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Icon from "../components/icon";
-import Button, { KIND, TYPE } from "../components/ui/Button";
+import Button, { KIND, SIZE, TYPE } from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import PageSection from "../components/ui/PageSection";
 
@@ -45,22 +45,10 @@ const services = () => {
         <PageSection>
           <h2 className="page-heading">Services</h2>
 
-          <Button>Basic Button</Button>
-          <Button kind={KIND.primary}>Primary Button</Button>
-          <Button kind={KIND.secondary}>Secondary Button</Button>
-          <Button kind={KIND.tertiary}>Tertiary Button</Button>
-          <Button type={TYPE.button}>Type Button</Button>
-          <Button type={TYPE.submit}>Type Submit</Button>
-          <Button type={TYPE.reset}>Type Reset</Button>
-          <Button disabled>Disabled</Button>
-          <Button isLoading kind={KIND.secondary}>
-            Should be loading
-          </Button>
-
           <section className="my-10">
             <Card className="p-6">
-              <div className="md:flex">
-                <div className="w-full md:w-3/5">
+              <div className="lg:flex">
+                <div className="w-full lg:w-3/5">
                   <Image
                     src="/images/services/interior.jpg"
                     alt="Interior Picture"
@@ -70,8 +58,8 @@ const services = () => {
                     className="rounded"
                   />
                 </div>
-                <div className="w-full pt-5 md:px-10">
-                  <p className="mb-4 text-2xl font-bold">Interior Services</p>
+                <div className="w-full mt-6 lg:px-10">
+                  <p className="mb-4 text-xl font-bold">Interior Services</p>
                   <p className="">
                     Our car detailing company offers a range of interior
                     services to help you maintain the cleanliness and appearance
@@ -82,79 +70,83 @@ const services = () => {
                     exceptional interior detailing services that will leave your
                     vehicle looking and feeling like new.
                   </p>
-                  <Button className="mt-4">asc</Button>
+                  <div className="flex justify-center mt-8">
+                    <Button size={SIZE.compact}>Book Now</Button>
+                  </div>
                 </div>
               </div>
             </Card>
           </section>
 
           <section className="mt-4">
-            <table id="services-table">
-              <thead>
-                <tr>
-                  <th>Interior Services</th>
-                  <th>Regular Interior</th>
-                  <th>Enhanced Interior</th>
-                  <th>Elite Interior</th>
-                </tr>
-              </thead>
-              <tbody>
-                {interiorServices[0].map((service, index) => (
-                  <tr key={index}>
-                    <td>{service}</td>
-                    {Array(3)
-                      .fill()
-                      .map((_, i) => (
-                        <td key={i}>
-                          <div className="flex justify-center">
-                            <Icon.Check className="w-5 h-5 text-accent" />
-                          </div>
-                        </td>
-                      ))}
+            <Card>
+              <table id="services-table">
+                <thead>
+                  <tr>
+                    <th>Interior Service</th>
+                    <th>Regular Interior</th>
+                    <th>Enhanced Interior</th>
+                    <th>Elite Interior</th>
                   </tr>
-                ))}
+                </thead>
+                <tbody>
+                  {interiorServices[0].map((service, index) => (
+                    <tr key={index}>
+                      <td>{service}</td>
+                      {Array(3)
+                        .fill()
+                        .map((_, i) => (
+                          <td key={i}>
+                            <div className="flex justify-center">
+                              <Icon.Check className="w-5 h-5 text-accent" />
+                            </div>
+                          </td>
+                        ))}
+                    </tr>
+                  ))}
 
-                {interiorServices[1].map((service, index) => (
-                  <tr key={index}>
-                    <td>{service}</td>
-                    {Array(1)
-                      .fill()
-                      .map((_, i) => (
-                        <td key={i}></td>
-                      ))}
-                    {Array(2)
-                      .fill()
-                      .map((_, i) => (
-                        <td key={i}>
-                          <div className="flex justify-center">
-                            <Icon.Check className="w-5 h-5 text-accent" />
-                          </div>
-                        </td>
-                      ))}
-                  </tr>
-                ))}
+                  {interiorServices[1].map((service, index) => (
+                    <tr key={index}>
+                      <td>{service}</td>
+                      {Array(1)
+                        .fill()
+                        .map((_, i) => (
+                          <td key={i}></td>
+                        ))}
+                      {Array(2)
+                        .fill()
+                        .map((_, i) => (
+                          <td key={i}>
+                            <div className="flex justify-center">
+                              <Icon.Check className="w-5 h-5 text-accent" />
+                            </div>
+                          </td>
+                        ))}
+                    </tr>
+                  ))}
 
-                {interiorServices[2].map((service, index) => (
-                  <tr key={index}>
-                    <td>{service}</td>
-                    {Array(2)
-                      .fill()
-                      .map((_, i) => (
-                        <td key={i}></td>
-                      ))}
-                    {Array(1)
-                      .fill()
-                      .map((_, i) => (
-                        <td key={i}>
-                          <div className="flex justify-center">
-                            <Icon.Check className="w-5 h-5 text-accent" />
-                          </div>
-                        </td>
-                      ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                  {interiorServices[2].map((service, index) => (
+                    <tr key={index}>
+                      <td>{service}</td>
+                      {Array(2)
+                        .fill()
+                        .map((_, i) => (
+                          <td key={i}></td>
+                        ))}
+                      {Array(1)
+                        .fill()
+                        .map((_, i) => (
+                          <td key={i}>
+                            <div className="flex justify-center">
+                              <Icon.Check className="w-5 h-5 text-accent" />
+                            </div>
+                          </td>
+                        ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </Card>
           </section>
         </PageSection>
       </main>

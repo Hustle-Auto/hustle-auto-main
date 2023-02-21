@@ -5,13 +5,11 @@ import Icon from "../icon";
 export const SIZE = Object.freeze({
   compact: Symbol("compact"),
   default: Symbol("default"),
-  large: Symbol("large"),
 });
 
 export const KIND = Object.freeze({
   primary: Symbol("primary"),
   secondary: Symbol("secondary"),
-  tertiary: Symbol("tertiary"),
 });
 
 export const TYPE = Object.freeze({
@@ -23,6 +21,7 @@ export const TYPE = Object.freeze({
 const Button = ({
   children,
   onClick,
+  size = SIZE.default,
   type = TYPE.button,
   kind = KIND.primary,
   disabled = false,
@@ -31,6 +30,7 @@ const Button = ({
   const buttonClassName = classnames("button", {
     accent: kind === KIND.secondary,
     disabled: disabled,
+    compact: size === SIZE.compact,
   });
 
   // if (isLoading) {
