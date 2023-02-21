@@ -1,5 +1,5 @@
 import Icon from "../icon";
-import Button from "../ui/Button";
+import Button, { KIND, TYPE } from "../ui/Button";
 import ModalCard from "./ModalCard";
 import ModalWrapper from "./ModalWrapper";
 
@@ -8,7 +8,7 @@ const SuccessModal = (props) => {
     <ModalWrapper>
       <ModalCard>
         <ModalCard.ImageTop>
-          <div className="text-accent">
+          <div className="text-black">
             <Icon.Check className="h-full" />
           </div>
         </ModalCard.ImageTop>
@@ -20,9 +20,7 @@ const SuccessModal = (props) => {
         </ModalCard.Body>
         <ModalCard.Footer>
           <div className="flex justify-center">
-            <Button accent onClick={props.onConfirm}>
-              Got It!
-            </Button>
+            <Button onClick={props.onConfirm}>Got It!</Button>
           </div>
         </ModalCard.Footer>
       </ModalCard>

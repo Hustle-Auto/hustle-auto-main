@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import Button from "../components/ui/Button";
+import Button, { KIND, TYPE } from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CheckboxCardInput from "../components/ui/CheckboxCardInput.jsx";
 import PageSection from "../components/ui/PageSection";
@@ -276,7 +276,7 @@ const GetAQuote = () => {
               <span className="text-accent"> ${totalPrice} </span>
             </p>
             <div className="flex justify-center my-8 sm:my-0">
-              <Button accent onClick={handleOnContinueClick}>
+              <Button kind={KIND.secondary} onClick={handleOnContinueClick}>
                 Book Now
               </Button>
             </div>

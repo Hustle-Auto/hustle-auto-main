@@ -9,7 +9,7 @@ import * as Yup from "yup";
 
 import ErrorModal from "../components/modal/ErrorModal";
 import SuccessModal from "../components/modal/SuccessModal";
-import Button from "../components/ui/Button";
+import Button, { KIND, TYPE } from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
 import PageSection from "../components/ui/PageSection";
@@ -240,12 +240,11 @@ const ContactUs = () => {
 
                   <div className="flex justify-end mt-3">
                     <Button
-                      submit
-                      accent
+                      type={TYPE.submit}
                       disabled={isLoading}
-                      loading={isLoading}
+                      isLoading={isLoading}
                     >
-                      <div>Submit</div>
+                      Submit
                     </Button>
                   </div>
                 </Form>

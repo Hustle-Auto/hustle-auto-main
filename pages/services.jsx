@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Icon from "../components/icon";
+import Button, { KIND, TYPE } from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import PageSection from "../components/ui/PageSection";
 
@@ -44,10 +45,22 @@ const services = () => {
         <PageSection>
           <h2 className="page-heading">Services</h2>
 
+          <Button>Basic Button</Button>
+          <Button kind={KIND.primary}>Primary Button</Button>
+          <Button kind={KIND.secondary}>Secondary Button</Button>
+          <Button kind={KIND.tertiary}>Tertiary Button</Button>
+          <Button type={TYPE.button}>Type Button</Button>
+          <Button type={TYPE.submit}>Type Submit</Button>
+          <Button type={TYPE.reset}>Type Reset</Button>
+          <Button disabled>Disabled</Button>
+          <Button isLoading kind={KIND.secondary}>
+            Should be loading
+          </Button>
+
           <section className="my-10">
-            <div className="px-4 py-3">
+            <Card className="p-6">
               <div className="md:flex">
-                <div className="w-3/4">
+                <div className="w-full md:w-3/5">
                   <Image
                     src="/images/services/interior.jpg"
                     alt="Interior Picture"
@@ -57,9 +70,9 @@ const services = () => {
                     className="rounded"
                   />
                 </div>
-                <div className="w-full pt-5 md:px-5">
+                <div className="w-full pt-5 md:px-10">
                   <p className="mb-4 text-2xl font-bold">Interior Services</p>
-                  <p>
+                  <p className="">
                     Our car detailing company offers a range of interior
                     services to help you maintain the cleanliness and appearance
                     of your vehicle&apos;s interior. We understand that your car
@@ -69,9 +82,10 @@ const services = () => {
                     exceptional interior detailing services that will leave your
                     vehicle looking and feeling like new.
                   </p>
+                  <Button className="mt-4">asc</Button>
                 </div>
               </div>
-            </div>
+            </Card>
           </section>
 
           <section className="mt-4">

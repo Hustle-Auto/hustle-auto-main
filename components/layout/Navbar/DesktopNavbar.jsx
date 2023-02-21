@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Icon from "../../icon";
-import Button from "../../ui/Button";
+import Button, { TYPE } from "../../ui/Button";
 import PageSection from "../../ui/PageSection";
 import NavbarLink from "./NavbarLink";
 
@@ -64,11 +64,8 @@ const DesktopNavbar = () => {
                       </NavbarLink>
                     </li>
                     <li>
-                      <NavbarLink
-                        href="/get-a-quote"
-                        activeLinkClassName={"font-bold"}
-                      >
-                        <Button submit>
+                      <NavbarLink href="/get-a-quote" activeLinkClassName={""}>
+                        <Button type={TYPE.submit}>
                           <div>Get A Quote</div>
                         </Button>
                       </NavbarLink>
