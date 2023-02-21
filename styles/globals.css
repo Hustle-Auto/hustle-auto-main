@@ -4,7 +4,6 @@
 
 @layer components {
   /* ----------------------- Services Table ----------------------- */
-
   #services-table {
     @apply w-full overflow-scroll table-auto;
   }
