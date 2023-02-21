@@ -1,4 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+
+import HUSTLE from "../data/hustle";
 class MyDocument extends Document {
   render() {
     return (
@@ -36,6 +38,11 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: ` <iframe src="https://www.googletagmanager.com/ns.html?id=${HUSTLE.SITE.GOOGLE_TAG_MANAGER_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          />
         </body>
       </Html>
     );

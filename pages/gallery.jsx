@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Icon from "../components/icon";
 import PageSection from "../components/ui/PageSection";
-import HUS from "../data/hus";
+import HUSTLE from "../data/hustle";
 
 const gallery = () => {
   return (
@@ -26,7 +26,7 @@ const gallery = () => {
             <p>
               Please have a look at our{" "}
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.FACEBOOK}`}
+                href={`${HUSTLE.SOCIALS.FACEBOOK}`}
                 target="blank"
                 className="text-accent"
               >
@@ -34,7 +34,7 @@ const gallery = () => {
               </a>
               ,{" "}
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.INSTAGRAM}`}
+                href={`${HUSTLE.SOCIALS.INSTAGRAM}`}
                 target="blank"
                 className="text-accent"
               >
@@ -42,7 +42,7 @@ const gallery = () => {
               </a>
               ,{" "}
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.LINKEDIN}`}
+                href={`${HUSTLE.SOCIALS.LINKEDIN}`}
                 target="blank"
                 className="text-accent"
               >
@@ -50,7 +50,7 @@ const gallery = () => {
               </a>
               , and{" "}
               <a
-                href={`${HUS.HUSTLE_AUTO_SOCIAL_LINKS.GOOGLE}`}
+                href={`${HUSTLE.SOCIALS.GOOGLE}`}
                 target="blank"
                 className="text-accent"
               >

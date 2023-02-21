@@ -1,4 +1,4 @@
-import HUS from "../../data/hus";
+import HUSTLE from "../../data/hustle";
 import Icon from "../icon";
 import Button from "../ui/Button";
 import ModalCard from "./ModalCard";
@@ -18,7 +18,7 @@ const ErrorModal = ({ onConfirm }) => {
           <ModalCard.Text>
             <div className="text-center">
               Please try again. If the issue persists, please contact us at
-              {HUS.HUSTLE_AUTO_EMAIl}.
+              {HUSTLE.COMPANY.EMAIL}.
             </div>
           </ModalCard.Text>
         </ModalCard.Body>

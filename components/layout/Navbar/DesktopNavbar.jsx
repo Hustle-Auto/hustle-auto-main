@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "../../../public/images/logo.png";
+import Icon from "../../icon";
 import Button from "../../ui/Button";
 import PageSection from "../../ui/PageSection";
 import NavbarLink from "./NavbarLink";
@@ -20,7 +20,7 @@ const DesktopNavbar = () => {
               <div className="w-24 mr-auto">
                 <Link href="/">
                   <a>
-                    <Image src={logo} alt="logo"></Image>
+                    <Icon.HustleLogo />
                   </a>
                 </Link>
               </div>
