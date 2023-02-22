@@ -33,14 +33,6 @@ const Button = ({
     compact: size === SIZE.compact,
   });
 
-  // if (isLoading) {
-  //   return (
-  //     <button type={type} className={buttonClassName} onClick={onClick}>
-  //       <div className="flex items-center space-x-3">{children}</div>
-  //     </button>
-  //   );
-  // }
-
   return (
     <>
       <button
