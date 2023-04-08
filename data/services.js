@@ -247,7 +247,7 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 19.0,
+      sedan: 190.0,
       "mid-size-suv": 225.0,
       "pickup-truck": 240.0,
       "full-size-suv": 260.0,
