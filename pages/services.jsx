@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Link from "next/link";
 
-import Icon from "../components/icon";
+import ExteriorServices from "../components/services/ExteriorServices";
+import InteriorServices from "../components/services/InteriorServices";
+import PaintCorrectionService from "../components/services/PaintCorrectionService";
 import PageSection from "../components/ui/PageSection";
 
 const services = () => {
@@ -16,21 +17,17 @@ const services = () => {
       </Head>
       <main>
         <PageSection>
-          <h2 className="page-heading">Services</h2>
+          <h2 className="pb-5 page-heading">Services</h2>
 
-          <div className="mt-5 space-y-3 text-center">
-            <div className="flex justify-center">
-              <Icon.WrenchScrewDriver className="w-10 h-10" />
-            </div>
-            <div className="font-bold">Currently Under Construction</div>
-            <p>
-              For a brief summary, please visit the{" "}
-              <Link href="/get-a-quote">
-                <a className="text-accent">Get A Quote</a>
-              </Link>{" "}
-              Page.
-            </p>
-          </div>
+          <InteriorServices />
+        </PageSection>
+
+        <PageSection>
+          <ExteriorServices />
+        </PageSection>
+
+        <PageSection>
+          <PaintCorrectionService />
         </PageSection>
       </main>
     </>

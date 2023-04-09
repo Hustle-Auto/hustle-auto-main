@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "../../../public/images/logo.png";
-import Button from "../../ui/Button";
+import Icon from "../../icon";
+import Button, { TYPE } from "../../ui/Button";
 import PageSection from "../../ui/PageSection";
 import NavbarLink from "./NavbarLink";
 
@@ -20,7 +20,7 @@ const DesktopNavbar = () => {
               <div className="w-24 mr-auto">
                 <Link href="/">
                   <a>
-                    <Image src={logo} alt="logo"></Image>
+                    <Icon.HustleLogo />
                   </a>
                 </Link>
               </div>
@@ -64,11 +64,8 @@ const DesktopNavbar = () => {
                       </NavbarLink>
                     </li>
                     <li>
-                      <NavbarLink
-                        href="/get-a-quote"
-                        activeLinkClassName={"font-bold"}
-                      >
-                        <Button submit>
+                      <NavbarLink href="/get-a-quote" activeLinkClassName={""}>
+                        <Button type={TYPE.submit}>
                           <div>Get A Quote</div>
                         </Button>
                       </NavbarLink>

@@ -1,30 +1,41 @@
+import * as cookies from "cookies-next";
 import Script from "next/script";
-import { ModalContainer } from "reoverlay";
+import { ModalContainer, Reoverlay } from "reoverlay";
 import "../styles/globals.css";
 
+import CookieConsentModal from "../components/CookieConsentModal";
 import Layout from "../components/layout/Layout";
-import HUS from "../data/hus";
+import HUSTLE from "../data/hustle";
 import Construction from "../pages/construction";
 
+const cookieConsentKey = "cookie-consent";
+
 function MyApp({ Component, pageProps }) {
-  if (HUS.UNDER_CONSTRUCTION) {
+  if (HUSTLE.SITE.UNDER_CONSTRUCTION) {
     return <Construction {...pageProps} />;
   }
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        strategy="afterInteractive"
-      />
-
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-tag-manager" strategy="afterInteractive">
         {`
+          // Define dataLayer and the gtag function.
           window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+          function gtag(){dataLayer.push(arguments);}
 
-          gtag('config','${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+          // Default ad_storage to 'denied'.
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
+          
+          <!-- Google Tag Manager -->
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${HUSTLE.SITE.GOOGLE_TAG_MANAGER_ID}');
+          <!-- End Google Tag Manager -->
         `}
       </Script>
 

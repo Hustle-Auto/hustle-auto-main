@@ -3,6 +3,35 @@
 @tailwind utilities;
 
 @layer components {
+  /* ----------------------- Services Table ----------------------- */
+  #services-table {
+    @apply w-full overflow-scroll table-auto;
+  }
+
+  #services-table thead {
+    /* @apply bg-gray-100; */
+  }
+
+  #services-table th {
+    @apply px-2 py-4;
+  }
+
+  #services-table td {
+    @apply px-4 py-2.5 text-sm;
+  }
+
+  #services-table tr {
+    @apply transition duration-500 border-b border-gray-200;
+  }
+
+  /* #services-table tr:nth-child(even) {
+    @apply bg-gray-100;
+  }
+
+  #services-table tr:hover {
+    @apply bg-gray-200;
+  } */
+
   /* ----------------------- Typography ----------------------- */
 
   .page-heading {
@@ -49,8 +78,15 @@
   .button {
     @apply px-5 py-4 tracking-wide text-black uppercase border-2 border-black hover:text-white hover:border-white;
 
+    /* for focus state */
+    @apply outline-none focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-black;
+
     /* for transition */
     @apply relative z-10 overflow-hidden transition duration-300 bg-white rounded;
+  }
+
+  .button.compact {
+    @apply px-4 py-3 text-sm;
   }
 
   .button::after {
@@ -70,6 +106,9 @@
 
   .button.accent {
     @apply text-accent hover:text-white border-accent;
+
+    /* for focus state */
+    @apply focus:ring-accent;
   }
 
   .button.accent::after {
@@ -93,7 +132,7 @@
   .sk-cube-grid .sk-cube {
     width: 33%;
     height: 33%;
-    background-color: white;
+    background-color: currentColor;
     float: left;
     -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
     animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;

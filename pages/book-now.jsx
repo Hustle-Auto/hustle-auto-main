@@ -10,7 +10,7 @@ import * as Yup from "yup";
 import Icon from "../components/icon";
 import ErrorModal from "../components/modal/ErrorModal";
 import SuccessModal from "../components/modal/SuccessModal";
-import Button from "../components/ui/Button";
+import Button, { KIND, TYPE } from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
 import IconButton from "../components/ui/IconButton";
@@ -352,12 +352,12 @@ const BookNow = () => {
 
                   <div className="flex justify-end mt-3">
                     <Button
-                      submit
-                      accent
+                      type={TYPE.submit}
+                      kind={KIND.secondary}
                       disabled={isLoading}
-                      loading={isLoading}
+                      isLoading={isLoading}
                     >
-                      <div>Request Service</div>
+                      Request Service
                     </Button>
                   </div>
                 </Form>

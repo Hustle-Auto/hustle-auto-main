@@ -1,6 +1,6 @@
-import HUS from "../../data/hus";
+import HUSTLE from "../../data/hustle";
 import Icon from "../icon";
-import Button from "../ui/Button";
+import Button, { KIND, TYPE } from "../ui/Button";
 import ModalCard from "./ModalCard";
 import ModalWrapper from "./ModalWrapper";
 
@@ -9,7 +9,7 @@ const ErrorModal = ({ onConfirm }) => {
     <ModalWrapper>
       <ModalCard>
         <ModalCard.ImageTop>
-          <div className="text-black ">
+          <div className="text-accent ">
             <Icon.Error className="h-full" />
           </div>
         </ModalCard.ImageTop>
@@ -17,14 +17,16 @@ const ErrorModal = ({ onConfirm }) => {
           <ModalCard.Title>Something Went Wrong!</ModalCard.Title>
           <ModalCard.Text>
             <div className="text-center">
-              Please try again. If the issue persists, please contact us at
-              {HUS.HUSTLE_AUTO_EMAIl}.
+              Please try again. If the issue persists, please contact us at{" "}
+              {HUSTLE.COMPANY.EMAIL}.
             </div>
           </ModalCard.Text>
         </ModalCard.Body>
         <ModalCard.Footer>
           <div className="flex justify-center">
-            <Button onClick={onConfirm}>Got It!</Button>
+            <Button kind={KIND.secondary} onClick={onConfirm}>
+              Got It!
+            </Button>
           </div>
         </ModalCard.Footer>
       </ModalCard>

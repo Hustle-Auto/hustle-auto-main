@@ -1,3 +1,8 @@
+import { useEffect, useState } from "react";
+
+import { Reoverlay } from "reoverlay";
+
+import CookieConsentModal from "../CookieConsentModal";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -9,6 +14,7 @@ const Layout = ({ children }) => {
         <div className="flex-1">{children}</div>
         <Footer />
       </div>
+      <CookieConsentModal />
     </>
   );
 };

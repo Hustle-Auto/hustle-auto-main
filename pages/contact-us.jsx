@@ -9,11 +9,11 @@ import * as Yup from "yup";
 
 import ErrorModal from "../components/modal/ErrorModal";
 import SuccessModal from "../components/modal/SuccessModal";
-import Button from "../components/ui/Button";
+import Button, { KIND, TYPE } from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CustomErrorMessage from "../components/ui/CustomErrorMessage";
 import PageSection from "../components/ui/PageSection";
-import HUS from "../data/hus";
+import HUSTLE from "../data/hustle";
 
 const initialValues = {
   firstName: "",
@@ -100,7 +100,7 @@ const ContactUs = () => {
         <PageSection>
           <h2 className="page-heading">Contact Us</h2>
           <section className="flex flex-col-reverse my-10 lg:gap-10 lg:grid lg:grid-cols-3">
-            <article className="p-4 ">
+            <article className="p-4">
               <Card>
                 <Card.Body>
                   <Card.Title>Contact Info</Card.Title>
@@ -108,11 +108,11 @@ const ContactUs = () => {
                     <section className="space-y-1">
                       <a
                         className="text-accent"
-                        href={`mailto:${HUS.HUSTLE_AUTO_EMAIl}`}
+                        href={`mailto:${HUSTLE.COMPANY.EMAIL}`}
                       >
-                        {HUS.HUSTLE_AUTO_EMAIl}
+                        {HUSTLE.COMPANY.EMAIL}
                       </a>
-                      <p>{HUS.HUSTLE_AUTO_PHONE_NUMBER}</p>
+                      <p>{HUSTLE.COMPANY.PHONE_NUMBER}</p>
                       <p>Calgary, Alberta</p>
                     </section>
                   </Card.Text>
@@ -240,12 +240,11 @@ const ContactUs = () => {
 
                   <div className="flex justify-end mt-3">
                     <Button
-                      submit
-                      accent
+                      type={TYPE.submit}
                       disabled={isLoading}
-                      loading={isLoading}
+                      isLoading={isLoading}
                     >
-                      <div>Submit</div>
+                      Submit
                     </Button>
                   </div>
                 </Form>

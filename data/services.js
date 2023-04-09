@@ -33,7 +33,7 @@ export const detailingLocations = [
     id: "far-calgary-location",
     label: "At your location in Calgary SW",
     description: "We will come to you to perform the service",
-    price: 25.0,
+    price: 30.0,
   },
 ];
 
@@ -90,10 +90,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 80.0,
-      "mid-size-suv": 100.0,
-      "pickup-truck": 100.0,
-      "full-size-suv": 110.0,
+      sedan: 100.0,
+      "mid-size-suv": 120.0,
+      "pickup-truck": 120.0,
+      "full-size-suv": 130.0,
     },
   },
   {
@@ -111,10 +111,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 120.0,
-      "mid-size-suv": 150.0,
-      "pickup-truck": 150.0,
-      "full-size-suv": 170.0,
+      sedan: 140.0,
+      "mid-size-suv": 170.0,
+      "pickup-truck": 170.0,
+      "full-size-suv": 190.0,
     },
   },
   {
@@ -132,10 +132,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 180.0,
-      "mid-size-suv": 210.0,
-      "pickup-truck": 210.0,
-      "full-size-suv": 225.0,
+      sedan: 200.0,
+      "mid-size-suv": 230.0,
+      "pickup-truck": 230.0,
+      "full-size-suv": 245.0,
     },
   },
   {
@@ -151,10 +151,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 60.0,
-      "mid-size-suv": 70.0,
-      "pickup-truck": 80.0,
-      "full-size-suv": 80.0,
+      sedan: 80.0,
+      "mid-size-suv": 90.0,
+      "pickup-truck": 100.0,
+      "full-size-suv": 100.0,
     },
   },
   {
@@ -170,10 +170,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 75.0,
-      "mid-size-suv": 80.0,
-      "pickup-truck": 90.0,
-      "full-size-suv": 90.0,
+      sedan: 95.0,
+      "mid-size-suv": 100.0,
+      "pickup-truck": 110.0,
+      "full-size-suv": 110.0,
     },
   },
   {
@@ -190,10 +190,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 90.0,
-      "mid-size-suv": 95.0,
-      "pickup-truck": 110.0,
-      "full-size-suv": 110.0,
+      sedan: 110.0,
+      "mid-size-suv": 115.0,
+      "pickup-truck": 130.0,
+      "full-size-suv": 130.0,
     },
   },
   {
@@ -218,10 +218,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 130.0,
-      "mid-size-suv": 160.0,
-      "pickup-truck": 190.0,
-      "full-size-suv": 180.0,
+      sedan: 140.0,
+      "mid-size-suv": 170.0,
+      "pickup-truck": 200.0,
+      "full-size-suv": 190.0,
     },
   },
   {
@@ -247,10 +247,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 180.0,
-      "mid-size-suv": 215.0,
-      "pickup-truck": 230.0,
-      "full-size-suv": 250.0,
+      sedan: 190.0,
+      "mid-size-suv": 225.0,
+      "pickup-truck": 240.0,
+      "full-size-suv": 260.0,
     },
   },
   {
@@ -277,10 +277,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 220.0,
-      "mid-size-suv": 285.0,
-      "pickup-truck": 300.0,
-      "full-size-suv": 320.0,
+      sedan: 230.0,
+      "mid-size-suv": 295.0,
+      "pickup-truck": 310.0,
+      "full-size-suv": 330.0,
     },
   },
   {
@@ -304,10 +304,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 300.0,
-      "mid-size-suv": 350.0,
-      "pickup-truck": 380.0,
-      "full-size-suv": 400.0,
+      sedan: 320.0,
+      "mid-size-suv": 370.0,
+      "pickup-truck": 400.0,
+      "full-size-suv": 420.0,
     },
   },
   {
@@ -330,10 +330,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 400.0,
-      "mid-size-suv": 450.0,
-      "pickup-truck": 480.0,
-      "full-size-suv": 500.0,
+      sedan: 420.0,
+      "mid-size-suv": 470.0,
+      "pickup-truck": 500.0,
+      "full-size-suv": 520.0,
     },
   },
 ];
