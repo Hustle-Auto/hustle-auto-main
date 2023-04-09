@@ -6,13 +6,7 @@ import Button, { SIZE } from "../ui/Button";
 import Card from "../ui/Card";
 
 const paintCorrectionServices = [
-  [
-    "Cleaning off rims and tires",
-    "Two bucket hand wash",
-    "Clay bar of the vehicle (if required)",
-    "A decontamination wash iron deposits",
-    "Paint correction prep",
-  ],
+  [],
   [
     "Cleaning off rims and tires",
     "Two bucket hand wash",
