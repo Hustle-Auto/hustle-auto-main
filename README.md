@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# :sparkles: Welcome to Hustle Auto's Website
 
-## Getting Started
+[![Licenses](https://img.shields.io/github/license/Hustle-Auto/hustle-auto-main)](https://github.com/Hustle-Auto/hustle-auto-main/blob/main/MIT-LICENSE.txt)
+  <div style="flex: 1;">
+   <div style="height: 200px; width: 100%;">
+      <img src="https://media.tenor.com/MYOUqnV-uGMAAAAd/scaler-create-impact" style="clip-path: polygon(0 0, 80% 0, 100% 80%, 0 80%);" alt="Scaler Logo">
+   </div>
 
-First, run the development server:
+## Hustle Auto Contributors
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+| Name | Role |
+| --- | --- |
+| [Pranav](https://github.com/PranavB6) | Software Engineer  |
+| [Madeeha Anjum](https://github.com/Madeeha-Anjum) | Software Engineer  |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What is Hustle Auto?
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Hustle Automotive is a mobile/in-house detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more
+**Refer our [website](https://hustleauto.ca/) for more information**
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## :book: Wiki
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Getting Started](https://github.com/Hustle-Auto/hustle-auto-main/wiki/Getting-Started-on-Local-Development)
+- [GCP](https://github.com/Hustle-Auto/hustle-auto-main/wiki/How-to-Setup-GCP-Storage-Bucket)
