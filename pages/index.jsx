@@ -14,7 +14,7 @@ export default function Home() {
         <title>Hustle Automotive Services</title>
         <meta
           name="description"
-          content="You can contact Hustle Automotive using the form"
+          content="Hustle Automotive is a mobile detailing service based in Calgary. We provides quality and affordable car detailing services. Our services include: Interior and Exterior Detailing, Paint Correction, and more!"
         />
       </Head>
       <main>
