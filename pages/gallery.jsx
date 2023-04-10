@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+import { Storage } from "@google-cloud/storage";
 import axios from "axios";
+import dayjs from "dayjs";
 import Head from "next/head";
 import Image from "next/image";
 import Masonry from "react-masonry-css";
@@ -9,95 +11,57 @@ import Icon from "../components/icon";
 import Card from "../components/ui/Card";
 import PageSection from "../components/ui/PageSection";
 
-// const sendGetBucketInfoRequest = async () => {
-//   return axios
-//     .get(
-//       "https://us-central1-exalted-booster-377120.cloudfunctions.net/v1-api-gpix/"
-//     )
-//     .then((res) => {
-//       return res.data;
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
+const BUCKET_NAME = "pranav-hustleauto-bucket";
+
+// This function gets called at build time
+export async function getServerSideProps() {
+  // Call an external API endpoint to get posts
+  const storage = new Storage();
+
+  async function getAllImagesData() {
+    const [files] = await storage.bucket(BUCKET_NAME).getFiles();
+
+    const imagesData = files
+      // All the important information is in the metadata property
+      .map((file) => file.metadata)
+      // Get all the information we are interested in
+      .map((fileMetadata) => ({
+        id: fileMetadata.id,
+        url: fileMetadata.mediaLink,
+        updated: fileMetadata.updated,
+        width: fileMetadata.metadata.width,
+        height: fileMetadata.metadata.height,
+      }))
+      // Sort by date
+      .sort((a, b) => (dayjs(a.updated).isAfter(dayjs(b.updated)) ? 1 : -1));
+
+    return imagesData;
+  }
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      imagesData: await getAllImagesData(),
+    },
+  };
+}
+
+// const getAllImagesData = async () => {
+//   const res = await axios.get(
+//     `https://storage.googleapis.com/storage/v1/b/${BUCKET_NAME}/o`
+//   );
+
+//   return res.data.items.map((imageData) => ({
+//     id: imageData.id,
+//     url: imageData.mediaLink,
+//     updated: imageData.updated,
+//     width: imageData.metadata.width,
+//     height: imageData.metadata.height,
+//   }));
 // };
-// const sendGetImageRequest = async (fileName) => {
-//   return axios
-//     .post(
-//       `https://us-central1-exalted-booster-377120.cloudfunctions.net/v1-api-gpix?fileName=${fileName}`
-//     )
-//     .then((res) => {
-//       return res.data;
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
 
-const images = [
-  {
-    url: "/images/gallery/9E5E7EF5-C7DB-4F78-A91F-E4E31945531C.jpeg",
-    width: 1020,
-    height: 1020,
-  },
-  {
-    url: "/images/gallery/313887298.jpg",
-    width: 1080,
-    height: 1080,
-  },
-  {
-    url: "/images/gallery/317361506.jpg",
-    width: 1080,
-    height: 1349,
-  },
-  {
-    url: "/images/gallery/317499881.jpg",
-    width: 1080,
-    height: 1350,
-  },
-  {
-    url: "/images/gallery/317575030.jpg",
-    width: 1080,
-    height: 1080,
-  },
-  {
-    url: "/images/gallery/317594813.jpg",
-    width: 1080,
-    height: 1080,
-  },
-  {
-    url: "/images/gallery/BEB8CF72-5150-4758-90D0-E5055C39D8E9_1_201_a.jpeg",
-    width: 1151,
-    height: 1020,
-  },
-  {
-    url: "/images/gallery/FEF86E35-50BA-4CFC-9CEC-9960483FEA4B_1_201_a.jpeg",
-    width: 1150,
-    height: 1020,
-  },
-];
-
-const Gallery = () => {
-  // const [images, setImages] = useState([]);
-  // useEffect(() => {
-  //   const getImages = async () => {
-  //     // get all file names
-  //     const bucketInfo = await sendGetBucketInfoRequest();
-
-  //     const fileNames = bucketInfo.map((file) => {
-  //       return file.name;
-  //     });
-  //     // get all images
-  //     const res = await Promise.all([
-  //       ...fileNames.map((fileName) => sendGetImageRequest(fileName)),
-  //     ]);
-
-  //     // set images
-  //     setImages(res);
-  //   };
-  //   getImages();
-  // }, []);
-
+const Gallery = ({ imagesData }) => {
   return (
     <>
       <Head>
@@ -117,7 +81,7 @@ const Gallery = () => {
               className="flex space-x-4"
               columnClassName="space-y-4"
             >
-              {images.map((image) => {
+              {imagesData.map((image) => {
                 return (
                   <a
                     key={image.url}
