@@ -69,7 +69,14 @@ const Gallery = ({ imagesData }) => {
 
           <div className="my-10">
             <Masonry
-              breakpointCols={3}
+              breakpointCols={{
+                default: 3,
+                1536: 3, // tailwindcss 2xl
+                1280: 2, // tailwindcss xl
+                1024: 2, // tailwindcss lg
+                768: 1, // tailwindcss md
+                640: 1, // tailwindcss sm
+              }}
               className="flex space-x-4"
               columnClassName="space-y-4"
             >
@@ -108,7 +115,12 @@ const Gallery = ({ imagesData }) => {
                       </div>
 
                       {image.link && (
-                        <a className="flex items-center space-x-2 group">
+                        <a
+                          className="flex items-center space-x-2 group"
+                          href={image.link}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <Icon.Instagram className="w-6 h-6" />
                           <div>
                             <span className="text-sm underline">Instagram</span>
