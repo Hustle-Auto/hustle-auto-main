@@ -38,7 +38,7 @@ export async function getServerSideProps() {
       updated: fileMetadata.updated,
       width: fileMetadata.metadata?.width,
       height: fileMetadata.metadata?.height,
-      tag: fileMetadata.metadata?.tag,
+      tag: fileMetadata.metadata?.tag ?? "",
       link: fileMetadata.metadata?.link ?? "",
     }))
     // Remove images that don't have all the information we need
@@ -110,13 +110,17 @@ const Gallery = ({ imagesData }) => {
                       </div> */}
                     </a>
                     <article className="flex justify-between px-3 my-4">
-                      <div className="px-3 py-1 text-sm text-white bg-black rounded-full">
-                        {image.tag}
-                      </div>
+                      {image.tag && (
+                        <div className="px-3 py-1 text-sm text-white bg-black rounded-full">
+                          {image.tag}
+                        </div>
+                      )}
+                      {/* Ensure link is always at the end, even if there is no tag */}
+                      {!image.tag && <div></div>}
 
                       {image.link && (
                         <a
-                          className="flex items-center space-x-2 group"
+                          className="flex items-center space-x-2 justify-self-end group"
                           href={image.link}
                           target="_blank"
                           rel="noreferrer"
@@ -124,7 +128,7 @@ const Gallery = ({ imagesData }) => {
                           <Icon.Instagram className="w-6 h-6" />
                           <div>
                             <span className="text-sm underline">Instagram</span>
-                            <Icon.ExternalLink className="inline-block w-4 h-4 ml-2" />
+                            <Icon.ExternalLink className="inline-block w-4 h-4 ml-1" />
                           </div>
                         </a>
                       )}
