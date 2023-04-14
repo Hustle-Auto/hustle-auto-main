@@ -1,7 +1,7 @@
-import Icon from "../icon";
-import Button, { KIND, TYPE } from "../ui/Button";
 import ModalCard from "./ModalCard";
 import ModalWrapper from "./ModalWrapper";
+import Icon from "../icon";
+import Button, { KIND, TYPE } from "../ui/Button";
 
 const SuccessModal = (props) => {
   return (

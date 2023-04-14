@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import { Reoverlay } from "reoverlay";
 
-import CookieConsentModal from "../CookieConsentModal";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import CookieConsentModal from "../CookieConsentModal";
 
 const Layout = ({ children }) => {
   return (
