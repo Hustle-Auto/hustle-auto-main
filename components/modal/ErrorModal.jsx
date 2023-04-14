@@ -1,8 +1,8 @@
+import ModalCard from "./ModalCard";
+import ModalWrapper from "./ModalWrapper";
 import HUSTLE from "../../data/hustle";
 import Icon from "../icon";
 import Button, { KIND, TYPE } from "../ui/Button";
-import ModalCard from "./ModalCard";
-import ModalWrapper from "./ModalWrapper";
 
 const ErrorModal = ({ onConfirm }) => {
   return (

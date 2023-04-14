@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import Link from "next/link";
 
+import NavbarLink from "./NavbarLink";
 import HUSTLE from "../../../data/hustle";
 import Icon from "../../icon";
 import PageSection from "../../ui/PageSection";
-import NavbarLink from "./NavbarLink";
 
 const MobileNavbar = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);

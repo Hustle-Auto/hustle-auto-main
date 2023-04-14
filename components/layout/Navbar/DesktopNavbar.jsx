@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import NavbarLink from "./NavbarLink";
 import Icon from "../../icon";
 import Button, { TYPE } from "../../ui/Button";
 import PageSection from "../../ui/PageSection";
-import NavbarLink from "./NavbarLink";
 
 const DesktopNavbar = () => {
   const linkClassName =
