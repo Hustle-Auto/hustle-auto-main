@@ -8,6 +8,7 @@ import Masonry from "react-masonry-css";
 
 import Icon from "../components/icon";
 import PageSection from "../components/ui/PageSection";
+import HUSTLE from "../data/hustle";
 
 const hasUndefinedKeys = (obj) => {
   return Object.values(obj).some((value) => value === undefined);
