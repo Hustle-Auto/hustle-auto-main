@@ -2,6 +2,7 @@ import ArrowLeft from "./ArrowLeft";
 import Burger from "./Burger";
 import Check from "./Check";
 import Error from "./Error";
+import ExternalLink from "./ExternalLink";
 import Facebook from "./Facebook";
 import Google from "./Google";
 import HustleLogo from "./HustleLogo";
@@ -24,6 +25,7 @@ const Icon = {
   X: X,
   Loader: Loader,
   WrenchScrewDriver: WrenchScrewDriver,
+  ExternalLink: ExternalLink,
 };
 
 export default Icon;
