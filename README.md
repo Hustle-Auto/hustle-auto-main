@@ -20,5 +20,4 @@ Hustle Automotive is a mobile/in-house detailing service based in Calgary. We pr
 
 ## :book: Wiki
 
-- [Getting Started](https://github.com/Hustle-Auto/hustle-auto-main/wiki/Getting-Started-on-Local-Development)
-- [GCP](https://github.com/Hustle-Auto/hustle-auto-main/wiki/How-to-Setup-GCP-Storage-Bucket)
+- [Getting Started](https://github.com/Hustle-Auto/hustle-auto-main/wiki)
