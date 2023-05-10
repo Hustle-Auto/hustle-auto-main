@@ -8,10 +8,10 @@
 
 ## Hustle Auto Contributors
 
-| Name | Role |
-| --- | --- |
-| [Pranav](https://github.com/PranavB6) | Software Engineer  |
-| [Madeeha Anjum](https://github.com/Madeeha-Anjum) | Software Engineer  |
+| Name                                              | Role              |
+| ------------------------------------------------- | ----------------- |
+| [Pranav](https://github.com/PranavB6)             | Software Engineer |
+| [Madeeha Anjum](https://github.com/Madeeha-Anjum) | Software Engineer |
 
 ## What is Hustle Auto?
 
@@ -21,3 +21,4 @@ Hustle Automotive is a mobile/in-house detailing service based in Calgary. We pr
 ## :book: Wiki
 
 - [Getting Started](https://github.com/Hustle-Auto/hustle-auto-main/wiki)
+- [GCP](https://github.com/Hustle-Auto/hustle-auto-main/wiki/How-to-Setup-GCP-Storage-Bucket)

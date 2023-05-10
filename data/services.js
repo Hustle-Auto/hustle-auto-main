@@ -25,15 +25,17 @@ export const detailingLocations = [
   },
   {
     id: "close-calgary-location",
-    label: "At your location in Calgary NE, SE & NW",
+    type: "mobile",
+    label: "At your location in Calgary NE/NW",
     description: "We will come to you to perform the service",
-    price: 20.0,
+    price: 30.0,
   },
   {
     id: "far-calgary-location",
-    label: "At your location in Calgary SW",
+    type: "mobile",
+    label: "At your location in Calgary SE/SW",
     description: "We will come to you to perform the service",
-    price: 30.0,
+    price: 50.0,
   },
 ];
 

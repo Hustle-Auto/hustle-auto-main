@@ -1,9 +1,7 @@
-import * as cookies from "cookies-next";
 import Script from "next/script";
-import { ModalContainer, Reoverlay } from "reoverlay";
+import { ModalContainer } from "reoverlay";
 import "../styles/globals.css";
 
-import CookieConsentModal from "../components/CookieConsentModal";
 import Layout from "../components/layout/Layout";
 import HUSTLE from "../data/hustle";
 import Construction from "../pages/construction";
@@ -14,6 +12,12 @@ function MyApp({ Component, pageProps }) {
   if (HUSTLE.SITE.UNDER_CONSTRUCTION) {
     return <Construction {...pageProps} />;
   }
+
+  console.log(`
+  
+                   .---\'-    \\\r\n      .-----------\/           \\\r\n     \/           (         ^  |   __\r\n&   (             \\        O  \/  \/ .\'\r\n\'._\/(              \'-\'  (.   (_.\' \/\r\n     \\                    \\     .\/\r\n      |    |       |    |\/ \'._.\'\r\n       )   @).____\\|  @ |\r\n   .  \/    \/       (    | mrf\r\n  \\|, \'_:::\\  . ..  \'_:::\\ ..\\).
+  `);
+  console.log("Created by: Madeeha-Anjum and PranavB6");
 
   return (
     <>

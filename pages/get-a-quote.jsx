@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import Button, { KIND, TYPE } from "../components/ui/Button";
+import Button, { KIND } from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import CheckboxCardInput from "../components/ui/CheckboxCardInput.jsx";
 import PageSection from "../components/ui/PageSection";
 import RadioCardInput from "../components/ui/RadioCardInput";
 import {
+  addOns,
   carTypes,
+  detailingLocations,
   serviceTypes,
   services,
-  addOns,
-  detailingLocations,
 } from "../data/services";
 import useSessionStorage from "../hooks/useSessionStorage";
 import { calcTotalPriceOfServices } from "../utils/utils";
@@ -31,6 +31,10 @@ const GetAQuote = () => {
     }
   );
   const [totalPrice, setTotalPrice] = useState(0);
+
+  // NOTE: Business Rule - Mobile Detailing Location Option is only available for Interior Services
+  const enableMobileDetailingLocationOption =
+    userInput?.serviceType?.id === "interior";
 
   const handleCarTypeChange = (e) => {
     const selectedCarType = carTypes.find(
@@ -250,18 +254,42 @@ const GetAQuote = () => {
                       detailingLocation.id === userInput.detailingLocation?.id
                     }
                     onChange={handleDetailingLocationChange}
+                    disabled={
+                      !enableMobileDetailingLocationOption &&
+                      detailingLocation.type === "mobile"
+                    }
                   >
                     <Card.Body>
                       <Card.Text>
-                        <div className="mb-3 space-y-1 text-center">
-                          <div>{detailingLocation.label}</div>
-                          <div className="font-bold">
-                            ${detailingLocation.price}
-                          </div>
-                        </div>
-                        <div className="text-sm text-center">
-                          {detailingLocation.description}
-                        </div>
+                        {(enableMobileDetailingLocationOption ||
+                          detailingLocation.type !== "mobile") && (
+                          <>
+                            <div className="mb-3 space-y-1 text-center">
+                              <div>{detailingLocation.label}</div>
+
+                              <div className="font-bold">
+                                ${detailingLocation.price}
+                              </div>
+                            </div>
+                            <div className="text-sm text-center">
+                              {detailingLocation.description}
+                            </div>
+                          </>
+                        )}
+                        {!enableMobileDetailingLocationOption &&
+                          detailingLocation.type === "mobile" && (
+                            <>
+                              <div className="mb-3 space-y-1 text-center">
+                                <div>{detailingLocation.label}</div>
+                              </div>
+                              <div className="text-sm text-center">
+                                <span className="italic ">
+                                  This option is only available for Interior
+                                  Detailing
+                                </span>
+                              </div>
+                            </>
+                          )}
                       </Card.Text>
                     </Card.Body>
                   </RadioCardInput>
