@@ -2,13 +2,17 @@ import classnames from "classnames";
 
 import Card from "./Card";
 
-const RadioCardInput = ({ children, value, checked, onChange }) => {
+const RadioCardInput = ({ children, value, checked, disabled, onChange }) => {
   const cardClassName = classnames(
     "cursor-pointer relative transition duration-500 hover:bg-gray-50 h-full",
     {
       "border-blue-500": checked,
       "ring-2": checked,
       "ring-blue-500": checked,
+    },
+    {
+      "bg-gray-100": disabled,
+      "cursor-not-allowed": disabled,
     }
   );
   return (
@@ -20,6 +24,7 @@ const RadioCardInput = ({ children, value, checked, onChange }) => {
           checked={checked}
           value={value}
           onChange={onChange}
+          disabled={disabled}
           className="absolute accent-blue-500 top-4 right-4"
         />
         {children}
