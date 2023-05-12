@@ -198,7 +198,7 @@ const GetAQuote = () => {
                         <div className="mb-3 space-y-1 text-center">
                           <div>{service.label}</div>
                           <div className="font-bold">
-                            ${service.prices[userInput.carType?.id]}
+                            ${service.prices[userInput.carType?.id].toFixed(2)}
                           </div>
                         </div>
                         <div className="text-sm leading-6">
@@ -233,7 +233,9 @@ const GetAQuote = () => {
                       <Card.Text>
                         <div className="space-y-1 text-center">
                           <div>{addOn.label}</div>
-                          <div className="font-bold">${addOn.price}</div>
+                          <div className="font-bold">
+                            ${addOn.price.toFixed(2)}
+                          </div>
                         </div>
                       </Card.Text>
                     </Card.Body>
@@ -268,7 +270,7 @@ const GetAQuote = () => {
                               <div>{detailingLocation.label}</div>
 
                               <div className="font-bold">
-                                ${detailingLocation.price}
+                                ${detailingLocation.price.toFixed(2)}
                               </div>
                             </div>
                             <div className="text-sm text-center">
