@@ -4,7 +4,10 @@ import Card from "./Card";
 
 const RadioCardInput = ({ children, value, checked, disabled, onChange }) => {
   const cardClassName = classnames(
-    "cursor-pointer relative transition duration-500 hover:bg-gray-50 h-full",
+    "cursor-pointer relative transition duration-500 h-full",
+    {
+      "hover:bg-gray-50": !disabled,
+    },
     {
       "border-blue-500": checked,
       "ring-2": checked,
@@ -12,6 +15,7 @@ const RadioCardInput = ({ children, value, checked, disabled, onChange }) => {
     },
     {
       "bg-gray-100": disabled,
+      "border-gray-200": disabled,
       "cursor-not-allowed": disabled,
     }
   );

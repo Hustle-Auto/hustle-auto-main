@@ -170,10 +170,21 @@ const GetAQuote = () => {
                     value={serviceType.id}
                     checked={serviceType.id === userInput.serviceType?.id}
                     onChange={handleServiceTypeChange}
+                    disabled={serviceType.id === "exterior"}
                   >
                     <Card.Body>
                       <Card.Text>
                         <p className="text-center">{serviceType.label}</p>
+
+                        {serviceType.id === "exterior" && (
+                          <div className="mt-1 text-xs text-center">
+                            <span className="italic ">
+                              Due to a change in bylaws, we are temporarily not
+                              offering exterior detailing services. Thank you
+                              for your patience.
+                            </span>
+                          </div>
+                        )}
                       </Card.Text>
                     </Card.Body>
                   </RadioCardInput>
@@ -284,7 +295,7 @@ const GetAQuote = () => {
                               <div className="mb-3 space-y-1 text-center">
                                 <div>{detailingLocation.label}</div>
                               </div>
-                              <div className="text-sm text-center">
+                              <div className="text-xs text-center">
                                 <span className="italic ">
                                   This option is only available for Interior
                                   Detailing
