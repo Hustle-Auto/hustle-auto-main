@@ -179,9 +179,9 @@ const GetAQuote = () => {
                         {serviceType.id === "exterior" && (
                           <div className="mt-1 text-xs text-center">
                             <span className="italic ">
-                              Due to a change in bylaws, we are temporarily not
-                              offering exterior detailing services. Thank you
-                              for your patience.
+                              Due to a change in bylaws, we have temporarily
+                              suspended our exterior detailing services. Thank
+                              you for your patience.
                             </span>
                           </div>
                         )}
