@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
 import axios from "axios";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Reoverlay } from "reoverlay";
@@ -17,6 +19,9 @@ import IconButton from "../components/ui/IconButton";
 import PageSection from "../components/ui/PageSection";
 import useSessionStorage from "../hooks/useSessionStorage";
 import { generateUserSelectionsSummary } from "../utils/utils";
+
+// for strict validation of date format
+dayjs.extend(customParseFormat);
 
 const initialValues = {
   firstName: "",
@@ -42,7 +47,32 @@ const validationSchema = Yup.object({
     .matches(phoneRegExp, "Invalid phone number")
     .required("Required"),
   carDetails: Yup.string().trim().required("Required"),
-  preferredServiceDate: Yup.string(),
+  preferredServiceDate: Yup.string()
+    .trim()
+    .test({
+      name: "is-valid-date",
+      message: "Invalid date",
+      skipAbsent: true,
+      test: (value) => dayjs(value, "YYYY-MM-DD", true).isValid(),
+    })
+    .test({
+      name: "is-future-date",
+      message: "Date cannot be in the past",
+      skipAbsent: true,
+      test: (value) =>
+        dayjs(value).isSame(dayjs(), "day") ||
+        dayjs(value).isAfter(dayjs(), "day"),
+    })
+    .test({
+      name: "is-weekend",
+      message: "Date must be a weekend as we are closed on weekdays",
+      skipAbsent: true,
+      test: (value) => {
+        const day = dayjs(value).day();
+        // 0 = Sunday, 6 = Saturday
+        return day === 6 || day === 0;
+      },
+    }),
   message: Yup.string().trim(),
 });
 
