@@ -72,9 +72,9 @@ export const carTypes = [
 
 export const serviceTypes = [
   { id: "interior", label: "Interior Detailing" },
-  { id: "exterior", label: "Exterior Detailing" },
   { id: "complete", label: "Complete Packages" },
   { id: "paint-correction", label: "Paint Correction" },
+  { id: "exterior", label: "Exterior Detailing" },
 ];
 
 export const services = [
@@ -92,10 +92,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 116.00,
-      "mid-size-suv": 149.00,
-      "pickup-truck": 149.00,
-      "full-size-suv": 182.00,
+      sedan: 116.0,
+      "mid-size-suv": 149.0,
+      "pickup-truck": 149.0,
+      "full-size-suv": 182.0,
     },
   },
   {
@@ -113,10 +113,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 199.00,
-      "mid-size-suv": 232.00,
-      "pickup-truck": 232.00,
-      "full-size-suv": 265.00,
+      sedan: 199.0,
+      "mid-size-suv": 232.0,
+      "pickup-truck": 232.0,
+      "full-size-suv": 265.0,
     },
   },
   {
@@ -134,10 +134,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 282.00,
-      "mid-size-suv": 315.00,
-      "pickup-truck": 315.00,
-      "full-size-suv": 348.00,
+      sedan: 282.0,
+      "mid-size-suv": 315.0,
+      "pickup-truck": 315.0,
+      "full-size-suv": 348.0,
     },
   },
   {
@@ -153,10 +153,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 83.00,
-      "mid-size-suv": 116.00,
-      "pickup-truck": 132.50,
-      "full-size-suv": 132.50,
+      sedan: 83.0,
+      "mid-size-suv": 116.0,
+      "pickup-truck": 132.5,
+      "full-size-suv": 132.5,
     },
   },
   {
@@ -172,10 +172,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 166.00,
-      "mid-size-suv": 199.00,
-      "pickup-truck": 232.00,
-      "full-size-suv": 232.00,
+      sedan: 166.0,
+      "mid-size-suv": 199.0,
+      "pickup-truck": 232.0,
+      "full-size-suv": 232.0,
     },
   },
   {
@@ -192,10 +192,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 265.50,
-      "mid-size-suv": 282.00,
-      "pickup-truck": 315.00,
-      "full-size-suv": 315.00,
+      sedan: 265.5,
+      "mid-size-suv": 282.0,
+      "pickup-truck": 315.0,
+      "full-size-suv": 315.0,
     },
   },
   {
@@ -220,10 +220,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 198.90,
-      "mid-size-suv": 264.90,
-      "pickup-truck": 281.40,
-      "full-size-suv": 314.40,
+      sedan: 198.9,
+      "mid-size-suv": 264.9,
+      "pickup-truck": 281.4,
+      "full-size-suv": 314.4,
     },
   },
   {
@@ -249,10 +249,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 364.90,
-      "mid-size-suv": 430.90,
-      "pickup-truck": 463.90,
-      "full-size-suv": 496.90,
+      sedan: 364.9,
+      "mid-size-suv": 430.9,
+      "pickup-truck": 463.9,
+      "full-size-suv": 496.9,
     },
   },
   {
@@ -279,10 +279,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 547.40,
-      "mid-size-suv": 596.90,
-      "pickup-truck": 629.90,
-      "full-size-suv": 662.90,
+      sedan: 547.4,
+      "mid-size-suv": 596.9,
+      "pickup-truck": 629.9,
+      "full-size-suv": 662.9,
     },
   },
   {
@@ -306,10 +306,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 331.00,
-      "mid-size-suv": 413.50,
-      "pickup-truck": 463.00,
-      "full-size-suv": 496.00,
+      sedan: 331.0,
+      "mid-size-suv": 413.5,
+      "pickup-truck": 463.0,
+      "full-size-suv": 496.0,
     },
   },
   {
@@ -332,10 +332,10 @@ export const services = [
     </ul>
     `,
     prices: {
-      sedan: 380.50,
-      "mid-size-suv": 446.50,
-      "pickup-truck": 512.50,
-      "full-size-suv": 529.00,
+      sedan: 380.5,
+      "mid-size-suv": 446.5,
+      "pickup-truck": 512.5,
+      "full-size-suv": 529.0,
     },
   },
 ];
