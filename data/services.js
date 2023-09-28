@@ -148,15 +148,16 @@ export const services = [
     <ul>
       <li>Two bucket hand wash</li>
       <li>Cleaning of tires and rims</li>
-      <li>Conditioning of tire with shine </li>
-      <li>Cleaning of all exterior windows </li>
+      <li>Conditioning of tire with shine</li>
+      <li>Streak Free Cleaning of all exterior windows</li>
+      <li>A spray on wax/sealant is applied to the vehicle providing a deeper shine and protection to the vehicle</li>
     </ul>
     `,
     prices: {
-      sedan: 83.0,
-      "mid-size-suv": 116.0,
-      "pickup-truck": 132.5,
-      "full-size-suv": 132.5,
+      sedan: 60.0,
+      "mid-size-suv": 80.0,
+      "pickup-truck": 90.0,
+      "full-size-suv": 90.0,
     },
   },
   {
@@ -166,16 +167,17 @@ export const services = [
     description: `
     <ul>
       <li>Includes everything in the Regular Exterior</li>
-      <li>Decontamination wash</li>
-      <li>Clay bar the vehicle removing any containments in the paint</li>
-      <li>A wax/sealant applied to the vehicle providing a deeper shine and protection to the vehicle</li>
+      <li>Dead bug removal</li>
+      <li>Clay Bar (removing other contaminants embedded within the surface of the clear coat)</li>
+      <li>Machine Wax</li>
+      <li>Engine Bay shampoo</li>
     </ul>
     `,
     prices: {
-      sedan: 166.0,
-      "mid-size-suv": 199.0,
-      "pickup-truck": 232.0,
-      "full-size-suv": 232.0,
+      sedan: 160.0,
+      "mid-size-suv": 180.0,
+      "pickup-truck": 220.0,
+      "full-size-suv": 220.0,
     },
   },
   {
@@ -185,17 +187,17 @@ export const services = [
     description: `
     <ul>
       <li>Includes berthing in the Enhanced Detail</li>
-      <li>Iron remover</li>
-      <li>A full exterior stage 1 polish</li>
-      <li>Protection added of Wax to help protect that clear and enriched polish</li>
-      <li>With protection to all plastic and rubber parts</li>
+      <li>Iron removal (removing iron deposits within the surface of the paint)</li>
+      <li>Single Stage Paint Polish (Removes up to 80% swirls and haze on paint! Giving the mirror-like finish)</li>
+      <li>Paint Prep Solution</li>
+      <li>6-12 months of protective coating</li>
     </ul>
     `,
     prices: {
-      sedan: 265.5,
-      "mid-size-suv": 282.0,
-      "pickup-truck": 315.0,
-      "full-size-suv": 315.0,
+      sedan: 240.0,
+      "mid-size-suv": 280.0,
+      "pickup-truck": 300.0,
+      "full-size-suv": 300.0,
     },
   },
   {

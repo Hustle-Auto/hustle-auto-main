@@ -170,21 +170,10 @@ const GetAQuote = () => {
                     value={serviceType.id}
                     checked={serviceType.id === userInput.serviceType?.id}
                     onChange={handleServiceTypeChange}
-                    disabled={serviceType.id === "exterior"}
                   >
                     <Card.Body>
                       <Card.Text>
                         <p className="text-center">{serviceType.label}</p>
-
-                        {serviceType.id === "exterior" && (
-                          <div className="mt-1 text-xs text-center">
-                            <span className="italic ">
-                              We have temporarily suspended our Exterior
-                              Detailing Services due to a change in bylaws. We
-                              thank you for your patience.
-                            </span>
-                          </div>
-                        )}
                       </Card.Text>
                     </Card.Body>
                   </RadioCardInput>
