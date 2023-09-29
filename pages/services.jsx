@@ -3,6 +3,7 @@ import Head from "next/head";
 import ExteriorServices from "../components/services/ExteriorServices";
 import InteriorServices from "../components/services/InteriorServices";
 import PaintCorrectionService from "../components/services/PaintCorrectionService";
+import ProtectiveCoatingService from "../components/services/ProtectiveCoatingService";
 import PageSection from "../components/ui/PageSection";
 
 const services = () => {
@@ -16,9 +17,12 @@ const services = () => {
         />
       </Head>
       <main>
+        <h2 className="pb-5 page-heading">Services</h2>
         <PageSection>
-          <h2 className="pb-5 page-heading">Services</h2>
+          <ProtectiveCoatingService />
+        </PageSection>
 
+        <PageSection>
           <InteriorServices />
         </PageSection>
 
