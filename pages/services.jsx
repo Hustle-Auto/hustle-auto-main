@@ -23,11 +23,11 @@ const services = () => {
         </PageSection>
 
         <PageSection>
-          <PaintCorrectionService />
+          <ExteriorServices />
         </PageSection>
 
         <PageSection>
-          <ExteriorServices />
+          <PaintCorrectionService />
         </PageSection>
       </main>
     </>
