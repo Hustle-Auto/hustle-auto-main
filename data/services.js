@@ -169,56 +169,39 @@ export const services = [
     },
   },
   {
-    id: "stage-1-paint-correction",
-    label: "Stage 1 Paint Correction",
-    serviceType: "paint-correction",
+    id: "5-year-ceramic-coating",
+    label: "5-Year Ceramic Coating",
+    serviceType: ServiceType.CERAMIC_COATING,
     description: `
-    <p>All Paint Corrections</p>
+    <p>Protect and preserve your vehicle's exterior with our 5-Year Ceramic Coating, offering a durable barrier against the elements for lasting beauty and ease of maintenance</p>
     <ul>
-      <li>Cleaning off rims and tires</li>
-      <li>Two bucket hand wash</li>
-      <li>Clay bar of the vehicle (if required)</li>
-      <li>A decontamination wash iron deposits</li>
-      <li>Paint correction prep</li>
-    </ul>
-    <p>Stage 1 Paint Correction</p>
-    <ul>
-      <li>1 step of compounding of larger swirl, scratches and any other defects</li>
-      <li>1 step polish of refining the paint, removing of minor scratches and swirls, and improving clarity of the paint</li>
-      <li>Here you achieve a 80% to 90% clarity</li>
+      <li>Two layers of high-quality ceramic coating</li>
+      <li>Enhanced gloss and color depth</li>
+      <li>Superior hydrophobic properties for easy cleaning</li>
     </ul>
     `,
     prices: {
-      sedan: 331.0,
-      "mid-size-suv": 413.5,
-      "pickup-truck": 463.0,
-      "full-size-suv": 496.0,
+      [CarType.SEDAN]: 699.0,
+      [CarType.SUV]: 799.0,
+      [CarType.TRUCK]: 899.0,
     },
   },
   {
-    id: "stage-2-paint-correction",
-    label: "Stage 2 Paint Correction",
-    serviceType: "paint-correction",
+    id: "7-year-ceramic-coating",
+    label: "7-Year Ceramic Coating",
+    serviceType: ServiceType.CERAMIC_COATING,
     description: `
-    <p>All Paint Corrections</p>
+    <p>Our ultimate protection package, the 7-Year Ceramic Coating, ensures your vehicle maintains a showroom look with the highest level of durability and resistance to environmental impacts.</p>
     <ul>
-      <li>Cleaning off rims and tires</li>
-      <li>Two bucket hand wash</li>
-      <li>Clay bar of the vehicle (if required)</li>
-      <li>A decontamination wash iron deposits</li>
-      <li>Paint correction prep</li>
-    </ul>
-    <p>Stage 2 Paint Correction</p>
-    <ul>
-      <li>2 step correction of compound of removal defects, marks, scratches and swirls with more in-depth</li>
-      <li>1 step correction polish to refine the finish to achieve 90% to 99% clarity</li>
+      <li>Three layers of premium ceramic coating</li>
+      <li>Maximum durability for protection against scratches and contaminants</li>
+      <li>Advanced hydrophobic effect for superior water repelling</li>
     </ul>
     `,
     prices: {
-      sedan: 380.5,
-      "mid-size-suv": 446.5,
-      "pickup-truck": 512.5,
-      "full-size-suv": 529.0,
+      [CarType.SEDAN]: 799.0,
+      [CarType.SUV]: 899.0,
+      [CarType.TRUCK]: 999.0,
     },
   },
 ];
