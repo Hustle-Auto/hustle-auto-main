@@ -39,104 +39,79 @@ export const detailingLocations = [
   },
 ];
 
+const CarType = {
+  SEDAN: "sedan",
+  SUV: "mid-size-suv",
+  TRUCK: "pickup-truck",
+};
+
 export const carTypes = [
   {
-    id: "sedan",
+    id: CarType.SEDAN,
     label: "Sedan",
-    imageSrc: "/images/car-types/sedan.png",
-    imageWidth: "1000",
-    imageHeight: "273",
   },
   {
-    id: "mid-size-suv",
+    id: CarType.SUV,
     label: "Mid-Size SUV",
-    imageSrc: "/images/car-types/midsize-suv.png",
-    imageWidth: "1000",
-    imageHeight: "369",
   },
   {
-    id: "pickup-truck",
-    label: "Truck",
-    imageSrc: "/images/car-types/truck.png",
-    imageWidth: "1000",
-    imageHeight: "334",
-  },
-  {
-    id: "full-size-suv",
-    label: "Full-Size SUV",
-    imageSrc: "/images/car-types/car.png",
-    imageWidth: "965",
-    imageHeight: "500",
+    id: CarType.TRUCK,
+    label: "Full-Size SUV / Minivan / Truck",
   },
 ];
 
+const ServiceType = {
+  INTERIOR: "interior",
+  EXTERIOR: "exterior",
+  CERAMIC_COATING: "ceramic-coating",
+};
+
 export const serviceTypes = [
-  { id: "interior", label: "Interior Detailing" },
-  { id: "paint-correction", label: "Paint Correction" },
-  { id: "exterior", label: "Exterior Detailing" },
+  { id: ServiceType.INTERIOR, label: "Interior Detailing" },
+  { id: ServiceType.EXTERIOR, label: "Exterior Detailing" },
+  { id: ServiceType.CERAMIC_COATING, label: "Ceramic Coating" },
 ];
 
 export const services = [
   {
     id: "regular-interior-detailing",
-    label: "Regular Interior Detailing",
-    serviceType: "interior",
+    label: "Regular Interior Detail",
+    serviceType: ServiceType.INTERIOR,
     description: `
     <ul>
-      <li>A thoroughly vacuum the interior carpets, mats, seats and truck space</li>
-      <li>Clean and sanitize all interior panels</li>
-      <li>Clean both exterior & interior windows</li>
-      <li>Steam clean the vents</li>
-      <li>Wash the rubber mats</li>
+      <li>Vacuum carpets, seats, and trunk</li>
+      <li>Hot water shampoo for carpets and seats</li>
+      <li>Floor mats washed and shined</li>
+      <li>Wipe down of all surfaces for cleaning and sanitization</li>
+      <li>Interior glass cleaned for a streak-free view</li>
     </ul>
     `,
     prices: {
-      sedan: 116.0,
-      "mid-size-suv": 149.0,
-      "pickup-truck": 149.0,
-      "full-size-suv": 182.0,
+      [CarType.SEDAN]: 90.0,
+      [CarType.SUV]: 90.0,
+      [CarType.TRUCK]: 110.0,
     },
   },
   {
     id: "enhanced-interior-detailing",
-    label: "Enhanced Interior Detailing",
-    serviceType: "interior",
+    label: "Deep Cleaning Interior Detail",
+    serviceType: ServiceType.INTERIOR,
     description: `
     <ul>
-      <li>Everything within the Regular Interior Included</li>
-      <li>Shampoo of mats, carpets of the vehicle and if vehicle is equipped with cloths seats, that will be shampooed as well</li>
-      <li>Clean and condition leather seats</li>
-      <li>Clean and condition vinyl and plastics </li>
-      <li>Remove any spots</li>
-      <li>Cleaning of door jams</li>
+      <li>Includes all Regular Interior Detail features</li>
+      <li>Air compression cleaning for cracks and crevices</li>
+      <li>Protection for all carpeted and fabric surfaces</li>
+      <li>Leather seats cleaned and conditioned</li>
+      <li>Vinyl surfaces conditioned and dressed</li>
+      <li>Headliner and door jams cleaned</li>
+      <li>Stain removal and steam cleaning for vinyl and leather</li>
+      <li>Air vents sanitized and cleaned</li>
     </ul>
     `,
     prices: {
-      sedan: 199.0,
-      "mid-size-suv": 232.0,
-      "pickup-truck": 232.0,
-      "full-size-suv": 265.0,
-    },
-  },
-  {
-    id: "elite-interior-detailing",
-    label: "Elite Interior Detailing",
-    serviceType: "interior",
-    description: `
-    <ul>
-      <li>Includes everything from Enhanced Interior detail</li>
-      <li>Cleaning of the headliner </li>
-      <li>Steam and clean of seat belts </li>
-      <li>Protection Coating to all Plastic, Vinyl and Rubber surfaces from stains and dirt</li>
-      <li>Protection Coating to all Leather Surfaces </li>
-      <li>Protection Coating to all fabric surfaces</li>
-    </ul>
-    `,
-    prices: {
-      sedan: 282.0,
-      "mid-size-suv": 315.0,
-      "pickup-truck": 315.0,
-      "full-size-suv": 348.0,
+      [CarType.SEDAN]: 180.0,
+      [CarType.SUV]: 180.0,
+      [CarType.TRUCK]: 220.0,
     },
   },
   {
