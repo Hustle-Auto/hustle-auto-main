@@ -256,15 +256,15 @@ const GetAQuote = () => {
                       detailingLocation.id === userInput.detailingLocation?.id
                     }
                     onChange={handleDetailingLocationChange}
-                    disabled={
-                      !enableMobileDetailingLocationOption &&
-                      detailingLocation.type === "mobile"
-                    }
+                    disabled={detailingLocation.disableOnServiceTypes?.includes(
+                      userInput.serviceType.id
+                    )}
                   >
                     <Card.Body>
                       <Card.Text>
-                        {(enableMobileDetailingLocationOption ||
-                          detailingLocation.type !== "mobile") && (
+                        {!detailingLocation.disableOnServiceTypes?.includes(
+                          userInput.serviceType.id
+                        ) && (
                           <>
                             <div className="mb-3 space-y-1 text-center">
                               <div>{detailingLocation.label}</div>
@@ -278,20 +278,20 @@ const GetAQuote = () => {
                             </div>
                           </>
                         )}
-                        {!enableMobileDetailingLocationOption &&
-                          detailingLocation.type === "mobile" && (
-                            <>
-                              <div className="mb-3 space-y-1 text-center">
-                                <div>{detailingLocation.label}</div>
-                              </div>
-                              <div className="text-xs text-center">
-                                <span className="italic ">
-                                  This option is only available for Interior
-                                  Detailing
-                                </span>
-                              </div>
-                            </>
-                          )}
+                        {detailingLocation.disableOnServiceTypes?.includes(
+                          userInput.serviceType.id
+                        ) && (
+                          <>
+                            <div className="mb-3 space-y-1 text-center">
+                              <div>{detailingLocation.label}</div>
+                            </div>
+                            <div className="text-sm text-center px-6">
+                              <span className="italic">
+                                {detailingLocation.disabledMessage}
+                              </span>
+                            </div>
+                          </>
+                        )}
                       </Card.Text>
                     </Card.Body>
                   </RadioCardInput>

@@ -1,3 +1,15 @@
+const CarType = {
+  SEDAN: "sedan",
+  SUV: "mid-size-suv",
+  TRUCK: "pickup-truck",
+};
+
+const ServiceType = {
+  INTERIOR: "interior",
+  EXTERIOR: "exterior",
+  CERAMIC_COATING: "ceramic-coating",
+};
+
 export const addOns = [
   {
     id: "pet-hair-removal",
@@ -24,26 +36,36 @@ export const detailingLocations = [
     price: 0,
   },
   {
+    id: "airdrie-location",
+    type: "mobile",
+    label: "At your location in Airdrie",
+    description: "We will come to you to perform the service",
+    price: 10.0,
+    disableOnServiceTypes: [ServiceType.CERAMIC_COATING],
+    disabledMessage:
+      "Mobile service is not available for Ceramic Coating services",
+  },
+  {
     id: "close-calgary-location",
     type: "mobile",
     label: "At your location in Calgary NE/NW",
     description: "We will come to you to perform the service",
-    price: 30.0,
+    price: 25.0,
+    disableOnServiceTypes: [ServiceType.CERAMIC_COATING],
+    disabledMessage:
+      "Mobile service is not available for Ceramic Coating services",
   },
   {
     id: "far-calgary-location",
     type: "mobile",
     label: "At your location in Calgary SE/SW",
     description: "We will come to you to perform the service",
-    price: 50.0,
+    price: 35.0,
+    disableOnServiceTypes: [ServiceType.CERAMIC_COATING],
+    disabledMessage:
+      "Mobile service is not available for Ceramic Coating services",
   },
 ];
-
-const CarType = {
-  SEDAN: "sedan",
-  SUV: "mid-size-suv",
-  TRUCK: "pickup-truck",
-};
 
 export const carTypes = [
   {
@@ -59,12 +81,6 @@ export const carTypes = [
     label: "Full-Size SUV / Minivan / Truck",
   },
 ];
-
-const ServiceType = {
-  INTERIOR: "interior",
-  EXTERIOR: "exterior",
-  CERAMIC_COATING: "ceramic-coating",
-};
 
 export const serviceTypes = [
   { id: ServiceType.INTERIOR, label: "Interior Detailing" },
