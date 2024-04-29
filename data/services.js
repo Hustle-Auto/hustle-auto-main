@@ -117,59 +117,55 @@ export const services = [
   {
     id: "regular-exterior-detailing",
     label: "Regular Exterior Detailing",
-    serviceType: "exterior",
+    serviceType: ServiceType.EXTERIOR,
     description: `
     <ul>
-      <li>Two bucket hand wash</li>
-      <li>Cleaning of tires and rims</li>
-      <li>Conditioning of tire with shine </li>
-      <li>Cleaning of all exterior windows </li>
+      <li>Two-bucket hand wash</li>
+      <li>Tires and rims cleaned, tires conditioned</li>
+      <li>Streak-free exterior window cleaning</li>
+      <li>Spray on wax/sealant for shine and protection</li>
     </ul>
     `,
     prices: {
-      sedan: 83.0,
-      "mid-size-suv": 116.0,
-      "pickup-truck": 132.5,
-      "full-size-suv": 132.5,
+      [CarType.SEDAN]: 90.0,
+      [CarType.SUV]: 120.0,
+      [CarType.TRUCK]: 180.0,
     },
   },
   {
     id: "enhanced-exterior-detailing",
     label: "Enhanced Exterior Detailing",
-    serviceType: "exterior",
+    serviceType: ServiceType.EXTERIOR,
     description: `
     <ul>
-      <li>Includes everything in the Regular Exterior</li>
-      <li>Decontamination wash</li>
-      <li>Clay bar the vehicle removing any containments in the paint</li>
-      <li>A wax/sealant applied to the vehicle providing a deeper shine and protection to the vehicle</li>
+      <li>Comprehensive hand wash including bug removal</li>
+      <li>Clay bar treatment for a smooth finish</li>
+      <li>Machine wax for enhanced gloss and protection</li>
+      <li>Engine bay shampoo for a clean engine environment</li>
     </ul>
     `,
     prices: {
-      sedan: 166.0,
-      "mid-size-suv": 199.0,
-      "pickup-truck": 232.0,
-      "full-size-suv": 232.0,
+      [CarType.SEDAN]: 200.0,
+      [CarType.SUV]: 260.0,
+      [CarType.TRUCK]: 300.0,
     },
   },
   {
     id: "elite-exterior-detailing",
     label: "Elite Exterior Detailing",
-    serviceType: "exterior",
+    serviceType: ServiceType.EXTERIOR,
     description: `
     <ul>
-      <li>Includes berthing in the Enhanced Detail</li>
-      <li>Iron remover</li>
-      <li>A full exterior stage 1 polish</li>
-      <li>Protection added of Wax to help protect that clear and enriched polish</li>
-      <li>With protection to all plastic and rubber parts</li>
+      <li>All Enhanced Exterior Detail features</li>
+      <li>Iron removal for paint decontamination</li>
+      <li>One-step gloss enhancement for a brilliant shine</li>
+      <li>Long-lasting protective coating application</li>
     </ul>
     `,
     prices: {
-      sedan: 265.5,
-      "mid-size-suv": 282.0,
-      "pickup-truck": 315.0,
-      "full-size-suv": 315.0,
+      [CarType.SEDAN]: 320.0,
+      [CarType.SUV]: 390.0,
+      [CarType.TRUCK]: 450.0,
     },
   },
   {
