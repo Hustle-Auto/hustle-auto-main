@@ -14,17 +14,32 @@ export const addOns = [
   {
     id: "pet-hair-removal",
     label: "Pet Hair Removal",
-    price: 25,
-  },
-  {
-    id: "tough-stain-removal",
-    label: "Tough Stain Removal",
-    price: 50,
+    price: 40.0,
+    enableOnServiceTypes: [ServiceType.INTERIOR],
   },
   {
     id: "foul-odor-elimination",
     label: "Foul Odor Elimination",
-    price: 75,
+    price: 100.0,
+    enableOnServiceTypes: [ServiceType.INTERIOR],
+  },
+  {
+    id: "glass-ceramic-coating",
+    label: "Glass Ceramic Coating",
+    price: 200.0,
+    enableOnServiceTypes: [ServiceType.CERAMIC_COATING],
+  },
+  {
+    id: "wheel-ceramic-coating",
+    label: "Wheel Ceramic Coating",
+    price: 300.0,
+    enableOnServiceTypes: [ServiceType.CERAMIC_COATING],
+  },
+  {
+    id: "stage-2-paint-correction",
+    label: "Stage 2 Paint Correction",
+    price: 300.0,
+    enableOnServiceTypes: [ServiceType.CERAMIC_COATING],
   },
 ];
 

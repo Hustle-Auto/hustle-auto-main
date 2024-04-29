@@ -220,27 +220,33 @@ const GetAQuote = () => {
             <div className="sm:grid sm:grid-cols-3 sm:gap-8">
               {!userInput.service && <p>Please Select A Package</p>}
               {userInput.service &&
-                addOns.map((addOn) => (
-                  <CheckboxCardInput
-                    key={addOn.id}
-                    value={addOn.id}
-                    checked={userInput.addOns
-                      .map((addOn) => addOn.id)
-                      .includes(addOn.id)}
-                    onChange={handleAddOnChange}
-                  >
-                    <Card.Body>
-                      <Card.Text>
-                        <div className="space-y-1 text-center">
-                          <div>{addOn.label}</div>
-                          <div className="font-bold">
-                            ${addOn.price.toFixed(2)}
+                addOns
+                  .filter((addOn) =>
+                    addOn.enableOnServiceTypes.includes(
+                      userInput.serviceType.id
+                    )
+                  )
+                  .map((addOn) => (
+                    <CheckboxCardInput
+                      key={addOn.id}
+                      value={addOn.id}
+                      checked={userInput.addOns
+                        .map((addOn) => addOn.id)
+                        .includes(addOn.id)}
+                      onChange={handleAddOnChange}
+                    >
+                      <Card.Body>
+                        <Card.Text>
+                          <div className="space-y-1 text-center">
+                            <div>{addOn.label}</div>
+                            <div className="font-bold">
+                              ${addOn.price.toFixed(2)}
+                            </div>
                           </div>
-                        </div>
-                      </Card.Text>
-                    </Card.Body>
-                  </CheckboxCardInput>
-                ))}
+                        </Card.Text>
+                      </Card.Body>
+                    </CheckboxCardInput>
+                  ))}
             </div>
           </section>
           <section className="my-10">
