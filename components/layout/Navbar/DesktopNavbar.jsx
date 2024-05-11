@@ -36,7 +36,7 @@ const DesktopNavbar = () => {
                         Home
                       </NavbarLink>
                     </li>
-                    <li>
+                    {/* <li>
                       <NavbarLink
                         href="/services"
                         className={linkClassName}
@@ -44,7 +44,7 @@ const DesktopNavbar = () => {
                       >
                         Services
                       </NavbarLink>
-                    </li>
+                    </li> */}
                     <li>
                       <NavbarLink
                         href="/gallery"
