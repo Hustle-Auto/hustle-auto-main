@@ -23,21 +23,11 @@ const services = () => {
         </PageSection>
 
         <PageSection>
-          <PaintCorrectionService />
+          <ExteriorServices />
         </PageSection>
 
         <PageSection>
-          <div className="relative">
-            <div className="absolute flex items-center justify-center w-full h-full">
-              <div className="z-10 max-w-lg px-5 py-8 bg-white border border-black opacity-100">
-                We have temporarily suspended our Exterior Detailing Services
-                due to a change in bylaws. We thank you for your patience.
-              </div>
-            </div>
-            <div className="pointer-events-none blur-sm">
-              <ExteriorServices />
-            </div>
-          </div>
+          <PaintCorrectionService />
         </PageSection>
       </main>
     </>

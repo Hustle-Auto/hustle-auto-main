@@ -57,7 +57,7 @@ const MobileNavbar = () => {
                     Home
                   </NavbarLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavbarLink
                     href="/services"
                     className={linkClassName}
@@ -66,7 +66,7 @@ const MobileNavbar = () => {
                   >
                     Services
                   </NavbarLink>
-                </li>
+                </li> */}
                 <li>
                   <NavbarLink
                     href="/gallery"
