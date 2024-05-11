@@ -35,12 +35,12 @@ export const addOns = [
     price: 300.0,
     enableOnServiceTypes: [ServiceType.CERAMIC_COATING],
   },
-  {
-    id: "stage-2-paint-correction",
-    label: "Stage 2 Paint Correction",
-    price: 300.0,
-    enableOnServiceTypes: [ServiceType.CERAMIC_COATING],
-  },
+  // {
+  //   id: "stage-2-paint-correction",
+  //   label: "Stage 2 Paint Correction",
+  //   price: 300.0,
+  //   enableOnServiceTypes: [ServiceType.CERAMIC_COATING],
+  // },
 ];
 
 export const detailingLocations = [
@@ -58,7 +58,7 @@ export const detailingLocations = [
     price: 10.0,
     disableOnServiceTypes: [ServiceType.CERAMIC_COATING],
     disabledMessage:
-      "Mobile service is not available for Ceramic Coating services",
+      "Mobile service is only available for Interior and Exterior Detailing services",
   },
   {
     id: "close-calgary-location",
@@ -68,7 +68,7 @@ export const detailingLocations = [
     price: 25.0,
     disableOnServiceTypes: [ServiceType.CERAMIC_COATING],
     disabledMessage:
-      "Mobile service is not available for Ceramic Coating services",
+      "Mobile service is only available for Interior and Exterior Detailing services",
   },
   {
     id: "far-calgary-location",
@@ -78,7 +78,7 @@ export const detailingLocations = [
     price: 35.0,
     disableOnServiceTypes: [ServiceType.CERAMIC_COATING],
     disabledMessage:
-      "Mobile service is not available for Ceramic Coating services",
+      "Mobile service is only available for Interior and Exterior Detailing services",
   },
 ];
 
@@ -212,9 +212,9 @@ export const services = [
     </ul>
     `,
     prices: {
-      [CarType.SEDAN]: 699.0,
-      [CarType.SUV]: 799.0,
-      [CarType.TRUCK]: 899.0,
+      [CarType.SEDAN]: 799.0,
+      [CarType.SUV]: 899.0,
+      [CarType.TRUCK]: 999.0,
     },
   },
   {
@@ -230,9 +230,9 @@ export const services = [
     </ul>
     `,
     prices: {
-      [CarType.SEDAN]: 799.0,
-      [CarType.SUV]: 899.0,
-      [CarType.TRUCK]: 999.0,
+      [CarType.SEDAN]: 899.0,
+      [CarType.SUV]: 999.0,
+      [CarType.TRUCK]: 1099.0,
     },
   },
 ];
