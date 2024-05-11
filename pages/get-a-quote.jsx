@@ -170,21 +170,10 @@ const GetAQuote = () => {
                     value={serviceType.id}
                     checked={serviceType.id === userInput.serviceType?.id}
                     onChange={handleServiceTypeChange}
-                    disabled={serviceType.id === "exterior"}
                   >
                     <Card.Body>
                       <Card.Text>
                         <p className="text-center">{serviceType.label}</p>
-
-                        {serviceType.id === "exterior" && (
-                          <div className="mt-1 text-xs text-center">
-                            <span className="italic ">
-                              We have temporarily suspended our Exterior
-                              Detailing Services due to a change in bylaws. We
-                              thank you for your patience.
-                            </span>
-                          </div>
-                        )}
                       </Card.Text>
                     </Card.Body>
                   </RadioCardInput>
@@ -231,27 +220,33 @@ const GetAQuote = () => {
             <div className="sm:grid sm:grid-cols-3 sm:gap-8">
               {!userInput.service && <p>Please Select A Package</p>}
               {userInput.service &&
-                addOns.map((addOn) => (
-                  <CheckboxCardInput
-                    key={addOn.id}
-                    value={addOn.id}
-                    checked={userInput.addOns
-                      .map((addOn) => addOn.id)
-                      .includes(addOn.id)}
-                    onChange={handleAddOnChange}
-                  >
-                    <Card.Body>
-                      <Card.Text>
-                        <div className="space-y-1 text-center">
-                          <div>{addOn.label}</div>
-                          <div className="font-bold">
-                            ${addOn.price.toFixed(2)}
+                addOns
+                  .filter((addOn) =>
+                    addOn.enableOnServiceTypes.includes(
+                      userInput.serviceType.id
+                    )
+                  )
+                  .map((addOn) => (
+                    <CheckboxCardInput
+                      key={addOn.id}
+                      value={addOn.id}
+                      checked={userInput.addOns
+                        .map((addOn) => addOn.id)
+                        .includes(addOn.id)}
+                      onChange={handleAddOnChange}
+                    >
+                      <Card.Body>
+                        <Card.Text>
+                          <div className="space-y-1 text-center">
+                            <div>{addOn.label}</div>
+                            <div className="font-bold">
+                              ${addOn.price.toFixed(2)}
+                            </div>
                           </div>
-                        </div>
-                      </Card.Text>
-                    </Card.Body>
-                  </CheckboxCardInput>
-                ))}
+                        </Card.Text>
+                      </Card.Body>
+                    </CheckboxCardInput>
+                  ))}
             </div>
           </section>
           <section className="my-10">
@@ -267,15 +262,15 @@ const GetAQuote = () => {
                       detailingLocation.id === userInput.detailingLocation?.id
                     }
                     onChange={handleDetailingLocationChange}
-                    disabled={
-                      !enableMobileDetailingLocationOption &&
-                      detailingLocation.type === "mobile"
-                    }
+                    disabled={detailingLocation.disableOnServiceTypes?.includes(
+                      userInput.serviceType.id
+                    )}
                   >
                     <Card.Body>
                       <Card.Text>
-                        {(enableMobileDetailingLocationOption ||
-                          detailingLocation.type !== "mobile") && (
+                        {!detailingLocation.disableOnServiceTypes?.includes(
+                          userInput.serviceType.id
+                        ) && (
                           <>
                             <div className="mb-3 space-y-1 text-center">
                               <div>{detailingLocation.label}</div>
@@ -289,20 +284,20 @@ const GetAQuote = () => {
                             </div>
                           </>
                         )}
-                        {!enableMobileDetailingLocationOption &&
-                          detailingLocation.type === "mobile" && (
-                            <>
-                              <div className="mb-3 space-y-1 text-center">
-                                <div>{detailingLocation.label}</div>
-                              </div>
-                              <div className="text-xs text-center">
-                                <span className="italic ">
-                                  This option is only available for Interior
-                                  Detailing
-                                </span>
-                              </div>
-                            </>
-                          )}
+                        {detailingLocation.disableOnServiceTypes?.includes(
+                          userInput.serviceType.id
+                        ) && (
+                          <>
+                            <div className="mb-3 space-y-1 text-center">
+                              <div>{detailingLocation.label}</div>
+                            </div>
+                            <div className="text-sm text-center px-6">
+                              <span className="italic">
+                                {detailingLocation.disabledMessage}
+                              </span>
+                            </div>
+                          </>
+                        )}
                       </Card.Text>
                     </Card.Body>
                   </RadioCardInput>

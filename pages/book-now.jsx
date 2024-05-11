@@ -206,7 +206,7 @@ const BookNow = () => {
                       <p className="font-bold">
                         Estimated Total:{" "}
                         <span className="text-accent">
-                          ${userSelectionsSummary?.totalPrice}
+                          ${userSelectionsSummary?.totalPrice} + Tax (5% GST)
                         </span>
                       </p>
                     </section>
