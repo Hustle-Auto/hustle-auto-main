@@ -62,16 +62,6 @@ const validationSchema = Yup.object({
       test: (value) =>
         dayjs(value).isSame(dayjs(), "day") ||
         dayjs(value).isAfter(dayjs(), "day"),
-    })
-    .test({
-      name: "is-weekend",
-      message: "Date must be a weekend as we are closed on weekdays",
-      skipAbsent: true,
-      test: (value) => {
-        const day = dayjs(value).day();
-        // 0 = Sunday, 6 = Saturday
-        return day === 6 || day === 0;
-      },
     }),
   message: Yup.string().trim(),
 });
