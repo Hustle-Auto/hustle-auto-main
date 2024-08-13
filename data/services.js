@@ -118,8 +118,8 @@ export const services = [
     </ul>
     `,
     prices: {
-      [CarType.SEDAN]: 90.0,
-      [CarType.SUV]: 90.0,
+      [CarType.SEDAN]: 100.0,
+      [CarType.SUV]: 100.0,
       [CarType.TRUCK]: 110.0,
     },
   },
